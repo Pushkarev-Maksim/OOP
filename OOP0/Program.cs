@@ -13,6 +13,27 @@ namespace OOP0
     public class Program
     {
         /// <summary>
+        /// Определение структуры Time.
+        /// </summary>
+        public struct Time
+        {
+            /// <summary>
+            /// Определение переменной (поля) Сlock.
+            /// </summary>
+            public int Сlock;
+
+            /// <summary>
+            /// Определение переменной (поля) Minutes.
+            /// </summary>
+            public int Minutes;
+
+            /// <summary>
+            /// Определение переменной (поля) Seconds.
+            /// </summary>
+            public int Seconds;
+        }
+
+        /// <summary>
         /// Определение структуры DateОfDay.
         /// </summary>
         public struct DateОfDay
