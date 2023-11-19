@@ -109,7 +109,7 @@ namespace OOP0
         public static void ConsoleOutput1(DateОfDay date, Time time)
         {
             Console.WriteLine($"Дата и время: " +
-                $"{date.Day}.{date.Month}.{date.Year}.{time.Сlock}.{time.Minutes}.{time.Seconds}");
+                $"{date.Day}.{date.Month}.{date.Year} {time.Сlock}.{time.Minutes}.{time.Seconds}");
         }
 
         /// <summary>
