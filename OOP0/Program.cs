@@ -137,6 +137,15 @@ namespace OOP0
             Console.WriteLine("Введите год: ");
             int year = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Введите часы: ");
+            int сlock = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите минуты: ");
+            int minutes = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите секунды: ");
+            int seconds = int.Parse(Console.ReadLine());
+
             // С помощью функции FillingTheStructure заполним структуру
             DateОfDay date = FillingTheStructure(day, month, year);
 
