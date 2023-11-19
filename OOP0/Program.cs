@@ -102,6 +102,17 @@ namespace OOP0
         }
 
         /// <summary>
+        /// Функция, которая выводит в консоль дату и время.
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="time"></param>
+        public static void ConsoleOutput1(DateОfDay date, Time time)
+        {
+            Console.WriteLine($"Дата и время: " +
+                $"{date.Day}.{date.Month}.{date.Year}.{time.Сlock}.{time.Minutes}.{time.Seconds}");
+        }
+
+        /// <summary>
         /// Функция заполнения структуры.
         /// </summary>
         /// <param name="day">День.</param>
@@ -187,6 +198,9 @@ namespace OOP0
 
             // Определяем дату завтрашнего дня с помощью функции DateNextDay
             DateОfDay dateNext = DateNextDay(date);
+
+            // Выводим в консоль дату и время
+            ConsoleOutput1(date, time);
 
             // Выводим в консоль полученную дату с помощью функции ConsoleOutput
             ConsoleOutput(dateNext);
