@@ -123,6 +123,27 @@ namespace OOP0
         }
 
         /// <summary>
+        /// Функция заполнения структуры Time.
+        /// </summary>
+        /// <param name="сlock">Часы.</param>
+        /// <param name="minutes">Минуты.</param>
+        /// <param name="seconds">Секунды</param>
+        /// <returns>time.</returns>
+        public static Time FillingTheStructure1(int сlock, int minutes, int seconds)
+        {
+            // Создаем объект структуры
+            Time time = default;
+
+            // Заполняем объект структуры
+            time.Сlock = сlock;
+            time.Minutes = minutes;
+            time.Seconds = seconds;
+
+            // Возвращаем заполненный объект структуры
+            return time;
+        }
+
+        /// <summary>
         /// Main.
         /// </summary>
         /// <param name="args">.</param>
@@ -148,6 +169,9 @@ namespace OOP0
 
             // С помощью функции FillingTheStructure заполним структуру
             DateОfDay date = FillingTheStructure(day, month, year);
+
+            // С помощью функции FillingTheStructure1 заполним структуру
+            Time time = FillingTheStructure1(сlock, minutes, seconds);
 
             // Определяем дату завтрашнего дня с помощью функции DateNextDay
             DateОfDay dateNext = DateNextDay(date);
