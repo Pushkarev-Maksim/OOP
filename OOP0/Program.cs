@@ -149,22 +149,34 @@ namespace OOP0
         /// <param name="args">.</param>
         public static void Main(string[] args)
         {
+            // Ввод дня с консоли
             Console.WriteLine("Введите день: ");
+            // Преобразование к типу int
             int day = int.Parse(Console.ReadLine());
 
+            // Ввод месяца с консоли
             Console.WriteLine("Введите месяц: ");
+            // Преобразование к типу int
             int month = int.Parse(Console.ReadLine());
 
+            // Ввод года с консоли
             Console.WriteLine("Введите год: ");
+            // Преобразование к типу int
             int year = int.Parse(Console.ReadLine());
 
+            // Ввод часа с консоли
             Console.WriteLine("Введите часы: ");
+            // Преобразование к типу int
             int сlock = int.Parse(Console.ReadLine());
 
+            // Ввод минуты с консоли
             Console.WriteLine("Введите минуты: ");
+            // Преобразование к типу int
             int minutes = int.Parse(Console.ReadLine());
 
+            // Ввод секунды с консоли
             Console.WriteLine("Введите секунды: ");
+            // Преобразование к типу int
             int seconds = int.Parse(Console.ReadLine());
 
             // С помощью функции FillingTheStructure заполним структуру
