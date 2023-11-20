@@ -149,7 +149,7 @@ namespace OOP0
         /// <param name="args">.</param>
         public static void Main(string[] args)
         {
-            Console.WriteLine("Введите день: ");
+            Console.WriteLine("Введите день, пожалуйста: ");
             int day = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Введите месяц: ");
