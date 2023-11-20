@@ -161,7 +161,7 @@ namespace OOP0
         public static void Main(string[] args)
         {
             // Ввод дня с консоли
-            Console.WriteLine("Введите день: ");
+            Console.WriteLine("Введите день, срочно: ");
             // Преобразование к типу int
             int day = int.Parse(Console.ReadLine());
 
