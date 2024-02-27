@@ -20,15 +20,6 @@ namespace Model
         }
 
         /// <summary>
-        /// Удаление всех персон.
-        /// </summary>
-        /// <param name="person">Персона.</param>
-        public void RemovePerson(Person person)
-        {
-            persons.Clear();
-        }
-
-        /// <summary>
         /// Удаление персон по индексу.
         /// </summary>
         /// <param name="index">Индекс.</param>
@@ -67,6 +58,15 @@ namespace Model
                 throw new IndexOutOfRangeException($"'Элемента с индексом " +
                     $"{index} нет в списке");
             }
+        }
+
+        /// <summary>
+        /// Удаление всех персон.
+        /// </summary>
+        /// <param name="person">Персона.</param>
+        public void RemovePerson(Person person)
+        {
+            persons.Clear();
         }
 
         /// <summary>
