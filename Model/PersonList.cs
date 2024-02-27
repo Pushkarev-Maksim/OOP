@@ -78,9 +78,6 @@ namespace Model
             return persons.Count;
         }
 
-
-
-
         // Под вопросом???
         public int IndexOfPerson(Person person)
         {
