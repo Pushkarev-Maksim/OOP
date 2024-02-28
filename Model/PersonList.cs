@@ -78,19 +78,19 @@ namespace Model
             return persons.Count;
         }
 
-        // Под вопросом???
-        public int IndexOfPerson(Person person)
+        /// <summary>
+        /// Получение информации о списке персон.
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
+        public string GetInfoAPersonList()
         {
-            return persons.IndexOf(person);
-        }
-
-        public void GetInfoAPersona(Person person)
-        {
-            string 123 = default;
+            string infoPerson = default;
             foreach (Person persona in persons)
             {
-
+                infoPerson += person.GetInfoAPersona();
             }
+            return infoPerson;
         }
     }
 }

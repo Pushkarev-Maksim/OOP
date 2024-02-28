@@ -34,7 +34,8 @@ namespace OOP1
             personList2.AddPerson(person6);
 
             // 3.b Вывод содержимого каждого списка на экран
-            Console.WriteLine($"Список №1: {}");
+            Console.WriteLine($"Список №1: {personList1.GetInfoAPersonList()}");
+            Console.WriteLine($"Список №2: {personList2.GetInfoAPersonList()}");
         }
     }
 }

@@ -41,6 +41,15 @@ namespace Model
         }
 
         /// <summary>
+        /// Получение информации о персоне.
+        /// </summary>
+        /// <returns></returns>
+        public string GetInfoAPersona()
+        {
+            return $"{name} {surname}, {age} лет, пол: {gender}";
+        }
+
+        /// <summary>
         /// Проверка возраста.
         /// </summary>
         public int Age
@@ -77,19 +86,6 @@ namespace Model
             set
             {
                 gender = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-
             }
         }
     }
