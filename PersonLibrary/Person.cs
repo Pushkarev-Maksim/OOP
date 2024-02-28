@@ -46,7 +46,7 @@ namespace PersonLibrary
         /// <returns></returns>
         public string GetInfoAPersona()
         {
-            return $"{name} {surname}, {age} лет, пол: {gender}";
+            return $"{name} {surname}, {age} лет, пол: {gender}\n";
         }
 
         /// <summary>
