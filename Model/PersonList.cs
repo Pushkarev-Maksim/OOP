@@ -88,7 +88,7 @@ namespace Model
             string infoPerson = default;
             foreach (Person persona in persons)
             {
-                infoPerson += person.GetInfoAPersona();
+                infoPerson += persona.GetInfoAPersona();
             }
             return infoPerson;
         }
