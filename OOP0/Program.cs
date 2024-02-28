@@ -42,6 +42,10 @@ namespace OOP1
             personList1.AddPerson(persona7);
             Console.WriteLine($"Список №1 после добавления нового человека:" +
                 $"\n{personList1.GetInfoAPersonList()}");
+
+            // 3.d Копирование второго человека из первого списка в конец второго
+            Person a = personList1.GetPersonAtIndex(1);
+            Console.WriteLine(a);
         }
     }
 }

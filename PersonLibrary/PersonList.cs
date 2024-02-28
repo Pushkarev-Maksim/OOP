@@ -55,7 +55,7 @@ namespace PersonLibrary
             }
             else
             {
-                throw new IndexOutOfRangeException($"'Элемента с индексом " +
+                throw new IndexOutOfRangeException($"Элемента с индексом " +
                     $"{index} нет в списке");
             }
         }
