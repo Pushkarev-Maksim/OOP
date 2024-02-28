@@ -34,18 +34,29 @@ namespace OOP1
             personList2.AddPerson(persona6);
 
             // 3.b Вывод содержимого каждого списка на экран
-            Console.WriteLine($"Список №1:\n{personList1.GetInfoAPersonList()}");
-            Console.WriteLine($"Список №2:\n{personList2.GetInfoAPersonList()}");
+            Console.WriteLine($"Список №1:" +
+                $"\n{personList1.GetInfoAPersonList()}");
+            Console.WriteLine($"Список №2:" +
+                $"\n{personList2.GetInfoAPersonList()}");
 
             // 3.c Добавление нового человека в первый список
             Person persona7 = new Person("Василий", "Пупкин", 25, Gender.Male);
             personList1.AddPerson(persona7);
-            Console.WriteLine($"Список №1 после добавления нового человека:" +
-                $"\n{personList1.GetInfoAPersonList()}");
+            Console.WriteLine($"В первый список добавлен новый человек.\n" +
+                $"Список №1:\n{personList1.GetInfoAPersonList()}");
 
-            // 3.d Копирование второго человека из первого списка в конец второго
-            Person a = personList1.GetPersonAtIndex(1);
-            Console.WriteLine(a);
+            // 3.d Копирование второго человека из первого списка в конец
+            // второго
+            Console.WriteLine("Во второй список добавлен второй человек из" +
+                " первого списка:");
+            personList2.AddPerson(personList1.GetPersonAtIndex(1));
+            Console.WriteLine($"Список №1:" +
+                $"\n{personList1.GetInfoAPersonList()}");
+            Console.WriteLine($"Список №2:" +
+                $"\n{personList2.GetInfoAPersonList()}");
+
+            // 3.e Удаление второго человека из первого списка
+
         }
     }
 }
