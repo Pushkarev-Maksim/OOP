@@ -8,6 +8,25 @@ namespace OOP1
     /// </summary>
     internal class Program
     {
+        public static Person ReadPersonFromConsole()
+        {
+            Console.WriteLine("Введите данные о персоне:");
+            Console.Write("Имя: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Фамилия: ");
+            string surname = Console.ReadLine();
+
+            Console.Write("Возраст: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Пол: ");
+            int gender1 = Convert.ToInt32(Console.ReadLine());
+            Gender gender = (Gender)gender1;
+
+            return new Person(name, surname, age, gender);
+        }
+
         /// <summary>
         /// Точка входа в программу.
         /// </summary>
@@ -81,6 +100,9 @@ namespace OOP1
                 $"\n{personList1.GetInfoAPersonList()}");
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfoAPersonList()}");
+
+            Person person3 = ReadPersonFromConsole();
+            Console.WriteLine(person3.GetInfoAPersona());
         }
     }
 }
