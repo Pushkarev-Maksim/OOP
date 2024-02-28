@@ -5,6 +5,10 @@ namespace OOP0
 {
     public class ConsoleInputPerson
     {
+        /// <summary>
+        /// Чтение персоны с клавиатуры.
+        /// </summary>
+        /// <returns></returns>
         public static Person ReadPersonFromConsole()
         {
             Console.WriteLine("Введите данные о персоне:");
