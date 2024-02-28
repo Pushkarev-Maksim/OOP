@@ -1,4 +1,4 @@
-﻿using Model;
+﻿using PersonLibrary;
 using System;
 
 namespace OOP1
