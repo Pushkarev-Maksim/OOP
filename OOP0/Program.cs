@@ -83,8 +83,9 @@ namespace OOP1
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfoAPersonList()}");
 
-            Person person3 = ConsoleInputPerson.ReadPersonFromConsole();
-            Console.WriteLine(person3.GetInfoAPersona());
+            // 4 Чтение персоны с клавиатуры и вывод персоны на экран
+            Person personConsole = ConsoleInputPerson.ReadPersonFromConsole();
+            Console.WriteLine(personConsole.GetInfoAPersona());
         }
     }
 }

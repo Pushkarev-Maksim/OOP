@@ -17,7 +17,7 @@ namespace OOP0
             Console.Write("Возраст: ");
             int age = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Пол: 0 - мужской, 1 - женский");
+            Console.Write("Пол: 0 - мужской, 1 - женский\n");
             int gender1 = Convert.ToInt32(Console.ReadLine());
             Gender gender = (Gender)gender1;
 
