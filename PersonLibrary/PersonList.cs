@@ -64,7 +64,7 @@ namespace PersonLibrary
         /// Удаление всех персон.
         /// </summary>
         /// <param name="person">Персона.</param>
-        public void RemovePerson(Person person)
+        public void RemovePerson()
         {
             persons.Clear();
         }
