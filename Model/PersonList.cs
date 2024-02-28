@@ -83,5 +83,14 @@ namespace Model
         {
             return persons.IndexOf(person);
         }
+
+        public void GetInfoAPersona(Person person)
+        {
+            string 123 = default;
+            foreach (Person persona in persons)
+            {
+
+            }
+        }
     }
 }
