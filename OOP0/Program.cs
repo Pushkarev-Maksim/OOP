@@ -36,6 +36,12 @@ namespace OOP1
             // 3.b Вывод содержимого каждого списка на экран
             Console.WriteLine($"Список №1:\n{personList1.GetInfoAPersonList()}");
             Console.WriteLine($"Список №2:\n{personList2.GetInfoAPersonList()}");
+
+            // 3.c Добавление нового человека в первый список
+            Person persona7 = new Person("Василий", "Пупкин", 25, Gender.Male);
+            personList1.AddPerson(persona7);
+            Console.WriteLine($"Список №1 после добавления нового человека:" +
+                $"\n{personList1.GetInfoAPersonList()}");
         }
     }
 }
