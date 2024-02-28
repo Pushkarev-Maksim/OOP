@@ -44,6 +44,7 @@ namespace OOP1
                 $"\n{personList1.GetInfoAPersonList()}");
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfoAPersonList()}");
+            Console.ReadKey(true);
 
             // 3.c Добавление нового человека в первый список
             Person persona7 = new Person("Василий", "Пупкин", 
@@ -51,6 +52,7 @@ namespace OOP1
             personList1.AddPerson(persona7);
             Console.WriteLine($"В первый список добавлен новый человек.\n" +
                 $"Список №1:\n{personList1.GetInfoAPersonList()}");
+            Console.ReadKey(true);
 
             // 3.d Копирование второго человека из первого списка в конец
             // второго
@@ -61,6 +63,7 @@ namespace OOP1
                 $"\n{personList1.GetInfoAPersonList()}");
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfoAPersonList()}");
+            Console.ReadKey(true);
 
             // 3.e Удаление второго человека из первого списка
             personList1.RemovePersonAtIndex(1);
@@ -69,6 +72,7 @@ namespace OOP1
                 $"\n{personList1.GetInfoAPersonList()}");
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfoAPersonList()}");
+            Console.ReadKey(true);
 
             // 3.f Очистка второго списка
             personList2.RemovePerson();
