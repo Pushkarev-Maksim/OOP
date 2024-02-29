@@ -52,46 +52,6 @@ namespace PersonLibrary
         }
 
         /// <summary>
-        /// Проверка возраста.
-        /// </summary>
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-
-            set
-            {
-                if (value >= 1 && value <= 150)
-                {
-                    age = value;
-                }
-                else
-                {
-                    throw new ArgumentException($"Возраст должен находиться" +
-                        $" в пределах от 1 до 150");
-                }
-            }
-        }
-
-        /// <summary>
-        /// Задание гендера.
-        /// </summary>
-        public Gender Gender
-        {
-            get
-            {
-                return gender;
-            }
-
-            set
-            {
-                gender = value;
-            }
-        }
-
-        /// <summary>
         /// Задание имени.
         /// </summary>
         public string Name
@@ -163,6 +123,46 @@ namespace PersonLibrary
         {
             return Regex.IsMatch(name, @"(^[а-яА-Я]+-?[а-яА-Я]+$)") ||
                    Regex.IsMatch(name, @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
+        }
+
+        /// <summary>
+        /// Задание возраста.
+        /// </summary>
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                if (value >= 1 && value <= 150)
+                {
+                    age = value;
+                }
+                else
+                {
+                    throw new ArgumentException($"Возраст должен находиться" +
+                        $" в пределах от 1 до 150");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Задание гендера.
+        /// </summary>
+        public Gender Gender
+        {
+            get
+            {
+                return gender;
+            }
+
+            set
+            {
+                gender = value;
+            }
         }
     }
 }
