@@ -70,6 +70,25 @@ namespace PersonLibrary
         }
 
         /// <summary>
+        /// Получение индекса по персоне.
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
+        public int ReturnIndexPerson(Person person)
+        {
+            if (persons.Contains(person))
+            {
+                return persons.IndexOf(person);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Данной персоны не " +
+                    "существует");
+            }
+
+        }
+
+        /// <summary>
         /// Удаление всех персон.
         /// </summary>
         /// <param name="person">Персона.</param>
