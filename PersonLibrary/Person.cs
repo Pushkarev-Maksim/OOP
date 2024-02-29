@@ -139,7 +139,7 @@ namespace PersonLibrary
         }
 
         /// <summary>
-        /// Проверка того, что имя и фамили введены на одном языке
+        /// Проверка того, что имя и фамилия введены на одном языке
         /// </summary>
         /// <param name="name"></param>
         /// <param name="surname"></param>

@@ -63,9 +63,9 @@ namespace OOP0
             }
             while (ageIncorrect);
 
-            Console.Write("Пол: 0 - мужской, 1 - женский\n");
+            Console.Write("Пол: 0 - Male, 1 - Female\n");
             int genderConsole = Convert.ToInt32(Console.ReadLine());
-            Gender gender = (Gender)genderConsole;
+            person.Gender = (Gender)genderConsole;
 
             return person;
         }
