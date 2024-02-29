@@ -1,6 +1,7 @@
 ﻿using OOP0;
 using PersonLibrary;
 using System;
+using System.Xml.Linq;
 
 namespace OOP1
 {
@@ -48,7 +49,7 @@ namespace OOP1
             Console.ReadKey(true);
 
             // 3.c Добавление нового человека в первый список
-            Person persona7 = new Person("Василий", "Пупкин", 
+            Person persona7 = new Person("Василий", "Черноголовков", 
                 25, Gender.Male);
             personList1.AddPerson(persona7);
             Console.WriteLine($"В первый список добавлен новый человек.\n" +
@@ -86,6 +87,13 @@ namespace OOP1
             // 4 Чтение персоны с клавиатуры и вывод персоны на экран
             Person personConsole = ConsoleInputPerson.ReadPersonFromConsole();
             Console.WriteLine(personConsole.GetInfoAPersona());
+
+            // 5 Генерация рандомной персоны
+            PersonGenerator personGenerator = new PersonGenerator();
+            Person randomPerson = personGenerator.GeneratorRandomPerson();
+            personList1.AddPerson(randomPerson);
+            Console.WriteLine($"Список №1 после добавление рандомной персоны:\n" +
+                $"{personList1.GetInfoAPersonList()}");
         }
     }
 }

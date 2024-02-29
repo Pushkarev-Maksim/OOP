@@ -82,10 +82,9 @@ namespace PersonLibrary
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Данной персоны не " +
+                throw new ArgumentException("Данной персоны не " +
                     "существует");
             }
-
         }
 
         /// <summary>

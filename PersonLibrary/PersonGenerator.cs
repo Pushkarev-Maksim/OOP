@@ -6,7 +6,7 @@ namespace PersonLibrary
     {
         private static Random random = new Random();
 
-        public static Person GeneratorRandomPerson()
+        public Person GeneratorRandomPerson()
         {
             string[] maleNames =
             {

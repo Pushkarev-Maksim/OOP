@@ -60,6 +60,10 @@ namespace OOP0
                 {
                     Console.WriteLine(ex.Message);
                 }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Возраст - это число=)");
+                }
             }
             while (ageIncorrect);
 

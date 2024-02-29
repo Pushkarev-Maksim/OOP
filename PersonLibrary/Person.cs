@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
 using System.Text.RegularExpressions;
 
 namespace PersonLibrary
@@ -28,7 +27,6 @@ namespace PersonLibrary
         private Gender gender;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Person"/> class.
         /// Конструктор класса.
         /// </summary>
         /// <param name="name">Имя.</param>
@@ -178,8 +176,8 @@ namespace PersonLibrary
                 }
                 else
                 {
-                    throw new ArgumentException($"Возраст должен находиться" +
-                        $" в пределах от 1 до 150");
+                    throw new ArgumentException($"Возраст должен находиться " +
+                        $"в пределах от 1 года до 150 лет");
                 }
             }
         }
