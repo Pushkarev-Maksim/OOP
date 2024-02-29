@@ -62,7 +62,7 @@ namespace PersonLibrary
             }
             set 
             {
-                if (ValidNameAndSurname(value))
+                if (ValidNameAndSurname(value, surname))
                 {
                     name = CheckRegisterNameSurname(value);
                 }
@@ -87,7 +87,7 @@ namespace PersonLibrary
             }
             set
             {
-                if (ValidNameAndSurname(value))
+                if (ValidNameAndSurname(name, value))
                 {
                     surname = CheckRegisterNameSurname(value);
                 }
@@ -115,14 +115,19 @@ namespace PersonLibrary
 
         /// <summary>
         /// Проверка на соответствие имени и фамилии одному языку.
-        /// Учтена возможность ввода двойного имени и двойной фамили
+        /// Учтена возможность ввода двойного имени и двойной фамили 
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="surname"></param>
         /// <returns></returns>
-        public bool ValidNameAndSurname(string name)
+        public bool ValidNameAndSurname(string name, string surname)
         {
-            return Regex.IsMatch(name, @"(^[а-яА-Я]+-?[а-яА-Я]+$)") ||
-                   Regex.IsMatch(name, @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
+            bool languageRussian = Regex.IsMatch(name, @"^[а-яА-Я]+-?[а-яА-Я]+$") && 
+                Regex.IsMatch(surname, @"^[а-яА-Я]+-?[а-яА-Я]+$");
+            bool languageEnglish = Regex.IsMatch(name, @"^[a-zA-Z]+-?[a-zA-Z]+$") && 
+                Regex.IsMatch(surname, @"^[a-zA-Z]+-?[a-zA-Z]+$");
+
+            return languageRussian || languageEnglish;
         }
 
         /// <summary>
