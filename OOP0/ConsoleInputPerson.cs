@@ -15,53 +15,57 @@ namespace OOP0
 
             Person person = new Person(); 
             
-            bool x = true;
-
-            while (x)
+            bool nameIncorrect = true;
+            do
             {
                 try
                 {
                     Console.Write("Имя: ");
                     person.Name = Console.ReadLine();
-                    break;
+                    nameIncorrect = false;
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+            while (nameIncorrect);
 
-            while (x)
+            bool surnameIncorrect = true;
+            do
             {
                 try
                 {
                     Console.Write("Фамилия: ");
                     person.Surname = Console.ReadLine();
-                    break;
+                    surnameIncorrect = false;
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+            while (surnameIncorrect);
 
-            while (x)
+            bool ageIncorrect = true;
+            do
             {
                 try
                 {
                     Console.Write("Возраст: ");
                     person.Age = Convert.ToInt32(Console.ReadLine());
-                    break;
+                    ageIncorrect = false;
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+            while (ageIncorrect);
 
-            //Console.Write("Пол: 0 - мужской, 1 - женский\n");
-            //int gender1 = Convert.ToInt32(Console.ReadLine());
-            //Gender gender = (Gender)gender1;
+            Console.Write("Пол: 0 - мужской, 1 - женский\n");
+            int genderConsole = Convert.ToInt32(Console.ReadLine());
+            Gender gender = (Gender)genderConsole;
 
             return person;
         }
