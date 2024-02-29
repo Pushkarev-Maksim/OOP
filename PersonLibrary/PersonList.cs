@@ -20,6 +20,15 @@ namespace PersonLibrary
         }
 
         /// <summary>
+        /// Удаление персон.
+        /// </summary>
+        /// <param name="person"></param>
+        public void RemovePerson(Person person)
+        {
+            persons.Remove(person);
+        }
+
+        /// <summary>
         /// Удаление персон по индексу.
         /// </summary>
         /// <param name="index">Индекс.</param>
