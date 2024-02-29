@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace PersonLibrary
@@ -42,6 +43,9 @@ namespace PersonLibrary
             this.gender = gender;
         }
 
+        /// <summary>
+        /// Конструктор класса по умолчанию.
+        /// </summary>
         public Person()
         {
             name = "Default";
@@ -70,16 +74,15 @@ namespace PersonLibrary
             }
             set 
             {
-                if (ValidNameAndSurname(value, surname))
+                if (ValidNameOrSurname(value))
                 {
                     name = CheckRegisterNameSurname(value);
                 }
                 else
                 {
-                    throw new ArgumentException("При вводе имени " +
-                        "используйте только буквы русского или " +
-                        "английского алфавита. Имя может быть двойным" +
-                        "и записано через дефис.");
+                    throw new ArgumentException("Имя должно быть написано " +
+                        "на одном языке. Имя может быть двойным и записано " +
+                        "через дефис.");
                 }
             }
         }
@@ -95,23 +98,22 @@ namespace PersonLibrary
             }
             set
             {
-                if (ValidNameAndSurname(name, value))
+                if (ValidNameOrSurname(value) && ValidNameAndSurname(name, value))
                 {
                     surname = CheckRegisterNameSurname(value);
                 }
                 else
                 {
-                    throw new ArgumentException("При вводе фамилии " +
-                        "используйте только буквы русского или " +
-                        "английского алфавита. Фамилия может быть двойной" +
-                        "и записана через дефис.");
+                    throw new ArgumentException("Фамилия должна быть написана " +
+                        "на одном языке.\nФамилия может быть двойной и записана " +
+                        "через дефис.\nФамилия и имя должны быть введены на одном " +
+                        "языке. ");
                 }
             }
-
         }
 
         /// <summary>
-        /// Преобразование имени и фамилии в првильные регистры.
+        /// Преобразование имени и фамилии в правильные регистры.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -122,20 +124,40 @@ namespace PersonLibrary
         }
 
         /// <summary>
-        /// Проверка на соответствие имени и фамилии одному языку.
-        /// Учтена возможность ввода двойного имени и двойной фамили 
+        /// Проверка того, что имя или фамилия введены на одном языке.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool ValidNameOrSurname(string name)
+        {
+            bool languageRussian = Regex.IsMatch(name,
+                @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
+            bool languageEnglish = Regex.IsMatch(name,
+                @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
+
+            return (languageRussian || languageEnglish);
+        }
+
+        /// <summary>
+        /// Проверка того, что имя и фамили введены на одном языке
         /// </summary>
         /// <param name="name"></param>
         /// <param name="surname"></param>
         /// <returns></returns>
         public bool ValidNameAndSurname(string name, string surname)
         {
-            bool languageRussian = Regex.IsMatch(name, @"^[а-яА-Я]+-?[а-яА-Я]+$") && 
-                Regex.IsMatch(surname, @"^[а-яА-Я]+-?[а-яА-Я]+$");
-            bool languageEnglish = Regex.IsMatch(name, @"^[a-zA-Z]+-?[a-zA-Z]+$") && 
-                Regex.IsMatch(surname, @"^[a-zA-Z]+-?[a-zA-Z]+$");
+            bool languageRussianName = Regex.IsMatch(name,
+                @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
+            bool languageEnglishName = Regex.IsMatch(name,
+                @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
 
-            return languageRussian || languageEnglish;
+            bool languageRussianSurname = Regex.IsMatch(surname,
+                @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
+            bool languageEnglishSurname = Regex.IsMatch(surname,
+                @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
+
+            return (languageRussianName && languageRussianSurname) ||
+                (languageEnglishName && languageEnglishSurname);
         }
 
         /// <summary>

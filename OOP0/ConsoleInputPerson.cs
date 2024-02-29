@@ -23,11 +23,10 @@ namespace OOP0
                 {
                     Console.Write("Имя: ");
                     person.Name = Console.ReadLine();
-                    x = false;
+                    break;
                 }
                 catch (ArgumentException ex)
                 {
-                    x = true;
                     Console.WriteLine(ex.Message);
                 }
             }
@@ -38,11 +37,10 @@ namespace OOP0
                 {
                     Console.Write("Фамилия: ");
                     person.Surname = Console.ReadLine();
-                    x = false;
+                    break;
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
-                    x = true;
                     Console.WriteLine(ex.Message);
                 }
             }
@@ -53,18 +51,17 @@ namespace OOP0
                 {
                     Console.Write("Возраст: ");
                     person.Age = Convert.ToInt32(Console.ReadLine());
-                    x = false;
+                    break;
                 }
                 catch (ArgumentException ex)
                 {
-                    x = true;
                     Console.WriteLine(ex.Message);
                 }
             }
 
-            Console.Write("Пол: 0 - мужской, 1 - женский\n");
-            int gender1 = Convert.ToInt32(Console.ReadLine());
-            Gender gender = (Gender)gender1;
+            //Console.Write("Пол: 0 - мужской, 1 - женский\n");
+            //int gender1 = Convert.ToInt32(Console.ReadLine());
+            //Gender gender = (Gender)gender1;
 
             return person;
         }
