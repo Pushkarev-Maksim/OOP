@@ -42,6 +42,14 @@ namespace PersonLibrary
             this.gender = gender;
         }
 
+        public Person()
+        {
+            name = "Default";
+            surname = "Default";
+            age = 0;
+            gender = Gender.Male;
+        }
+
         /// <summary>
         /// Получение информации о персоне.
         /// </summary>

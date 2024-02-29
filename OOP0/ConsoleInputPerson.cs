@@ -12,20 +12,61 @@ namespace OOP0
         public static Person ReadPersonFromConsole()
         {
             Console.WriteLine("Введите данные о персоне:");
-            Console.Write("Имя: ");
-            string name = Console.ReadLine();
 
-            Console.Write("Фамилия: ");
-            string surname = Console.ReadLine();
+            Person person = new Person(); 
+            
+            bool x = true;
 
-            Console.Write("Возраст: ");
-            int age = Convert.ToInt32(Console.ReadLine());
+            while (x)
+            {
+                try
+                {
+                    Console.Write("Имя: ");
+                    person.Name = Console.ReadLine();
+                    x = false;
+                }
+                catch (ArgumentException ex)
+                {
+                    x = true;
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            while (x)
+            {
+                try
+                {
+                    Console.Write("Фамилия: ");
+                    person.Surname = Console.ReadLine();
+                    x = false;
+                }
+                catch (Exception ex)
+                {
+                    x = true;
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            while (x)
+            {
+                try
+                {
+                    Console.Write("Возраст: ");
+                    person.Age = Convert.ToInt32(Console.ReadLine());
+                    x = false;
+                }
+                catch (ArgumentException ex)
+                {
+                    x = true;
+                    Console.WriteLine(ex.Message);
+                }
+            }
 
             Console.Write("Пол: 0 - мужской, 1 - женский\n");
             int gender1 = Convert.ToInt32(Console.ReadLine());
             Gender gender = (Gender)gender1;
 
-            return new Person(name, surname, age, gender);
+            return person;
         }
     }
 }
