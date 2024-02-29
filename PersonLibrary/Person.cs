@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace PersonLibrary
 {
@@ -87,6 +89,73 @@ namespace PersonLibrary
             {
                 gender = value;
             }
+        }
+
+        // Проверка на ввод имени и фамилии на одном языке
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set 
+            {
+                if (ValidNameAndSurname(value))
+                {
+                    name = CheckRegisterNameSurname(value);
+                }
+                else
+                {
+                    throw new ArgumentException("При вводе имени " +
+                        "используйте только буквы русского или " +
+                        "английского алфавита. Имя может быть двойным.");
+                }
+            }
+        }
+
+        public string Surname
+        {
+            get
+            {
+                return surname;
+            }
+            set
+            {
+                if (ValidNameAndSurname(value))
+                {
+                    surname = CheckRegisterNameSurname(value);
+                }
+                else
+                {
+                    throw new ArgumentException("При вводе фамилии " +
+                        "используйте только буквы русского или " +
+                        "английского алфавита. Фамилия может быть двойной.");
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Преобразование имени и фамилии в првильные регистры.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public string CheckRegisterNameSurname(string name)
+        {
+            TextInfo txt = CultureInfo.CurrentCulture.TextInfo;
+            return txt.ToTitleCase(name.ToLower());
+        }
+
+        /// <summary>
+        /// Проверка на соответствие имени и фамилии одному языку.
+        /// Учтена возможность ввода двойного имени и двойной фамили
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool ValidNameAndSurname(string name)
+        {
+            return Regex.IsMatch(name, @"(^[а-яА-Я]+-?[а-яА-Я]+$)") ||
+                   Regex.IsMatch(name, @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
         }
     }
 }
