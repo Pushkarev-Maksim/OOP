@@ -44,10 +44,9 @@ namespace PersonLibrary
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public Person()
-        {
-            name = "Default";
-            surname = "Default";
+        public Person(){
+            name = "Иван";
+            surname = "Иванов";
             age = 0;
             gender = Gender.Male;
         }
