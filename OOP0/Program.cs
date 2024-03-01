@@ -1,5 +1,4 @@
-﻿using OOP0;
-using PersonLibrary;
+﻿using PersonLibrary;
 using System;
 using System.Xml.Linq;
 
@@ -94,6 +93,7 @@ namespace OOP1
             personList1.AddPerson(randomPerson);
             Console.WriteLine($"Список №1 после добавление рандомной персоны:\n" +
                 $"{personList1.GetInfoAPersonList()}");
+            Console.ReadKey(true);
         }
     }
 }

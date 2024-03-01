@@ -2,10 +2,13 @@
 
 namespace PersonLibrary
 {
+    //TODO: XML
     public class PersonGenerator
     {
+        //TODO: RSDN
         private static Random random = new Random();
 
+        //TODO: XML
         public Person GeneratorRandomPerson()
         {
             string[] maleNames =
@@ -34,6 +37,7 @@ namespace PersonLibrary
 
             string name;
             string surname;
+            //TODO: duplication
             int age = random.Next(1, 150);
             Gender gender = (Gender)random.Next(2);
 

@@ -1,8 +1,9 @@
 ﻿using PersonLibrary;
 using System;
 
-namespace OOP0
+namespace OOP1
 {
+    //TODO: XML
     public class ConsoleInputPerson
     {
         /// <summary>
@@ -15,6 +16,7 @@ namespace OOP0
 
             Person person = new Person(); 
             
+            //TODO: duplication
             bool nameIncorrect = true;
             do
             {
@@ -31,6 +33,7 @@ namespace OOP0
             }
             while (nameIncorrect);
 
+            //TODO: duplication
             bool surnameIncorrect = true;
             do
             {
@@ -47,6 +50,7 @@ namespace OOP0
             }
             while (surnameIncorrect);
 
+            //TODO: duplication
             bool ageIncorrect = true;
             do
             {
@@ -66,7 +70,7 @@ namespace OOP0
                 }
             }
             while (ageIncorrect);
-
+            //TODO: duplication
             Console.Write("Пол: 0 - Male, 1 - Female\n");
             int genderConsole = Convert.ToInt32(Console.ReadLine());
             person.Gender = (Gender)genderConsole;

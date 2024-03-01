@@ -4,23 +4,28 @@ using System.Text.RegularExpressions;
 
 namespace PersonLibrary
 {
+    //TODO: XML
     public class Person
     {
+        //TODO: RSDN
         /// <summary>
         /// Имя.
         /// </summary>
         private string name;
 
+        //TODO: RSDN
         /// <summary>
         /// Фамилия.
         /// </summary>
         private string surname;
 
+        //TODO: RSDN
         /// <summary>
         /// Возраст.
         /// </summary>
         private int age;
 
+        //TODO: RSDN
         /// <summary>
         /// Гендер.
         /// </summary>
@@ -41,6 +46,7 @@ namespace PersonLibrary
             this.gender = gender;
         }
 
+        //TODO: duplication
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -52,6 +58,7 @@ namespace PersonLibrary
             gender = Gender.Male;
         }
 
+        //TODO: RSDN
         /// <summary>
         /// Получение информации о персоне.
         /// </summary>
@@ -78,9 +85,9 @@ namespace PersonLibrary
                 }
                 else
                 {
-                    throw new ArgumentException("Имя должно быть написано " +
-                        "на одном языке.\nИмя может быть двойным и записано " +
-                        "через дефис.");
+                    throw new ArgumentException(
+                        "Имя должно быть написано на одном языке.\n" +
+                        "Имя может быть двойным и записано через дефис.");
                 }
             }
         }
@@ -102,6 +109,7 @@ namespace PersonLibrary
                 }
                 else
                 {
+                    //TODO:
                     throw new ArgumentException("Фамилия должна быть написана " +
                         "на одном языке.\nФамилия может быть двойной и записана " +
                         "через дефис.\nФамилия и имя должны быть введены на одном " +
@@ -154,8 +162,8 @@ namespace PersonLibrary
             bool languageEnglishSurname = Regex.IsMatch(surname,
                 @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
 
-            return (languageRussianName && languageRussianSurname) ||
-                (languageEnglishName && languageEnglishSurname);
+            return (languageRussianName && languageRussianSurname) 
+                || (languageEnglishName && languageEnglishSurname);
         }
 
         /// <summary>
@@ -170,18 +178,21 @@ namespace PersonLibrary
 
             set
             {
+                //TODO: duplication
                 if (value >= 1 && value <= 150)
                 {
                     age = value;
                 }
                 else
                 {
+                    //TODO: duplication
                     throw new ArgumentException($"Возраст должен находиться " +
                         $"в пределах от 1 года до 150 лет");
                 }
             }
         }
 
+        //TODO: autoproperty
         /// <summary>
         /// Задание гендера.
         /// </summary>

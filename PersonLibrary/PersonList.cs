@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace PersonLibrary
 {
+    //TODO: XML
     public class PersonList
     {
         /// <summary>
