@@ -5,7 +5,7 @@ namespace PersonLibrary
     //TODO: XML
     public class PersonGenerator
     {
-        //TODO: RSDN
+        //TODO: XML
         private static Random random = new Random();
 
         //TODO: XML
@@ -38,7 +38,7 @@ namespace PersonLibrary
             string name;
             string surname;
             //TODO: duplication
-            int age = random.Next(1, 150);
+            int age = random.Next(1, 130);
             Gender gender = (Gender)random.Next(2);
 
             if (gender == Gender.Male)

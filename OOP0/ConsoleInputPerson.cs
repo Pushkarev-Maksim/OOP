@@ -70,6 +70,7 @@ namespace OOP1
                 }
             }
             while (ageIncorrect);
+
             //TODO: duplication
             Console.Write("Пол: 0 - Male, 1 - Female\n");
             int genderConsole = Convert.ToInt32(Console.ReadLine());
