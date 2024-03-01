@@ -44,7 +44,8 @@ namespace PersonLibrary
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public Person(){
+        public Person()
+        {
             name = "Иван";
             surname = "Иванов";
             age = 0;
