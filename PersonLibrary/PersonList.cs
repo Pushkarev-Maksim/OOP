@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 namespace PersonLibrary
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс PersonList.
+    /// </summary>
     public class PersonList
     {
         /// <summary>
@@ -14,7 +17,7 @@ namespace PersonLibrary
         /// <summary>
         /// Добавление персоны.
         /// </summary>
-        /// <param name="person">Персона.</param>
+        /// <param name="person">Объект класса Person.</param>
         public void AddPerson(Person person)
         {
             persons.Add(person);
@@ -23,7 +26,7 @@ namespace PersonLibrary
         /// <summary>
         /// Удаление персон.
         /// </summary>
-        /// <param name="person"></param>
+        /// <param name="person">Объект класса Person.</param>
         public void RemovePerson(Person person)
         {
             persons.Remove(person);
@@ -32,7 +35,7 @@ namespace PersonLibrary
         /// <summary>
         /// Удаление персон по индексу.
         /// </summary>
-        /// <param name="index">Индекс.</param>
+        /// <param name="index">Индекс объекта.</param>
         /// <exception cref="IndexOutOfRangeException">Исключение, которое
         /// генерируется, если введенный индекс находится за пределами его
         /// границ.</exception>
@@ -52,7 +55,7 @@ namespace PersonLibrary
         /// <summary>
         /// Поиск персоны по указанному индексу.
         /// </summary>
-        /// <param name="index">Индекс.</param>
+        /// <param name="index">Индекс объекта.</param>
         /// <returns>index</returns>
         /// <exception cref="IndexOutOfRangeException">Исключение, которое
         /// генерируется, если введенный индекс находится за пределами его
@@ -73,8 +76,8 @@ namespace PersonLibrary
         /// <summary>
         /// Получение индекса по персоне.
         /// </summary>
-        /// <param name="person"></param>
-        /// <returns></returns>
+        /// <param name="person">Объект класса Person.</param>
+        /// <returns>Индекс объекта.</returns>
         public int ReturnIndexPerson(Person person)
         {
             if (persons.Contains(person))
@@ -91,7 +94,6 @@ namespace PersonLibrary
         /// <summary>
         /// Удаление всех персон.
         /// </summary>
-        /// <param name="person">Персона.</param>
         public void RemovePerson()
         {
             persons.Clear();
@@ -100,7 +102,7 @@ namespace PersonLibrary
         /// <summary>
         /// Количество персон в списке.
         /// </summary>
-        /// <returns>.</returns>
+        /// <returns>Количество персон в списке.</returns>
         public int GetCountPerson()
         {
             return persons.Count;
@@ -109,14 +111,13 @@ namespace PersonLibrary
         /// <summary>
         /// Получение информации о списке персон.
         /// </summary>
-        /// <param name="person"></param>
-        /// <returns></returns>
-        public string GetInfoAPersonList()
+        /// <returns>Строка с данными полей объектов списка.</returns>
+        public string GetInfoPersonList()
         {
             string infoPerson = default;
             foreach (Person persona in persons)
             {
-                infoPerson += persona.GetInfoAPersona();
+                infoPerson += persona.GetInfoPerson();
             }
             return infoPerson;
         }

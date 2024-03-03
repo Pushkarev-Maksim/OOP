@@ -59,7 +59,7 @@ namespace PersonLibrary
         /// <summary>
         /// Получение информации о персоне.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Строка с данными полей объекта класса Person.</returns>
         public string GetInfoPerson()
         {
             return $"{Name} {Surname}, возраст: {Age}, пол: {Gender}\n";
