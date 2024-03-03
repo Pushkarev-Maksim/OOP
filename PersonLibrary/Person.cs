@@ -32,7 +32,7 @@ namespace PersonLibrary
         /// <summary>
         /// Гендер.
         /// </summary>
-        private Gender _gender;
+        private readonly Gender _gender;
 
         /// <summary>
         /// Конструктор класса.
