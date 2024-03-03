@@ -2,13 +2,18 @@
 
 namespace PersonLibrary
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Клас PersonGenerator для 
+    /// создания рандомного человека.
+    /// </summary>
     public class PersonGenerator
     {
-        //TODO: RSDN
-        private static Random random = new Random();
-
-        //TODO: XML
+        //TODO: XML +
+        /// <summary>
+        /// Метод создания рандомного человека.
+        /// </summary>
+        /// <returns>Объект класса Person.</returns>
         public Person GeneratorRandomPerson()
         {
             string[] maleNames =
@@ -35,10 +40,12 @@ namespace PersonLibrary
                 "Степанова", "Андреева", "Журавлева", "Белова", "Дорохова",
             };
 
+            Random random = new Random();
+
             string name;
             string surname;
-            //TODO: duplication
-            int age = random.Next(1, 150);
+            //TODO: duplication +
+            int age = random.Next(Person._minAge, Person._maxAge);
             Gender gender = (Gender)random.Next(2);
 
             if (gender == Gender.Male)
