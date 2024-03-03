@@ -54,7 +54,7 @@ namespace OOP1
             }
             while (surnameIncorrect);
 
-            //TODO: duplication
+            // TODO: duplication
             bool ageIncorrect = true;
             do
             {
@@ -76,9 +76,39 @@ namespace OOP1
             while (ageIncorrect);
 
             // TODO: duplication
-            Console.Write("Пол: 0 - Male, 1 - Female\n");
-            int genderConsole = Convert.ToInt32(Console.ReadLine());
-            person.Gender = (Gender)genderConsole;
+            bool genderIncorrect = true;
+            do
+            {
+                try
+                {
+                    Console.Write("Пол: 0, 'м' или 'M' для Мужского; " +
+                        "1, 'ж' или 'F' для Женского\n");
+                    string genderConsole = Console.ReadLine().ToLower();
+
+                    switch (genderConsole)
+                    {
+                        case "0":
+                        case "м":
+                        case "m":
+                            person.Gender = Gender.Male;
+                            break;
+                        case "1":
+                        case "ж":
+                        case "f":
+                            person.Gender = Gender.Female;
+                            break;
+                        default:
+                            throw new Exception();
+                    }
+
+                    genderIncorrect = false;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Некорректный ввод пола.");
+                }
+            }
+            while (genderIncorrect);
 
             return person;
         }
