@@ -21,48 +21,43 @@ namespace OOP1
             Person person = new Person();
 
             // TODO: duplication
-            bool nameIncorrect = true;
-            do
+            while (true)
             {
                 try
                 {
                     Console.Write("Имя: ");
                     person.Name = Console.ReadLine();
-                    nameIncorrect = false;
+                    break;
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
-            while (nameIncorrect);
 
             // TODO: duplication
-            bool surnameIncorrect = true;
-            do
+            while (true)
             {
                 try
                 {
                     Console.Write("Фамилия: ");
                     person.Surname = Console.ReadLine();
-                    surnameIncorrect = false;
+                    break;
                 }
                 catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
-            while (surnameIncorrect);
 
             // TODO: duplication
-            bool ageIncorrect = true;
-            do
+            while (true)
             {
                 try
                 {
                     Console.Write("Возраст: ");
                     person.Age = Convert.ToInt32(Console.ReadLine());
-                    ageIncorrect = false;
+                    break;
                 }
                 catch (ArgumentException ex)
                 {
@@ -73,11 +68,9 @@ namespace OOP1
                     Console.WriteLine("Возраст - это число=)");
                 }
             }
-            while (ageIncorrect);
 
             // TODO: duplication
-            bool genderIncorrect = true;
-            do
+            while (true)
             {
                 try
                 {
@@ -101,7 +94,7 @@ namespace OOP1
                             throw new Exception();
                     }
 
-                    genderIncorrect = false;
+                    break;
                 }
                 catch (Exception)
                 {
@@ -110,7 +103,6 @@ namespace OOP1
                         "1, 'ж' или 'F' для Женского.");
                 }
             }
-            while (genderIncorrect);
 
             return person;
         }
