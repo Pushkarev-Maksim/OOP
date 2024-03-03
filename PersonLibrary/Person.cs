@@ -4,32 +4,35 @@ using System.Text.RegularExpressions;
 
 namespace PersonLibrary
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс Person.
+    /// </summary>
     public class Person
     {
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Имя.
         /// </summary>
-        private string name;
+        private string _name;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Фамилия.
         /// </summary>
-        private string surname;
+        private string _surname;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Возраст.
         /// </summary>
-        private int age;
+        private int _age;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Гендер.
         /// </summary>
-        private Gender gender;
+        private Gender _gender;
 
         /// <summary>
         /// Конструктор класса.
@@ -40,32 +43,26 @@ namespace PersonLibrary
         /// <param name="gender">Гендер.</param>
         public Person(string name, string surname, int age, Gender gender)
         {
-            this.name = name;
-            this.surname = surname;
-            this.age = age;
-            this.gender = gender;
+            _name = name;
+            _surname = surname;
+            _age = age;
+            _gender = gender;
         }
 
-        //TODO: duplication
+        //TODO: duplication + изменил вид конструктора по умолчанию
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public Person()
-        {
-            name = "Иван";
-            surname = "Иванов";
-            age = 0;
-            gender = Gender.Male;
-        }
+        public Person() : this ("Иван", "Иванов", 0, Gender.Male)
+        { }
 
-        //TODO: RSDN
         /// <summary>
         /// Получение информации о персоне.
         /// </summary>
         /// <returns></returns>
-        public string GetInfoAPersona()
+        public string GetInfoPerson()
         {
-            return $"{name} {surname}, возраст: {age}, пол: {gender}\n";
+            return $"{Name} {Surname}, возраст: {Age}, пол: {Gender}\n";
         }
 
         /// <summary>
@@ -75,13 +72,13 @@ namespace PersonLibrary
         {
             get
             {
-                return name;
+                return _name;
             }
             set 
             {
                 if (ValidNameOrSurname(value))
                 {
-                    name = CheckRegisterNameSurname(value);
+                    _name = CheckRegisterNameSurname(value);
                 }
                 else
                 {
@@ -99,21 +96,21 @@ namespace PersonLibrary
         {
             get
             {
-                return surname;
+                return _surname;
             }
             set
             {
-                if (ValidNameOrSurname(value) && ValidNameAndSurname(name, value))
+                if (ValidNameOrSurname(value) 
+                    && ValidNameAndSurname(_name, value))
                 {
-                    surname = CheckRegisterNameSurname(value);
+                    _surname = CheckRegisterNameSurname(value);
                 }
                 else
                 {
-                    //TODO:
-                    throw new ArgumentException("Фамилия должна быть написана " +
-                        "на одном языке.\nФамилия может быть двойной и записана " +
-                        "через дефис.\nФамилия и имя должны быть введены на одном " +
-                        "языке. ");
+                    throw new ArgumentException
+                        ("Фамилия должна быть написана на одном языке.\n" +
+                        "Фамилия может быть двойной и записана через дефис.\n" +
+                        "Фамилия и имя должны быть введены на одном языке.");
                 }
             }
         }
@@ -121,8 +118,8 @@ namespace PersonLibrary
         /// <summary>
         /// Преобразование имени и фамилии в правильные регистры.
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">Имя или Фамилия.</param>
+        /// <returns>Имя и фамилию в правильном регистре.</returns>
         public string CheckRegisterNameSurname(string name)
         {
             TextInfo txt = CultureInfo.CurrentCulture.TextInfo;
@@ -132,8 +129,9 @@ namespace PersonLibrary
         /// <summary>
         /// Проверка того, что имя или фамилия введены на одном языке.
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">Имя.</param>
+        /// <returns>true, если имя или фамилия введены на одном языке;
+        /// false, если на разных языках.</returns>
         public bool ValidNameOrSurname(string name)
         {
             bool languageRussian = Regex.IsMatch(name,
@@ -145,11 +143,12 @@ namespace PersonLibrary
         }
 
         /// <summary>
-        /// Проверка того, что имя и фамилия введены на одном языке
+        /// Проверка того, что имя и фамилия введены на одном языке.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
-        /// <returns></returns>
+        /// <param name="name">Имя.</param>
+        /// <param name="surname">Фамилия.</param>
+        /// <returns>true, если имя и фамилия введены на одном языке;
+        /// false, если на разных языках.</returns>
         public bool ValidNameAndSurname(string name, string surname)
         {
             bool languageRussianName = Regex.IsMatch(name,
@@ -167,46 +166,45 @@ namespace PersonLibrary
         }
 
         /// <summary>
+        /// Минимальный возраст.
+        /// </summary>
+        public const int _minAge = 1;
+
+        /// <summary>
+        /// Максимальный возраст.
+        /// </summary>
+        public const int _maxAge = 130;
+
+        /// <summary>
         /// Задание возраста.
         /// </summary>
         public int Age
         {
             get
             {
-                return age;
+                return _age;
             }
 
             set
             {
-                //TODO: duplication
-                if (value >= 1 && value <= 150)
+                //TODO: duplication +
+                if (value >= _minAge && value <= _maxAge)
                 {
-                    age = value;
+                    _age = value;
                 }
                 else
                 {
-                    //TODO: duplication
+                    //TODO: duplication +
                     throw new ArgumentException($"Возраст должен находиться " +
-                        $"в пределах от 1 года до 150 лет");
+                        $"в пределах от {_minAge} года до {_maxAge} лет");
                 }
             }
         }
 
-        //TODO: autoproperty
+        //TODO: autoproperty +
         /// <summary>
         /// Задание гендера.
         /// </summary>
-        public Gender Gender
-        {
-            get
-            {
-                return gender;
-            }
-
-            set
-            {
-                gender = value;
-            }
-        }
+        public Gender Gender { get; set; }
     }
 }

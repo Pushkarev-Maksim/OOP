@@ -5,7 +5,14 @@
     /// </summary>
     public enum Gender
     {
+        /// <summary>
+        /// Male.
+        /// </summary>
         Male,
+
+        /// <summary>
+        /// Femaale.
+        /// </summary>
         Female
     }
 }
