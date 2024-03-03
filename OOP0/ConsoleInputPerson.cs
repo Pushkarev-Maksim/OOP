@@ -3,20 +3,24 @@ using System;
 
 namespace OOP1
 {
-    //TODO: XML
+    // TODO: XML +
+
+    /// <summary>
+    /// Класс ConsoleInputPerson.
+    /// </summary>
     public class ConsoleInputPerson
     {
         /// <summary>
         /// Чтение персоны с клавиатуры.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Объект класса Person.</returns>
         public static Person ReadPersonFromConsole()
         {
             Console.WriteLine("Введите данные о персоне:");
 
-            Person person = new Person(); 
-            
-            //TODO: duplication
+            Person person = new Person();
+
+            // TODO: duplication
             bool nameIncorrect = true;
             do
             {
@@ -33,7 +37,7 @@ namespace OOP1
             }
             while (nameIncorrect);
 
-            //TODO: duplication
+            // TODO: duplication
             bool surnameIncorrect = true;
             do
             {
@@ -70,7 +74,8 @@ namespace OOP1
                 }
             }
             while (ageIncorrect);
-            //TODO: duplication
+
+            // TODO: duplication
             Console.Write("Пол: 0 - Male, 1 - Female\n");
             int genderConsole = Convert.ToInt32(Console.ReadLine());
             person.Gender = (Gender)genderConsole;
