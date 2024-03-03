@@ -105,7 +105,9 @@ namespace OOP1
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Некорректный ввод пола.");
+                    Console.WriteLine("Некорректный ввод пола.\n" +
+                        "Пожалуйста, введите 0, 'м' или 'M' для Мужского; " +
+                        "1, 'ж' или 'F' для Женского.");
                 }
             }
             while (genderIncorrect);
