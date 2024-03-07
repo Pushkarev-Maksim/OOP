@@ -16,13 +16,13 @@ namespace PersonLibrary
         /// <returns>Объект класса Person.</returns>
         public Person GeneratorRandomPerson()
         {
-            string[] maleNames =
+            string[] maleName =
             {
                 "Игорь", "Олег", "Геннадий", "Павел", "Максим", "Ефим",
                 "Руслан", "Лаврентий", "Тарас", "Тимур",
             };
 
-            string[] femaleNames =
+            string[] femaleName =
             {
                 "Зоя", "Полина", "Валерия", "Ангелина", "Анастасия",
                 "Галина", "Оксана", "Марина", "Елена", "Яна",
@@ -42,24 +42,31 @@ namespace PersonLibrary
 
             Random random = new Random();
 
-            string name;
-            string surname;
+            Person person = new Person();
+
             //TODO: duplication +
-            int age = random.Next(Person._minAge, Person._maxAge);
-            Gender gender = (Gender)random.Next(2);
+            person.Age = random.Next(Person._minAge, Person._maxAge);
 
-            if (gender == Gender.Male)
-            {
-                name = maleNames[new Random().Next(1, maleNames.Length)];
-                surname = maleSurname[new Random().Next(1, maleSurname.Length)];
-            }
-            else
-            {
-                name = femaleNames[new Random().Next(1, maleNames.Length)];
-                surname = femaleSurname[new Random().Next(1, maleSurname.Length)];
-            }
+            person.Gender = (Gender)random.Next(
+                Enum.GetValues(typeof(Gender)).Length);
 
-            return new Person(name, surname, age, gender);
+            switch (person.Gender)
+            {
+                case Gender.Male:
+                    person.Name = maleName[
+                        random.Next(0, maleName.Length)];
+                    person.Surname = maleSurname[
+                        random.Next(0, maleSurname.Length)];
+                    break;
+
+                case Gender.Female:
+                    person.Name = femaleName[
+                        random.Next(0, femaleName.Length)];
+                    person.Surname = femaleSurname[
+                        random.Next(0, femaleSurname.Length)];
+                    break;
+            }
+            return person;
         }
     }
 }
