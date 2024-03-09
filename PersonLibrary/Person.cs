@@ -28,11 +28,11 @@ namespace PersonLibrary
         /// </summary>
         private int _age;
 
-        //TODO: RSDN +
+        //TODO: autoproperty +
         /// <summary>
         /// Гендер.
         /// </summary>
-        private readonly Gender _gender;
+        public Gender Gender { get; set; }
 
         /// <summary>
         /// Конструктор класса.
@@ -46,7 +46,7 @@ namespace PersonLibrary
             _name = name;
             _surname = surname;
             _age = age;
-            _gender = gender;
+            Gender = gender;
         }
 
         //TODO: duplication + изменил вид конструктора по умолчанию
@@ -200,11 +200,5 @@ namespace PersonLibrary
                 }
             }
         }
-
-        //TODO: autoproperty +
-        /// <summary>
-        /// Задание гендера.
-        /// </summary>
-        public Gender Gender { get; set; }
     }
 }
