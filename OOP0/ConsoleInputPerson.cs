@@ -77,14 +77,18 @@ namespace OOP1
 
             return person;
         }
-
+        
+        /// <summary>
+        /// Получение значений, введенных пользхователем.
+        /// </summary>
+        /// <param name="action">Действие.</param>
         public static void ActionHandler(Action action)
         {
-            Dictionary<Type, string> exceptionMessages = new Dictionary<Type, string>
+            List<Type> exceptionTypes = new List<Type>
             {
-                { typeof(ArgumentException), "Некорректный аргумент." },
-                { typeof(FormatException), "Некорректный формат." },
-                { typeof(ArgumentOutOfRangeException), "Аргумент вне допустимого диапазона." }
+                typeof(ArgumentException),
+                typeof(FormatException),
+                typeof(ArgumentOutOfRangeException)
             };
 
             while (true)
@@ -96,9 +100,9 @@ namespace OOP1
                 }
                 catch (Exception ex)
                 {
-                    if (exceptionMessages.TryGetValue(ex.GetType(), out string message))
+                    if (exceptionTypes.Contains(ex.GetType()))
                     {
-                        Console.WriteLine(message);
+                        Console.WriteLine(ex.Message);
                     }
                     else
                     {
