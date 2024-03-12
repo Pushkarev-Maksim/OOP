@@ -82,8 +82,8 @@ namespace PersonLibrary
                 }
                 else
                 {
-                    throw new ArgumentException(
-                        "Имя должно быть написано на одном языке.\n" +
+                    throw new ArgumentException
+                        ("Имя должно быть написано на одном языке.\n" +
                         "Имя может быть двойным и записано через дефис.");
                 }
             }
@@ -195,8 +195,9 @@ namespace PersonLibrary
                 else
                 {
                     //TODO: duplication +
-                    throw new ArgumentException($"Возраст должен находиться " +
-                        $"в пределах от {_minAge} года до {_maxAge} лет");
+                    throw new ArgumentOutOfRangeException
+                        ($"Возраст должен находиться в пределах " +
+                        $"от {_minAge} года до {_maxAge} лет");
                 }
             }
         }

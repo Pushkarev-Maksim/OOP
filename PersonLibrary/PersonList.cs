@@ -47,8 +47,8 @@ namespace PersonLibrary
             }
             else
             {
-                throw new IndexOutOfRangeException($"'Элемента с индексом " +
-                    $"{index} нет в списке");
+                throw new IndexOutOfRangeException
+                    ($"'Элемента с индексом {index} нет в списке");
             }
         }
 
@@ -68,8 +68,8 @@ namespace PersonLibrary
             }
             else
             {
-                throw new IndexOutOfRangeException($"Элемента с индексом " +
-                    $"{index} нет в списке");
+                throw new IndexOutOfRangeException
+                    ($"Элемента с индексом {index} нет в списке");
             }
         }
 
@@ -86,8 +86,8 @@ namespace PersonLibrary
             }
             else
             {
-                throw new ArgumentException("Данной персоны не " +
-                    "существует");
+                throw new ArgumentException
+                    ("Данной персоны не существует");
             }
         }
 
