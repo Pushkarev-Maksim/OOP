@@ -41,6 +41,7 @@ namespace OOP1
                             throw new FormatException
                             ("Возраст - это число=)");
                         }
+
                         person.Age = age;
                     },
                 () =>
@@ -69,7 +70,7 @@ namespace OOP1
                         }
                     },
             };
-            
+
             foreach (var action in actions)
             {
                 ActionHandler(action);
@@ -77,9 +78,9 @@ namespace OOP1
 
             return person;
         }
-        
+
         /// <summary>
-        /// Получение значений, введенных пользхователем.
+        /// Получение значений, введенных пользователем.
         /// </summary>
         /// <param name="action">Действие.</param>
         public static void ActionHandler(Action action)
@@ -88,7 +89,7 @@ namespace OOP1
             {
                 typeof(ArgumentException),
                 typeof(FormatException),
-                typeof(ArgumentOutOfRangeException)
+                typeof(ArgumentOutOfRangeException),
             };
 
             while (true)
