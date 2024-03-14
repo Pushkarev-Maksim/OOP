@@ -41,9 +41,9 @@ namespace OOP1
 
             // 3.b Вывод содержимого каждого списка на экран
             Console.WriteLine($"Список №1:\n" +
-                $"{personList1.GetInfoPersonList()}");
+                $"{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:\n" +
-                $"{personList2.GetInfoPersonList()}");
+                $"{personList2.GetInfo()}");
             Console.ReadKey(true);
 
             // 3.c Добавление нового человека в первый список
@@ -51,7 +51,7 @@ namespace OOP1
                 "Василий", "Черноголовков", 25, Gender.Male);
             personList1.AddPerson(persona7);
             Console.WriteLine($"В первый список добавлен новый человек.\n" +
-                $"Список №1:\n{personList1.GetInfoPersonList()}");
+                $"Список №1:\n{personList1.GetInfo()}");
             Console.ReadKey(true);
 
             // 3.d Копирование второго человека из первого списка в конец
@@ -60,38 +60,39 @@ namespace OOP1
                 " первого списка:");
             personList2.AddPerson(personList1.GetPersonAtIndex(1));
             Console.WriteLine($"Список №1:" +
-                $"\n{personList1.GetInfoPersonList()}");
+                $"\n{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:" +
-                $"\n{personList2.GetInfoPersonList()}");
+                $"\n{personList2.GetInfo()}");
             Console.ReadKey(true);
 
             // 3.e Удаление второго человека из первого списка
             personList1.RemovePersonAtIndex(1);
             Console.WriteLine("В первом списке удален второй человек:");
             Console.WriteLine($"Список №1:" +
-                $"\n{personList1.GetInfoPersonList()}");
+                $"\n{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:" +
-                $"\n{personList2.GetInfoPersonList()}");
+                $"\n{personList2.GetInfo()}");
             Console.ReadKey(true);
 
             // 3.f Очистка второго списка
             personList2.RemovePerson();
             Console.WriteLine("Второй список очищен");
             Console.WriteLine($"Список №1:" +
-                $"\n{personList1.GetInfoPersonList()}");
+                $"\n{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:" +
-                $"\n{personList2.GetInfoPersonList()}");
+                $"\n{personList2.GetInfo()}");
 
             // 4 Чтение персоны с клавиатуры и вывод персоны на экран
             Person personConsole = ConsoleInputPerson.ReadPersonFromConsole();
-            Console.WriteLine(personConsole.GetInfoPerson());
+            Console.WriteLine(personConsole.GetInfo());
 
             // 5 Генерация рандомной персоны
-            PersonGenerator personGenerator = new PersonGenerator();
-            Person randomPerson = personGenerator.GeneratorRandomPerson();
+            PersonGenerate personGenerator = new PersonGenerate();
+            Person randomPerson = personGenerator.GenerateRandomPerson();
             personList1.AddPerson(randomPerson);
-            Console.WriteLine($"Список №1 после добавление рандомной персоны:\n" +
-                $"{personList1.GetInfoPersonList()}");
+            Console.WriteLine(
+                $"Список №1 после добавление рандомной персоны:\n" +
+                $"{personList1.GetInfo()}");
             Console.ReadKey(true);
         }
     }

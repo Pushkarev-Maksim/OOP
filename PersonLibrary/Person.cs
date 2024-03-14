@@ -60,7 +60,7 @@ namespace PersonLibrary
         /// Получение информации о персоне.
         /// </summary>
         /// <returns>Строка с данными полей объекта класса Person.</returns>
-        public string GetInfoPerson()
+        public string GetInfo()
         {
             return $"{Name} {Surname}, возраст: {Age}, пол: {Gender}\n";
         }
@@ -76,9 +76,9 @@ namespace PersonLibrary
             }
             set 
             {
-                if (ValidNameOrSurname(value))
+                if (IsNameOrSurnameValid(value))
                 {
-                    _name = CheckRegisterNameSurname(value);
+                    _name = CheckRegister(value);
                 }
                 else
                 {
@@ -100,10 +100,10 @@ namespace PersonLibrary
             }
             set
             {
-                if (ValidNameOrSurname(value) 
-                    && ValidNameAndSurname(_name, value))
+                if (IsNameOrSurnameValid(value) 
+                    && IsNameAndSurnameValid(_name, value))
                 {
-                    _surname = CheckRegisterNameSurname(value);
+                    _surname = CheckRegister(value);
                 }
                 else
                 {
@@ -120,7 +120,7 @@ namespace PersonLibrary
         /// </summary>
         /// <param name="name">Имя или Фамилия.</param>
         /// <returns>Имя и фамилию в правильном регистре.</returns>
-        public string CheckRegisterNameSurname(string name)
+        public string CheckRegister(string name)
         {
             TextInfo txt = CultureInfo.CurrentCulture.TextInfo;
             return txt.ToTitleCase(name.ToLower());
@@ -132,7 +132,7 @@ namespace PersonLibrary
         /// <param name="name">Имя.</param>
         /// <returns>true, если имя или фамилия введены на одном языке;
         /// false, если на разных языках.</returns>
-        public bool ValidNameOrSurname(string name)
+        public bool IsNameOrSurnameValid(string name)
         {
             bool languageRussian = Regex.IsMatch(name,
                 @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
@@ -149,7 +149,7 @@ namespace PersonLibrary
         /// <param name="surname">Фамилия.</param>
         /// <returns>true, если имя и фамилия введены на одном языке;
         /// false, если на разных языках.</returns>
-        public bool ValidNameAndSurname(string name, string surname)
+        public bool IsNameAndSurnameValid(string name, string surname)
         {
             bool languageRussianName = Regex.IsMatch(name,
                 @"(^[а-яА-Я]+-?[а-яА-Я]+$)");

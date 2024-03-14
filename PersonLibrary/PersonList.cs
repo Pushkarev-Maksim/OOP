@@ -112,12 +112,12 @@ namespace PersonLibrary
         /// Получение информации о списке персон.
         /// </summary>
         /// <returns>Строка с данными полей объектов списка.</returns>
-        public string GetInfoPersonList()
+        public string GetInfo()
         {
             string infoPerson = default;
             foreach (Person persona in persons)
             {
-                infoPerson += persona.GetInfoPerson();
+                infoPerson += persona.GetInfo();
             }
             return infoPerson;
         }

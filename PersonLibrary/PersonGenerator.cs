@@ -4,17 +4,17 @@ namespace PersonLibrary
 {
     //TODO: XML +
     /// <summary>
-    /// Клас PersonGenerator для 
+    /// Клас PersonGenerate для 
     /// создания рандомного человека.
     /// </summary>
-    public class PersonGenerator
+    public class PersonGenerate
     {
         //TODO: XML +
         /// <summary>
         /// Метод создания рандомного человека.
         /// </summary>
         /// <returns>Объект класса Person.</returns>
-        public Person GeneratorRandomPerson()
+        public Person GenerateRandomPerson()
         {
             string[] maleName =
             {
