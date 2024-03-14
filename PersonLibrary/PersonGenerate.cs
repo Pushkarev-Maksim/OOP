@@ -47,8 +47,7 @@ namespace PersonLibrary
             //TODO: duplication +
             person.Age = random.Next(Person._minAge, Person._maxAge);
 
-            person.Gender = (Gender)random.Next(
-                Enum.GetValues(typeof(Gender)).Length);
+            person.Gender = (Gender)random.Next(2);
 
             switch (person.Gender)
             {
