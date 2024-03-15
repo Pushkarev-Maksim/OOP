@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace PersonLibrary
 {
-    //TODO: XML +
     /// <summary>
     /// Класс PersonList.
     /// </summary>
     public class PersonList
     {
+        //TODO: RSDN
         /// <summary>
         /// Объявление списка объектов типа Person.
         /// </summary>

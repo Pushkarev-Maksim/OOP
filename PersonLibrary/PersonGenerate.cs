@@ -2,14 +2,12 @@
 
 namespace PersonLibrary
 {
-    //TODO: XML +
     /// <summary>
     /// Клас PersonGenerate для 
     /// создания рандомного человека.
     /// </summary>
     public class PersonGenerate
     {
-        //TODO: XML +
         /// <summary>
         /// Метод создания рандомного человека.
         /// </summary>
@@ -44,7 +42,6 @@ namespace PersonLibrary
 
             Person person = new Person();
 
-            //TODO: duplication +
             person.Age = random.Next(Person._minAge, Person._maxAge);
 
             person.Gender = (Gender)random.Next(2);

@@ -4,31 +4,26 @@ using System.Text.RegularExpressions;
 
 namespace PersonLibrary
 {
-    //TODO: XML +
     /// <summary>
     /// Класс Person.
     /// </summary>
     public class Person
     {
-        //TODO: RSDN +
         /// <summary>
         /// Имя.
         /// </summary>
         private string _name;
 
-        //TODO: RSDN +
         /// <summary>
         /// Фамилия.
         /// </summary>
         private string _surname;
 
-        //TODO: RSDN +
         /// <summary>
         /// Возраст.
         /// </summary>
         private int _age;
 
-        //TODO: autoproperty +
         /// <summary>
         /// Гендер.
         /// </summary>
@@ -49,7 +44,6 @@ namespace PersonLibrary
             Gender = gender;
         }
 
-        //TODO: duplication + изменил вид конструктора по умолчанию
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -134,6 +128,7 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameOrSurnameValid(string name)
         {
+            //TODO: duplication
             bool languageRussian = Regex.IsMatch(name,
                 @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
             bool languageEnglish = Regex.IsMatch(name,
@@ -151,6 +146,7 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameAndSurnameValid(string name, string surname)
         {
+            //TODO: duplication
             bool languageRussianName = Regex.IsMatch(name,
                 @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
             bool languageEnglishName = Regex.IsMatch(name,
@@ -165,11 +161,13 @@ namespace PersonLibrary
                 || (languageEnglishName && languageEnglishSurname);
         }
 
+        //TODO: RSDN
         /// <summary>
         /// Минимальный возраст.
         /// </summary>
         public const int _minAge = 1;
 
+        //TODO: RSDN
         /// <summary>
         /// Максимальный возраст.
         /// </summary>
@@ -187,14 +185,12 @@ namespace PersonLibrary
 
             set
             {
-                //TODO: duplication +
                 if (value >= _minAge && value <= _maxAge)
                 {
                     _age = value;
                 }
                 else
                 {
-                    //TODO: duplication +
                     throw new ArgumentOutOfRangeException
                         ($"Возраст должен находиться в пределах " +
                         $"от {_minAge} года до {_maxAge} лет");

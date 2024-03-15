@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 namespace OOP1
 {
-    // TODO: XML +
-
     /// <summary>
     /// Класс ConsoleInputPerson.
     /// </summary>
@@ -54,17 +52,17 @@ namespace OOP1
                             case "0":
                             case "м":
                             case "m":
-                                {
-                                    person.Gender = Gender.Male;
-                                    break;
-                                }
+                            {
+                                person.Gender = Gender.Male;
+                                break;
+                            }
                             case "1":
                             case "ж":
                             case "f":
-                                {
-                                    person.Gender = Gender.Female;
-                                    break;
-                                }
+                            {
+                                person.Gender = Gender.Female;
+                                break;
+                            }
                             default:
                                 throw new ArgumentException
                                 ("Некорректный ввод пола.\n" +
