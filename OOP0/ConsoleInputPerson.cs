@@ -37,7 +37,8 @@ namespace OOP1
                         if (!int.TryParse(Console.ReadLine(), out int age))
                         {
                             throw new FormatException
-                            ("Возраст - это число=)");
+                            ($"Возраст - это число " +
+                            $"от {Person.MinAge} до {Person.MaxAge}");
                         }
                         person.Age = age;
                     },

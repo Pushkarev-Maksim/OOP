@@ -42,7 +42,7 @@ namespace PersonLibrary
 
             Person person = new Person();
 
-            person.Age = random.Next(Person._minAge, Person._maxAge);
+            person.Age = random.Next(Person.MinAge, Person.MaxAge);
 
             person.Gender = (Gender)random.Next(2);
 

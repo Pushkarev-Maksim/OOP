@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace PersonLibrary
 {
@@ -119,6 +120,16 @@ namespace PersonLibrary
             TextInfo txt = CultureInfo.CurrentCulture.TextInfo;
             return txt.ToTitleCase(name.ToLower());
         }
+        
+        /// <summary>
+        /// Патерн русского языка.
+        /// </summary>
+        private const string _russianLanguageCheck = @"(^[а-яА-Я]+-?[а-яА-Я]+$)";
+
+        /// <summary>
+        /// Патерн английского языка.
+        /// </summary>
+        private const string _englishLanguageCheck = @"(^[a-zA-Z]+-?[a-zA-Z]+$)";
 
         /// <summary>
         /// Проверка того, что имя или фамилия введены на одном языке.
@@ -128,13 +139,9 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameOrSurnameValid(string name)
         {
-            //TODO: duplication
-            bool languageRussian = Regex.IsMatch(name,
-                @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
-            bool languageEnglish = Regex.IsMatch(name,
-                @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
-
-            return (languageRussian || languageEnglish);
+            //TODO: duplication +
+            return (Regex.IsMatch(name, _russianLanguageCheck) 
+                || Regex.IsMatch(name, _englishLanguageCheck));
         }
 
         /// <summary>
@@ -146,32 +153,24 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameAndSurnameValid(string name, string surname)
         {
-            //TODO: duplication
-            bool languageRussianName = Regex.IsMatch(name,
-                @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
-            bool languageEnglishName = Regex.IsMatch(name,
-                @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
-
-            bool languageRussianSurname = Regex.IsMatch(surname,
-                @"(^[а-яА-Я]+-?[а-яА-Я]+$)");
-            bool languageEnglishSurname = Regex.IsMatch(surname,
-                @"(^[a-zA-Z]+-?[a-zA-Z]+$)");
-
-            return (languageRussianName && languageRussianSurname) 
-                || (languageEnglishName && languageEnglishSurname);
+            //TODO: duplication +
+            return (Regex.IsMatch(name, _russianLanguageCheck) && 
+                Regex.IsMatch(surname, _russianLanguageCheck)) 
+                || (Regex.IsMatch(name, _englishLanguageCheck) && 
+                Regex.IsMatch(surname, _englishLanguageCheck));
         }
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Минимальный возраст.
         /// </summary>
-        public const int _minAge = 1;
+        public const int MinAge = 1;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Максимальный возраст.
         /// </summary>
-        public const int _maxAge = 130;
+        public const int MaxAge = 130;
 
         /// <summary>
         /// Задание возраста.
@@ -185,7 +184,7 @@ namespace PersonLibrary
 
             set
             {
-                if (value >= _minAge && value <= _maxAge)
+                if (value >= MinAge && value <= MaxAge)
                 {
                     _age = value;
                 }
@@ -193,7 +192,7 @@ namespace PersonLibrary
                 {
                     throw new ArgumentOutOfRangeException
                         ($"Возраст должен находиться в пределах " +
-                        $"от {_minAge} года до {_maxAge} лет");
+                        $"от {MinAge} года до {MaxAge} лет");
                 }
             }
         }

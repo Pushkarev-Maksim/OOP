@@ -8,11 +8,11 @@ namespace PersonLibrary
     /// </summary>
     public class PersonList
     {
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// Объявление списка объектов типа Person.
         /// </summary>
-        private List<Person> persons = new List<Person>();
+        private readonly List<Person> _persons = new List<Person>();
 
         /// <summary>
         /// Добавление персоны.
@@ -20,7 +20,7 @@ namespace PersonLibrary
         /// <param name="person">Объект класса Person.</param>
         public void AddPerson(Person person)
         {
-            persons.Add(person);
+            _persons.Add(person);
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace PersonLibrary
         /// <param name="person">Объект класса Person.</param>
         public void RemovePerson(Person person)
         {
-            persons.Remove(person);
+            _persons.Remove(person);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace PersonLibrary
         /// границ.</exception>
         public void RemovePersonAtIndex(int index)
         {
-            if (index >= 0 && index < persons.Count)
+            if (index >= 0 && index < _persons.Count)
             {
-                persons.RemoveAt(index);
+                _persons.RemoveAt(index);
             }
             else
             {
@@ -62,9 +62,9 @@ namespace PersonLibrary
         /// границ.</exception>
         public Person GetPersonAtIndex(int index)
         {
-            if (index >= 0 && index < persons.Count)
+            if (index >= 0 && index < _persons.Count)
             {
-                return persons[index];
+                return _persons[index];
             }
             else
             {
@@ -80,9 +80,9 @@ namespace PersonLibrary
         /// <returns>Индекс объекта.</returns>
         public int ReturnIndexPerson(Person person)
         {
-            if (persons.Contains(person))
+            if (_persons.Contains(person))
             {
-                return persons.IndexOf(person);
+                return _persons.IndexOf(person);
             }
             else
             {
@@ -96,7 +96,7 @@ namespace PersonLibrary
         /// </summary>
         public void RemovePerson()
         {
-            persons.Clear();
+            _persons.Clear();
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace PersonLibrary
         /// <returns>Количество персон в списке.</returns>
         public int GetCountPerson()
         {
-            return persons.Count;
+            return _persons.Count;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace PersonLibrary
         public string GetInfo()
         {
             string infoPerson = default;
-            foreach (Person persona in persons)
+            foreach (Person persona in _persons)
             {
                 infoPerson += persona.GetInfo();
             }
