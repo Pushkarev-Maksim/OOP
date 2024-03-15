@@ -52,19 +52,23 @@ namespace PersonLibrary
             switch (person.Gender)
             {
                 case Gender.Male:
-                    person.Name = maleName[
+                    {
+                        person.Name = maleName[
                         random.Next(0, maleName.Length)];
-                    person.Surname = maleSurname[
-                        random.Next(0, maleSurname.Length)];
-                    break;
-
+                        person.Surname = maleSurname[
+                            random.Next(0, maleSurname.Length)];
+                        break;
+                    }
                 case Gender.Female:
-                    person.Name = femaleName[
+                    {
+                        person.Name = femaleName[
                         random.Next(0, femaleName.Length)];
-                    person.Surname = femaleSurname[
-                        random.Next(0, femaleSurname.Length)];
-                    break;
+                        person.Surname = femaleSurname[
+                            random.Next(0, femaleSurname.Length)];
+                        break;
+                    }
             }
+
             return person;
         }
     }

@@ -41,7 +41,6 @@ namespace OOP1
                             throw new FormatException
                             ("Возраст - это число=)");
                         }
-
                         person.Age = age;
                     },
                 () =>
@@ -55,13 +54,17 @@ namespace OOP1
                             case "0":
                             case "м":
                             case "m":
-                                person.Gender = Gender.Male;
-                                break;
+                                {
+                                    person.Gender = Gender.Male;
+                                    break;
+                                }
                             case "1":
                             case "ж":
                             case "f":
-                                person.Gender = Gender.Female;
-                                break;
+                                {
+                                    person.Gender = Gender.Female;
+                                    break;
+                                }
                             default:
                                 throw new ArgumentException
                                 ("Некорректный ввод пола.\n" +
