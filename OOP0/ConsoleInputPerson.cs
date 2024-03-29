@@ -101,15 +101,15 @@ namespace OOP1
                     action.Invoke();
                     return;
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    if (exceptionTypes.Contains(ex.GetType()))
+                    if (exceptionTypes.Contains(exception.GetType()))
                     {
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(exception.Message);
                     }
                     else
                     {
-                        throw ex;
+                        throw exception;
                     }
                 }
             }
