@@ -139,7 +139,6 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameOrSurnameValid(string name)
         {
-            //TODO: duplication +
             return (Regex.IsMatch(name, _russianLanguageCheck) 
                 || Regex.IsMatch(name, _englishLanguageCheck));
         }
@@ -153,20 +152,17 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameAndSurnameValid(string name, string surname)
         {
-            //TODO: duplication +
             return (Regex.IsMatch(name, _russianLanguageCheck) && 
                 Regex.IsMatch(surname, _russianLanguageCheck)) 
                 || (Regex.IsMatch(name, _englishLanguageCheck) && 
                 Regex.IsMatch(surname, _englishLanguageCheck));
         }
 
-        //TODO: RSDN +
         /// <summary>
         /// Минимальный возраст.
         /// </summary>
         public const int MinAge = 1;
 
-        //TODO: RSDN +
         /// <summary>
         /// Максимальный возраст.
         /// </summary>
