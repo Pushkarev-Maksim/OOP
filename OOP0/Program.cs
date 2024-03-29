@@ -44,6 +44,7 @@ namespace OOP1
                 $"{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:\n" +
                 $"{personList2.GetInfo()}");
+            Console.WriteLine("Нажмите любую клавишу");
             Console.ReadKey(true);
 
             // 3.c Добавление нового человека в первый список
@@ -52,6 +53,7 @@ namespace OOP1
             personList1.AddPerson(persona7);
             Console.WriteLine($"В первый список добавлен новый человек.\n" +
                 $"Список №1:\n{personList1.GetInfo()}");
+            Console.WriteLine("Нажмите любую клавишу");
             Console.ReadKey(true);
 
             // 3.d Копирование второго человека из первого списка в конец
@@ -63,6 +65,7 @@ namespace OOP1
                 $"\n{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfo()}");
+            Console.WriteLine("Нажмите любую клавишу");
             Console.ReadKey(true);
 
             // 3.e Удаление второго человека из первого списка
@@ -72,6 +75,7 @@ namespace OOP1
                 $"\n{personList1.GetInfo()}");
             Console.WriteLine($"Список №2:" +
                 $"\n{personList2.GetInfo()}");
+            Console.WriteLine("Нажмите любую клавишу");
             Console.ReadKey(true);
 
             // 3.f Очистка второго списка
