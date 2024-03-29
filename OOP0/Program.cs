@@ -87,8 +87,7 @@ namespace OOP1
             Console.WriteLine(personConsole.GetInfo());
 
             // 5 Генерация рандомной персоны
-            PersonGenerate personGenerator = new PersonGenerate();
-            Person randomPerson = personGenerator.GenerateRandomPerson();
+            Person randomPerson = PersonGenerate.GenerateRandomPerson();
             personList1.AddPerson(randomPerson);
             Console.WriteLine(
                 $"Список №1 после добавление рандомной персоны:\n" +

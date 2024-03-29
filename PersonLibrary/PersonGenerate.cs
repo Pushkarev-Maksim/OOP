@@ -12,7 +12,7 @@ namespace PersonLibrary
         /// Метод создания рандомного человека.
         /// </summary>
         /// <returns>Объект класса Person.</returns>
-        public Person GenerateRandomPerson()
+        public static Person GenerateRandomPerson()
         {
             string[] maleName =
             {
