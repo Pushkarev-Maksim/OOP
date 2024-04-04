@@ -37,7 +37,7 @@ namespace PersonLibrary
         /// <param name="gender">Пол.</param>
         /// <param name="numberPassport">Номер паспорта.</param>
         /// <param name="seriesPassport">Серия паспорта.</param>
-        /// <param name="marriage">Партнер.</param>
+        /// <param name="partner">Партнер.</param>
         /// <param name="job">Работа.</param>
         public Adult(string name, string surname, int age, Gender gender,
             int numberPassport, int seriesPassport, Adult partner, 
@@ -53,37 +53,50 @@ namespace PersonLibrary
         /// <summary>
         /// Задание номера паспорта.
         /// </summary>
-        public int NumberPassport 
-        { get {return _numberPassport;} }
+        public int NumberPassport
+        {
+            get { return _numberPassport; }
+            set { _numberPassport = value; }
+        }
 
         /// <summary>
         /// Задание серии паспорта.
         /// </summary>
         public int SeriesPassport 
-        { get {return _seriesPassport;} }
+        {
+            get { return _seriesPassport; }
+            set { _seriesPassport = value; }
+        }
 
         /// <summary>
         /// Задание партнера.
         /// </summary>
         public Adult Partner
-        { get { return _partner; } }
+        {
+            get { return _partner; }
+            set { _partner = value; }
+        }
         
         /// <summary>
         /// Задание работы.
         /// </summary>
-        public string Job 
-        { get { return _job; } }
+        public string Job
+        {
+            get { return _job; }
+            set { _job = value; }
+        }
 
         /// <summary>
-        /// Получение информации о ребенке.
+        /// Получение информации о взрослом.
         /// </summary>
-        /// <returns>Строка с данными полей объекта класса Child.</returns>
-        public new string GetInfo()
+        /// <returns>Строка с данными полей объекта класса Adult.</returns>
+        public override string GetInfo()
         {
-            return $"{Name} {Surname}, возраст: {Age}, " +
-                $"пол: {Gender}, номер павспорта: {NumberPassport}, " +
-                $"серия паспорта: {SeriesPassport}, партнер: {Partner}" +
-                $"место работы: {Job}\n";
+
+            //return $"{Name} {Surname}, возраст: {Age}, " +
+            //    $"пол: {Gender}, номер паспорта: {NumberPassport}, " +
+            //    $"серия паспорта: {SeriesPassport}, партнер: {Partner}" +
+            //    $"место работы: {Job}\n";
         }
     }
 }
