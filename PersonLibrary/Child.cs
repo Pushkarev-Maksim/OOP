@@ -9,7 +9,7 @@ namespace PersonLibrary
     /// <summary>
     /// Класс Child.
     /// </summary>
-    internal class Child : Person
+    public class Child : Person
     {
         /// <summary>
         /// Поле мамы.

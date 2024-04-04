@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PersonLibrary
 {
-    internal class Adult : Person
+    /// <summary>
+    /// Класс Adult.
+    /// </summary>
+    public class Adult : Person
     {
         /// <summary>
         /// Поле номера паспорта.
@@ -51,6 +54,13 @@ namespace PersonLibrary
         }
 
         /// <summary>
+        /// Конструктор класса Adult по умолчанию.
+        /// </summary>
+        public Adult() : this("Иван", "Иванов", 0, Gender.Male,
+            0, 0, null, null)
+        { }
+
+        /// <summary>
         /// Задание номера паспорта.
         /// </summary>
         public int NumberPassport
@@ -92,11 +102,31 @@ namespace PersonLibrary
         /// <returns>Строка с данными полей объекта класса Adult.</returns>
         public override string GetInfo()
         {
+            string partner = string.Empty;
 
-            //return $"{Name} {Surname}, возраст: {Age}, " +
-            //    $"пол: {Gender}, номер паспорта: {NumberPassport}, " +
-            //    $"серия паспорта: {SeriesPassport}, партнер: {Partner}" +
-            //    $"место работы: {Job}\n";
+            if (Gender == Gender.Male && Partner == null)
+            {
+                partner = "Не женат";
+            }
+
+            if (Gender == Gender.Female && Partner == null)
+            {
+                partner = "Не замужем";
+            }
+
+            if (Partner != null)
+            {
+                partner = Partner.Surname + " " + Partner.Name;
+            }
+
+            if (Job == null)
+            {
+                Job = "Безработный";
+            }
+
+            return base.GetInfo() + $", номер паспорта: {NumberPassport}, " +
+                $"серия паспорта: {SeriesPassport}, партнер: {partner}" +
+                $"место работы: {Job}\n";
         }
     }
 }
