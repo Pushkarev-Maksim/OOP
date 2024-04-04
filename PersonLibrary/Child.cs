@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PersonLibrary
 {
+    /// <summary>
+    /// Класс Child.
+    /// </summary>
     internal class Child : Person
     {
         /// <summary>
