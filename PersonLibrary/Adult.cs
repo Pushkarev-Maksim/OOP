@@ -128,5 +128,7 @@ namespace PersonLibrary
                 $"серия паспорта: {SeriesPassport}, партнер: {partner}" +
                 $"место работы: {Job}\n";
         }
+
+
     }
 }

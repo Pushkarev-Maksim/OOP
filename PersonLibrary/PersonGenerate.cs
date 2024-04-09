@@ -68,5 +68,38 @@ namespace PersonLibrary
 
             return person;
         }
+
+        public static void GenerateRandomAdult(Adult adult)
+        {
+            Random random = new Random();
+
+            string[] jobPlace =
+            {
+                "Газпром нефть", "Роснефть", "Магнит", "Росатом", "Почта России", 
+                "Россети", "Сбер", "Роскосмос", "Норильский никель", "Русгидро",
+            };
+
+            adult.Age = random.Next(Person.MinAge, Person.MaxAge);
+
+            adult.NumberPassport = random.Next(0*000000, 0*999999);
+            adult.SeriesPassport = random.Next(0*0000, 0*9999);
+
+            adult.Job = jobPlace[random.Next(0, jobPlace.Length)];
+        }
+
+        public static void GenerateRandomPartner(Adult adult)
+        {
+            Random random = new Random();
+
+            Gender partnerGender;
+            if (adult.Gender == Gender.Male)
+            {
+                partnerGender = Gender.Female;
+            }
+            else
+            {
+                partnerGender = Gender.Male;
+            }
+        }
     }
 }
