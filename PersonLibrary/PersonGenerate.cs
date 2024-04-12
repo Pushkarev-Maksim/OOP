@@ -9,10 +9,10 @@ namespace PersonLibrary
     public class PersonGenerate
     {
         /// <summary>
-        /// Метод создания рандомного человека.
+        /// Метод присоения полям Person рандомных значений.
         /// </summary>
-        /// <returns>Объект класса Person.</returns>
-        public static Person GenerateRandomPerson()
+        /// <param name="person">Объект класса Person.</param>
+        public static void SetRandomPerson(Person person)
         {
             string[] maleName =
             {
@@ -40,8 +40,6 @@ namespace PersonLibrary
 
             Random random = new Random();
 
-            Person person = new Person();
-
             person.Age = random.Next(Person.MinAge, Person.MaxAge);
 
             person.Gender = (Gender)random.Next(2);
@@ -65,11 +63,13 @@ namespace PersonLibrary
                         break;
                     }
             }
-
-            return person;
         }
 
-        public static void GenerateRandomAdult(Adult adult)
+        /// <summary>
+        /// Метод присоения полям Adult рандомных значений.
+        /// </summary>
+        /// <param name="adult">Объект класса Adult.</param>
+        public static void SetRandomAdult(Adult adult)
         {
             Random random = new Random();
 
@@ -81,25 +81,69 @@ namespace PersonLibrary
 
             adult.Age = random.Next(Person.MinAge, Person.MaxAge);
 
-            adult.NumberPassport = random.Next(0*000000, 0*999999);
-            adult.SeriesPassport = random.Next(0*0000, 0*9999);
+            adult.NumberPassport = random.Next(111111, 999999);
+            adult.SeriesPassport = random.Next(1111, 9999);
 
             adult.Job = jobPlace[random.Next(0, jobPlace.Length)];
         }
 
-        public static void GenerateRandomPartner(Adult adult)
+        /// <summary>
+        /// Метод заполнения полей обьекта класса Person.
+        /// </summary>
+        /// <returns>Объект класса Person.</returns>
+        public static Person GetRandomPerson()
+        {
+            Person person = new Person();
+            SetRandomPerson(person);
+            return person;
+        }
+
+        /// <summary>
+        /// Метод заполнения полей обьекта класса Adult.
+        /// </summary>
+        /// <returns>Объект класса Adult.</returns>
+        public static Adult GetRandomAdult()
+        {
+            Adult adult = new Adult();
+            SetRandomPerson(adult);
+            SetRandomAdult(adult);
+            return adult;
+        }
+
+        /// <summary>
+        /// Метод присоения полям Child рандомных значений.
+        /// </summary>
+        /// <param name="adult"></param>
+        public static void SetRandomChild(Child child)
         {
             Random random = new Random();
 
-            Gender partnerGender;
-            if (adult.Gender == Gender.Male)
+            string[] placeOfStudy =
             {
-                partnerGender = Gender.Female;
-            }
-            else
-            {
-                partnerGender = Gender.Male;
-            }
+                "МОУ «Гимназия им. В.А.Надькина»", "МОУ «СОШ №2»", 
+                "МОУ «СОШ №4 им. Д.М.Перова»", "МОУ «СОШ №5", 
+                "МОУ «СОШ №6", "МОУ «СОШ №7", "МОУ «СОШ №8",
+            };
+
+            child.PlaceOfStudy = placeOfStudy[random.Next(0, placeOfStudy.Length)];
+
+
+
         }
+
+        //public static void GenerateRandomPartner(Adult adult)
+        //{
+        //    Random random = new Random();
+
+        //    Gender partnerGender;
+        //    if (adult.Gender == Gender.Male)
+        //    {
+        //        partnerGender = Gender.Female;
+        //    }
+        //    else
+        //    {
+        //        partnerGender = Gender.Male;
+        //    }
+        //}
     }
 }

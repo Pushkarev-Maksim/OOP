@@ -57,7 +57,7 @@ namespace PersonLibrary
         /// <returns>Строка с данными полей объекта класса Person.</returns>
         public virtual string GetInfo()
         {
-            return $"{Name} {Surname}, возраст: {Age}, пол: {Gender}\n";
+            return $"{Name} {Surname}, возраст: {Age}, пол: {Gender}";
         }
 
         /// <summary>

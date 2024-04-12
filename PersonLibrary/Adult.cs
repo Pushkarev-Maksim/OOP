@@ -125,10 +125,8 @@ namespace PersonLibrary
             }
 
             return base.GetInfo() + $", номер паспорта: {NumberPassport}, " +
-                $"серия паспорта: {SeriesPassport}, партнер: {partner}" +
+                $"серия паспорта: {SeriesPassport}, партнер: {partner}, " +
                 $"место работы: {Job}\n";
         }
-
-
     }
 }

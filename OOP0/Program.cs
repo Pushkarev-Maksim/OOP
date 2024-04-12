@@ -98,11 +98,7 @@ namespace OOP1
             //    $"{personList1.GetInfo()}");
             //Console.ReadKey(true);
 
-            Adult adult = new Adult("Иван", "Иванов", 0, Gender.Male,
-            065477465, 045764567, null, "Стринги");
-            Adult adult1 = new Adult("Попа", "Иванова", 0, Gender.Female,
-            065477465, 045764567, adult, "Стринги");
-            Console.WriteLine(adult1.GetInfo());    
+            Console.WriteLine(PersonGenerate.GetRandomAdult().GetInfo());
         }
     }
 }
