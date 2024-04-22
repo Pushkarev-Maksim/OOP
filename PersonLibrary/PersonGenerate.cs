@@ -192,7 +192,7 @@ namespace PersonLibrary
         /// <summary>
         /// Метод присоения полям Child рандомных значений.
         /// </summary>
-        /// <param name="adult"></param>
+        /// <param name="adult">Объект класса Adult.</param>
         public static void SetRandomChild(Child child)
         {
             Random random = new Random();
