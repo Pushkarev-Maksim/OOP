@@ -99,6 +99,7 @@ namespace OOP1
             //Console.ReadKey(true);
 
             Console.WriteLine(PersonGenerate.GetRandomAdult().GetInfo());
+            Console.WriteLine(PersonGenerate.GetRandomChild().GetInfo());
         }
     }
 }

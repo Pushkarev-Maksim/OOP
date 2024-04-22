@@ -9,7 +9,7 @@ namespace PersonLibrary
     /// <summary>
     /// Класс Adult.
     /// </summary>
-    public class Adult : Person
+    public class Adult : PersonBase
     {
         /// <summary>
         /// Поле номера паспорта.

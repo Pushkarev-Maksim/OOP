@@ -8,7 +8,7 @@ namespace PersonLibrary
     /// <summary>
     /// Класс Person.
     /// </summary>
-    public class Person
+    public abstract class PersonBase
     {
         /// <summary>
         /// Имя.
@@ -37,7 +37,7 @@ namespace PersonLibrary
         /// <param name="surname">Фамилия.</param>
         /// <param name="age">Возраст.</param>
         /// <param name="gender">Гендер.</param>
-        public Person(string name, string surname, int age, Gender gender)
+        public PersonBase(string name, string surname, int age, Gender gender)
         {
             _name = name;
             _surname = surname;
@@ -48,7 +48,7 @@ namespace PersonLibrary
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public Person() : this ("Иван", "Иванов", 0, Gender.Male)
+        public PersonBase() : this ("Иван", "Иванов", 0, Gender.Male)
         { }
 
         /// <summary>
