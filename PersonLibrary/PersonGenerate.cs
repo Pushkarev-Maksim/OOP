@@ -50,16 +50,16 @@ namespace PersonLibrary
                     {
                         person.Name = maleName[
                         random.Next(0, maleName.Length)];
-                        person.Surname = maleSurname[
-                            random.Next(0, maleSurname.Length)];
+                        person.Surname = maleSurname
+                            [random.Next(0, maleSurname.Length)];
                         break;
                     }
                 case Gender.Female:
                     {
                         person.Name = femaleName[
                         random.Next(0, femaleName.Length)];
-                        person.Surname = femaleSurname[
-                            random.Next(0, femaleSurname.Length)];
+                        person.Surname = femaleSurname
+                            [random.Next(0, femaleSurname.Length)];
                         break;
                     }
             }
@@ -88,6 +88,33 @@ namespace PersonLibrary
         }
 
         /// <summary>
+        /// Метод присвоения полю Partner класса Adult значений.
+        /// </summary>
+        /// <param name="adult">Объект класса Adult.</param>
+        public static void SetRandomPartner(Adult adult)
+        {
+            Adult partner = new Adult();
+
+            Random random = new Random();
+
+            if (random.Next(3) == 0)
+            {
+                switch (adult.Gender)
+                {
+                    case Gender.Male:
+                        partner = GetRandomAdult(Gender.Female);
+                        break;
+
+                    case Gender.Female:
+                        partner = GetRandomAdult(Gender.Male);
+                        break;
+                }
+
+                adult.Partner = partner;
+            }
+        }
+
+        /// <summary>
         /// Метод заполнения полей обьекта класса Person.
         /// </summary>
         /// <returns>Объект класса Person.</returns>
@@ -105,6 +132,16 @@ namespace PersonLibrary
         public static Adult GetRandomAdult()
         {
             Adult adult = new Adult();
+            SetRandomPerson(adult);
+            SetRandomAdult(adult);
+            SetRandomPartner(adult);
+            return adult;
+        }
+
+        public static Adult GetRandomAdult(Gender gender)
+        {
+            Adult adult = new Adult();
+            adult.Gender = gender;
             SetRandomPerson(adult);
             SetRandomAdult(adult);
             return adult;
@@ -126,24 +163,6 @@ namespace PersonLibrary
             };
 
             child.PlaceOfStudy = placeOfStudy[random.Next(0, placeOfStudy.Length)];
-
-
-
         }
-
-        //public static void GenerateRandomPartner(Adult adult)
-        //{
-        //    Random random = new Random();
-
-        //    Gender partnerGender;
-        //    if (adult.Gender == Gender.Male)
-        //    {
-        //        partnerGender = Gender.Female;
-        //    }
-        //    else
-        //    {
-        //        partnerGender = Gender.Male;
-        //    }
-        //}
     }
 }
