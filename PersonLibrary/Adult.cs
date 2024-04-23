@@ -124,8 +124,8 @@ namespace PersonLibrary
                 Job = "Безработный";
             }
 
-            return base.GetInfo() + $", номер паспорта: {NumberPassport}, " +
-                $"серия паспорта: {SeriesPassport}, партнер: {partner}, " +
+            return base.GetInfo() + $", серия паспорта: {SeriesPassport}, " +
+                $"номер паспорта: {NumberPassport}, партнер: {partner}, " +
                 $"место работы: {Job}\n";
         }
     }

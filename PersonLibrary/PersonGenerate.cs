@@ -104,8 +104,11 @@ namespace PersonLibrary
             {
                 person.Gender = Gender.Male;
             }
-            person.Gender = Gender.Female;
-
+            else if (gender == Gender.Female)
+            {
+                person.Gender = Gender.Female;
+            }
+            
             switch (person.Gender)
             {
                 case Gender.Male:
@@ -128,7 +131,7 @@ namespace PersonLibrary
         }
 
         /// <summary>
-        /// Метод присоения полям Adult (кроме поля Patner) рандомных значений.
+        /// Метод присоения полям Adult рандомных значений.
         /// </summary>
         /// <param name="adult">Объект класса Adult.</param>
         public static void SetRandomAdult(Adult adult)
@@ -148,7 +151,7 @@ namespace PersonLibrary
 
             adult.Job = jobPlace[random.Next(0, jobPlace.Length)];
 
-            if (random.Next(2) != 0)
+            if (random.Next(2) == 0)
             {
                 switch (adult.Gender)
                 {
@@ -206,9 +209,23 @@ namespace PersonLibrary
 
             child.PlaceOfStudy = placeOfStudy[random.Next(0, placeOfStudy.Length)];
 
-            child.Father = GetRandomAdult(Gender.Male);
+            Adult father = GetRandomAdult(Gender.Male);
+            child.Father = father;
 
-            child.Mother = GetRandomAdult(Gender.Female);
+            Adult mother = GetRandomAdult(Gender.Female);
+            child.Mother = mother;
+
+            mother.Surname = father.Surname;
+            mother.Surname += "а";
+
+            if (child.Gender == Gender.Male)
+            {
+                child.Surname = father.Surname;
+            }
+            else if (child.Gender == Gender.Female)
+            {
+                child.Surname = mother.Surname;
+            }
         }
 
         /// <summary>

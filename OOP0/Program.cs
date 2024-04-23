@@ -98,8 +98,12 @@ namespace OOP1
             //    $"{personList1.GetInfo()}");
             //Console.ReadKey(true);
 
+            // Взрослые
             Console.WriteLine(PersonGenerate.GetRandomAdult().GetInfo());
+
+            // Дети
             Console.WriteLine(PersonGenerate.GetRandomChild().GetInfo());
+
         }
     }
 }
