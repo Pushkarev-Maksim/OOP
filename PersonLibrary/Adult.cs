@@ -10,12 +10,12 @@ namespace PersonLibrary
         /// <summary>
         /// Поле номера паспорта.
         /// </summary>
-        private int _numberPassport;
+        private string _numberPassport;
 
         /// <summary>
         /// Поле серии паспорта.
         /// </summary>
-        private int _seriesPassport;
+        private string _seriesPassport;
 
         /// <summary>
         /// Поле партнера.
@@ -26,26 +26,6 @@ namespace PersonLibrary
         /// Поле работы.
         /// </summary>
         private string _job;
-
-        /// <summary>
-        /// Максимальный номер паспорта.
-        /// </summary>
-        public const int MaxNumberPassport = 999999;
-
-        /// <summary>
-        /// Минимальный номер паспорта.
-        /// </summary>
-        public const int MinNumberPassport = 111111;
-
-        /// <summary>
-        /// Максимальная серия паспорта.
-        /// </summary>
-        public const int MaxSeriesPassport = 9999;
-
-        /// <summary>
-        /// Минимальная серия паспорта.
-        /// </summary>
-        public const int MinSeriesPassport = 1111;
 
         /// <inheritdoc/>
         public override int MinAge { get; } = 18;
@@ -62,7 +42,7 @@ namespace PersonLibrary
         /// <param name="partner">Партнер.</param>
         /// <param name="job">Работа.</param>
         public Adult(string name, string surname, int age, Gender gender,
-            int numberPassport, int seriesPassport, Adult partner, 
+            string numberPassport, string seriesPassport, Adult partner, 
             string job)
             : base(name, surname, age, gender)
         {
@@ -76,13 +56,13 @@ namespace PersonLibrary
         /// Конструктор класса Adult по умолчанию.
         /// </summary>
         public Adult() : this("Иван", "Иванов", 0, Gender.Male,
-            0, 0, null, null)
+            "", "", null, null)
         { }
 
         /// <summary>
         /// Задание номера паспорта.
         /// </summary>
-        public int NumberPassport
+        public string NumberPassport
         {
             get
             {
@@ -91,17 +71,14 @@ namespace PersonLibrary
 
             set
             {
-                if (value >= MinNumberPassport 
-                    && value <= MaxNumberPassport)
+                if (value.Length == 6)
                 {
                     _numberPassport = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException
-                        ($"Номер паспорта должен находиться " +
-                        $"в пределах от {MinNumberPassport} " +
-                        $"до {MaxNumberPassport} и содержать 6 цифр");
+                    throw new ArgumentException
+                        ("Номер паспорта должен содержать 6 цифр");
                 }
             }
         }
@@ -109,7 +86,7 @@ namespace PersonLibrary
         /// <summary>
         /// Задание серии паспорта.
         /// </summary>
-        public int SeriesPassport 
+        public string SeriesPassport 
         {
             get
             {
@@ -118,17 +95,14 @@ namespace PersonLibrary
 
             set
             {
-                if (value >= MinSeriesPassport
-                    && value <= MaxSeriesPassport)
+                if (value.Length == 4)
                 {
                     _seriesPassport = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException
-                        ($"Номер паспорта должен находиться " +
-                        $"в пределах от {MinSeriesPassport} " +
-                        $"до {MaxSeriesPassport} и содержать 4 цифры");
+                    throw new ArgumentException
+                        ("Серия паспорта должна содержать 4 цифры");
                 }
             }
         }

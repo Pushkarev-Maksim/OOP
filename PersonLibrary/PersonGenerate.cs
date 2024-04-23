@@ -157,14 +157,23 @@ namespace PersonLibrary
                 "Норильский никель", "Русгидро", "Тинькофф",
             };
 
+            adult.Job = jobPlace[random.Next(0, jobPlace.Length)];
+
             adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
-            adult.NumberPassport = random.Next
-                (Adult.MinNumberPassport, Adult.MaxNumberPassport);
-            adult.SeriesPassport = random.Next
-                (Adult.MinSeriesPassport, Adult.MaxSeriesPassport);
+            string numberPassport = "";
+            for (int i = 0; i < 6; i++)
+            {
+                numberPassport += random.Next(0, 10).ToString();
+            }
+            adult.NumberPassport = numberPassport;
 
-            adult.Job = jobPlace[random.Next(0, jobPlace.Length)];
+            string seriesPassport = "";
+            for (int i = 0; i < 4; i++)
+            {
+                seriesPassport += random.Next(0, 10).ToString();
+            }
+            adult.SeriesPassport = seriesPassport;
 
             if (random.Next(2) == 0)
             {
