@@ -102,7 +102,7 @@ namespace PersonLibrary
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentException
-                        ("Ребенок нигде не учится.");
+                        ("Ребенок нигде не обучается.");
                 }
                 _placeOfStudy = value;
             }
