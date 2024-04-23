@@ -1,4 +1,6 @@
-﻿namespace PersonLibrary
+﻿using System;
+
+namespace PersonLibrary
 {
     /// <summary>
     /// Класс Adult.
@@ -82,8 +84,26 @@
         /// </summary>
         public int NumberPassport
         {
-            get { return _numberPassport; }
-            set { _numberPassport = value; }
+            get
+            {
+                return _numberPassport;
+            }
+
+            set
+            {
+                if (value >= MinNumberPassport 
+                    && value <= MaxNumberPassport)
+                {
+                    _numberPassport = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException
+                        ($"Номер паспорта должен находиться " +
+                        $"в пределах от {MinNumberPassport} " +
+                        $"до {MaxNumberPassport} и содержать 6 цифр");
+                }
+            }
         }
 
         /// <summary>
@@ -91,8 +111,26 @@
         /// </summary>
         public int SeriesPassport 
         {
-            get { return _seriesPassport; }
-            set { _seriesPassport = value; }
+            get
+            {
+                return _seriesPassport;
+            }
+
+            set
+            {
+                if (value >= MinSeriesPassport
+                    && value <= MaxSeriesPassport)
+                {
+                    _seriesPassport = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException
+                        ($"Номер паспорта должен находиться " +
+                        $"в пределах от {MinSeriesPassport} " +
+                        $"до {MaxSeriesPassport} и содержать 4 цифры");
+                }
+            }
         }
 
         /// <summary>
@@ -100,8 +138,25 @@
         /// </summary>
         public Adult Partner
         {
-            get { return _partner; }
-            set { _partner = value; }
+            get 
+            { 
+                return _partner; 
+            }
+            set 
+            {
+                if (value != null && value.Gender == Gender)
+                {
+                    throw new ArgumentException
+                        ("Однополые браки запрещены в РФ (СК РФ)");
+                }
+
+                if (value != null)
+                {
+                    value._partner = this;
+                }
+                
+                _partner = value;
+            }
         }
         
         /// <summary>
@@ -110,7 +165,8 @@
         public string Job
         {
             get { return _job; }
-            set { _job = value; }
+            set { _job = string.IsNullOrWhiteSpace(value) 
+                    ? "Безработный" : value; }
         }
 
         /// <summary>

@@ -1,4 +1,6 @@
-﻿namespace PersonLibrary
+﻿using System;
+
+namespace PersonLibrary
 {
     /// <summary>
     /// Класс Child.
@@ -54,8 +56,19 @@
         /// </summary>
         public Adult Mother
         {
-            get { return _mother; }
-            set { _mother = value; }
+            get 
+            { 
+                return _mother; 
+            }
+            set
+            {
+                if (value != null && value.Gender != Gender.Female)
+                {
+                    throw new ArgumentException
+                        ("Мама должна быть женского пола.");
+                }
+                _mother = value;
+            }
         }
 
         /// <summary>
@@ -63,8 +76,19 @@
         /// </summary>
         public Adult Father
         {
-            get { return _father; }
-            set { _father = value; }
+            get 
+            { 
+                return _father; 
+            }
+            set
+            {
+                if (value != null && value.Gender != Gender.Male)
+                {
+                    throw new ArgumentException
+                        ("Папа должен быть мужского пола.");
+                }
+                _father = value;
+            }
         }
 
         /// <summary>
@@ -73,7 +97,15 @@
         public string PlaceOfStudy
         {
             get { return _placeOfStudy; }
-            set { _placeOfStudy = value; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException
+                        ("Ребенок нигде не учится.");
+                }
+                _placeOfStudy = value;
+            }
         }
 
         /// <summary>
