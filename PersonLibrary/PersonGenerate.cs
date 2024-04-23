@@ -42,7 +42,8 @@ namespace PersonLibrary
                 "Белова", "Дорохова",
             };
 
-            Random random = new Random();
+            Random random = new Random
+                (Guid.NewGuid().GetHashCode());
 
             person.Age = random.Next(person.MinAge, person.MaxAge);
 
@@ -105,7 +106,8 @@ namespace PersonLibrary
                 "Белова", "Дорохова",
             };
 
-            Random random = new Random();
+            Random random = new Random
+                (Guid.NewGuid().GetHashCode());
 
             person.Age = random.Next(person.MinAge, person.MaxAge);
 
@@ -145,7 +147,8 @@ namespace PersonLibrary
         /// <param name="adult">Объект класса Adult.</param>
         public static void SetRandomAdult(Adult adult)
         {
-            Random random = new Random();
+            Random random = new Random
+                (Guid.NewGuid().GetHashCode());
 
             string[] jobPlace =
             {
@@ -210,7 +213,8 @@ namespace PersonLibrary
         /// <param name="adult">Объект класса Adult.</param>
         public static void SetRandomChild(Child child)
         {
-            Random random = new Random();
+            Random random = new Random
+                (Guid.NewGuid().GetHashCode());
 
             string[] placeOfStudy =
             {
