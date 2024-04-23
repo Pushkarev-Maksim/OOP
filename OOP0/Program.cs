@@ -17,9 +17,9 @@ namespace OOP1
             // взрослых и детей
             PersonList personList = new PersonList();
             Console.WriteLine("Рандомный список взрослых и детей:\n");
-            
-            Random random = new Random();;
-            
+
+            Random random = new Random();
+
             for (int i = 0; i < 7; i++)
             {
                 if (random.NextDouble() < 0.5)
@@ -31,7 +31,7 @@ namespace OOP1
                     personList.AddPerson(PersonGenerate.GetRandomChild());
                 }
             }
-            
+
             Console.WriteLine(personList.GetInfo());
 
             if (personList.GetCountPerson() > 3)
