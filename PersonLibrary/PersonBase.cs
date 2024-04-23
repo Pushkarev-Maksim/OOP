@@ -48,7 +48,7 @@ namespace PersonLibrary
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public PersonBase() : this ("Иван", "Иванов", 0, Gender.Male)
+        public PersonBase() : this("Иван", "Иванов", 0, Gender.Male)
         { }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace PersonLibrary
             {
                 return _name;
             }
-            set 
+            set
             {
                 if (IsNameOrSurnameValid(value))
                 {
@@ -95,7 +95,7 @@ namespace PersonLibrary
             }
             set
             {
-                if (IsNameOrSurnameValid(value) 
+                if (IsNameOrSurnameValid(value)
                     && IsNameAndSurnameValid(_name, value))
                 {
                     _surname = CheckRegister(value);
@@ -120,7 +120,7 @@ namespace PersonLibrary
             TextInfo txt = CultureInfo.CurrentCulture.TextInfo;
             return txt.ToTitleCase(name.ToLower());
         }
-        
+
         /// <summary>
         /// Патерн русского языка.
         /// </summary>
@@ -139,7 +139,7 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameOrSurnameValid(string name)
         {
-            return (Regex.IsMatch(name, _russianLanguageCheck) 
+            return (Regex.IsMatch(name, _russianLanguageCheck)
                 || Regex.IsMatch(name, _englishLanguageCheck));
         }
 
@@ -152,21 +152,21 @@ namespace PersonLibrary
         /// false, если на разных языках.</returns>
         public bool IsNameAndSurnameValid(string name, string surname)
         {
-            return (Regex.IsMatch(name, _russianLanguageCheck) && 
-                Regex.IsMatch(surname, _russianLanguageCheck)) 
-                || (Regex.IsMatch(name, _englishLanguageCheck) && 
+            return (Regex.IsMatch(name, _russianLanguageCheck) &&
+                Regex.IsMatch(surname, _russianLanguageCheck))
+                || (Regex.IsMatch(name, _englishLanguageCheck) &&
                 Regex.IsMatch(surname, _englishLanguageCheck));
         }
 
         /// <summary>
         /// Минимальный возраст.
         /// </summary>
-        public const int MinAge = 1;
+        public virtual int MinAge { get; } = 1;
 
         /// <summary>
         /// Максимальный возраст.
         /// </summary>
-        public const int MaxAge = 130;
+        public virtual int MaxAge { get; } = 130;
 
         /// <summary>
         /// Задание возраста.

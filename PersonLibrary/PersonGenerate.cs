@@ -16,31 +16,35 @@ namespace PersonLibrary
         {
             string[] maleName =
             {
-                "Игорь", "Олег", "Геннадий", "Павел", "Максим", "Ефим",
-                "Руслан", "Лаврентий", "Тарас", "Тимур",
+                "Игорь", "Олег", "Геннадий", "Павел", 
+                "Максим", "Ефим", "Руслан", "Лаврентий", 
+                "Тарас", "Тимур",
             };
 
             string[] femaleName =
             {
-                "Зоя", "Полина", "Валерия", "Ангелина", "Анастасия",
-                "Галина", "Оксана", "Марина", "Елена", "Яна",
+                "Зоя", "Полина", "Валерия", "Ангелина", 
+                "Анастасия", "Галина", "Оксана", "Марина", 
+                "Елена", "Яна",
             };
 
             string[] maleSurname =
             {
-                "Иванов", "Смирнов", "Кузнецов", "Попов", "Васильев",
-                "Петров", "Соколов", "Михайлов", "Новиков", "Федоров",
+                "Иванов", "Смирнов", "Кузнецов", "Попов", 
+                "Васильев", "Петров", "Соколов", "Михайлов", 
+                "Новиков", "Федоров",
             };
 
             string[] femaleSurname =
             {
-                "Цветаева", "Лебедева", "Соболева", "Громова", "Глебова",
-                "Степанова", "Андреева", "Журавлева", "Белова", "Дорохова",
+                "Цветаева", "Лебедева", "Соболева", "Громова", 
+                "Глебова", "Степанова", "Андреева", "Журавлева", 
+                "Белова", "Дорохова",
             };
 
             Random random = new Random();
 
-            person.Age = random.Next(PersonBase.MinAge, PersonBase.MaxAge);
+            person.Age = random.Next(person.MinAge, person.MaxAge);
 
             person.Gender = (Gender)random.Next(2);
 
@@ -70,35 +74,40 @@ namespace PersonLibrary
         /// с заданным полом.
         /// </summary>
         /// <param name="person">Объект класса Person.</param>
-        public static void SetRandomPerson(PersonBase person, Gender gender)
+        public static void SetRandomPerson(PersonBase person,
+            Gender gender)
         {
             string[] maleName =
             {
-                "Игорь", "Олег", "Геннадий", "Павел", "Максим", "Ефим",
-                "Руслан", "Лаврентий", "Тарас", "Тимур",
+                "Игорь", "Олег", "Геннадий", "Павел", 
+                "Максим", "Ефим", "Руслан", "Лаврентий", 
+                "Тарас", "Тимур",
             };
 
             string[] femaleName =
             {
-                "Зоя", "Полина", "Валерия", "Ангелина", "Анастасия",
-                "Галина", "Оксана", "Марина", "Елена", "Яна",
+                "Зоя", "Полина", "Валерия", "Ангелина", 
+                "Анастасия", "Галина", "Оксана", "Марина", 
+                "Елена", "Яна",
             };
 
             string[] maleSurname =
             {
-                "Иванов", "Смирнов", "Кузнецов", "Попов", "Васильев",
-                "Петров", "Соколов", "Михайлов", "Новиков", "Федоров",
+                "Иванов", "Смирнов", "Кузнецов", "Попов", 
+                "Васильев", "Петров", "Соколов", "Михайлов", 
+                "Новиков", "Федоров",
             };
 
             string[] femaleSurname =
             {
-                "Цветаева", "Лебедева", "Соболева", "Громова", "Глебова",
-                "Степанова", "Андреева", "Журавлева", "Белова", "Дорохова",
+                "Цветаева", "Лебедева", "Соболева", "Громова", 
+                "Глебова", "Степанова", "Андреева", "Журавлева", 
+                "Белова", "Дорохова",
             };
 
             Random random = new Random();
 
-            person.Age = random.Next(PersonBase.MinAge, PersonBase.MaxAge);
+            person.Age = random.Next(person.MinAge, person.MaxAge);
 
             if (gender == Gender.Male)
             {
@@ -113,16 +122,16 @@ namespace PersonLibrary
             {
                 case Gender.Male:
                     {
-                        person.Name = maleName[
-                        random.Next(0, maleName.Length)];
+                        person.Name = maleName
+                            [random.Next(0, maleName.Length)];
                         person.Surname = maleSurname
                             [random.Next(0, maleSurname.Length)];
                         break;
                     }
                 case Gender.Female:
                     {
-                        person.Name = femaleName[
-                        random.Next(0, femaleName.Length)];
+                        person.Name = femaleName
+                            [random.Next(0, femaleName.Length)];
                         person.Surname = femaleSurname
                             [random.Next(0, femaleSurname.Length)];
                         break;
@@ -140,14 +149,17 @@ namespace PersonLibrary
 
             string[] jobPlace =
             {
-                "Газпром нефть", "Роснефть", "Магнит", "Росатом", "Почта России",
-                "Россети", "Сбер", "Роскосмос", "Норильский никель", "Русгидро",
+                "Газпром нефть", "Роснефть", "Магнит", "Росатом", 
+                "Почта России","Россети", "Сбер", "Роскосмос", 
+                "Норильский никель", "Русгидро", "Тинькофф",
             };
 
-            adult.Age = random.Next(PersonBase.MinAge, PersonBase.MaxAge);
+            adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
-            adult.NumberPassport = random.Next(111111, 999999);
-            adult.SeriesPassport = random.Next(1111, 9999);
+            adult.NumberPassport = random.Next
+                (Adult.MinNumberPassport, Adult.MaxNumberPassport);
+            adult.SeriesPassport = random.Next
+                (Adult.MinSeriesPassport, Adult.MaxSeriesPassport);
 
             adult.Job = jobPlace[random.Next(0, jobPlace.Length)];
 
@@ -207,7 +219,10 @@ namespace PersonLibrary
                 "МОУ «СОШ №6", "МОУ «СОШ №7", "МОУ «СОШ №8",
             };
 
-            child.PlaceOfStudy = placeOfStudy[random.Next(0, placeOfStudy.Length)];
+            child.PlaceOfStudy = placeOfStudy
+                [random.Next(0, placeOfStudy.Length)];
+
+            child.Age = random.Next(child.MinAge, child.MaxAge);
 
             Adult father = GetRandomAdult(Gender.Male);
             child.Father = father;

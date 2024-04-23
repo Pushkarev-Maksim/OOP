@@ -26,6 +26,9 @@ namespace PersonLibrary
         /// </summary>
         private string _placeOfStudy;
 
+        /// <inheritdoc/>
+        public override int MaxAge { get; } = 17;
+
         /// <summary>
         /// Конструктор класса Child.
         /// </summary>
@@ -36,7 +39,7 @@ namespace PersonLibrary
         /// <param name="mother">Мама.</param>
         /// <param name="father">Папа.</param>
         /// <param name="placeOfStudy">Место обучения.</param>
-        public Child(string name, string surname, int age, Gender gender, 
+        public Child(string name, string surname, int age, Gender gender,
             Adult mother, Adult father, string placeOfStudy)
             : base(name, surname, age, gender)
         {
@@ -98,8 +101,8 @@ namespace PersonLibrary
                 infoFather = "Нет отца";
             }
 
-            return base.GetInfo() +  $", мама: {infoMother}, папа: {infoFather}, " +
-                  $"место обучения: {PlaceOfStudy}\n";
+            return base.GetInfo() +  $", мама: {infoMother}, " +
+                $"папа: {infoFather}, место обучения: {PlaceOfStudy}\n";
         }
     }
 }

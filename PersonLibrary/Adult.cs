@@ -32,6 +32,29 @@ namespace PersonLibrary
         private string _job;
 
         /// <summary>
+        /// Максимальный номер паспорта.
+        /// </summary>
+        public const int MaxNumberPassport = 999999;
+
+        /// <summary>
+        /// Минимальный номер паспорта.
+        /// </summary>
+        public const int MinNumberPassport = 111111;
+
+        /// <summary>
+        /// Максимальная серия паспорта.
+        /// </summary>
+        public const int MaxSeriesPassport = 9999;
+
+        /// <summary>
+        /// Минимальная серия паспорта.
+        /// </summary>
+        public const int MinSeriesPassport = 1111;
+
+        /// <inheritdoc/>
+        public override int MinAge { get; } = 18;
+
+        /// <summary>
         /// Конструктор класса Adult.
         /// </summary>
         /// <param name="name">Имя.</param>
