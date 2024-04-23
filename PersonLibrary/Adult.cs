@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace PersonLibrary
 {
@@ -71,7 +72,7 @@ namespace PersonLibrary
 
             set
             {
-                if (value.Length == 6)
+                if (value.Length == 6 && IsSeriesOrNumberPassportValid(value))
                 {
                     _numberPassport = value;
                 }
@@ -95,7 +96,7 @@ namespace PersonLibrary
 
             set
             {
-                if (value.Length == 4)
+                if (value.Length == 4 && IsSeriesOrNumberPassportValid(value))
                 {
                     _seriesPassport = value;
                 }
@@ -121,7 +122,7 @@ namespace PersonLibrary
                 if (value != null && value.Gender == Gender)
                 {
                     throw new ArgumentException
-                        ("Однополые браки запрещены в РФ (СК РФ)");
+                        ("Однополые браки запрещены в РФ (Семейный кодекс РФ)");
                 }
 
                 if (value != null)
@@ -174,6 +175,17 @@ namespace PersonLibrary
             return base.GetInfo() + $", серия паспорта: {SeriesPassport}, " +
                 $"номер паспорта: {NumberPassport}, партнер: {partner}, " +
                 $"место работы: {Job}\n";
+        }
+
+        /// <summary>
+        /// Проверка того, что серия и номер паспорта содержат только цифры.
+        /// </summary>
+        /// <param name="pasport">Серия или номер паспорта.</param>
+        /// <returns>true, если серия или номер паспорта содержат 
+        /// только цифры; false, если и символы.</returns>
+        public bool IsSeriesOrNumberPassportValid(string pasport)
+        {
+            return Regex.IsMatch(pasport, @"^\d+$");
         }
 
         /// <summary>

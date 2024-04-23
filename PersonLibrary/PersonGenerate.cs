@@ -161,19 +161,19 @@ namespace PersonLibrary
 
             adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
-            string numberPassport = "";
-            for (int i = 0; i < 6; i++)
-            {
-                numberPassport += random.Next(0, 10).ToString();
-            }
-            adult.NumberPassport = numberPassport;
-
             string seriesPassport = "";
             for (int i = 0; i < 4; i++)
             {
                 seriesPassport += random.Next(0, 10).ToString();
             }
             adult.SeriesPassport = seriesPassport;
+
+            string numberPassport = "";
+            for (int i = 0; i < 6; i++)
+            {
+                numberPassport += random.Next(0, 10).ToString();
+            }
+            adult.NumberPassport = numberPassport;
 
             if (random.Next(2) == 0)
             {
