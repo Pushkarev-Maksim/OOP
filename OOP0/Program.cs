@@ -16,6 +16,7 @@ namespace OOP1
             // 5.a. Создание списка PersonList, состоящего из рандомного кол-ва
             // взрослых и детей
             PersonList personList = new PersonList();
+
             Console.WriteLine("Рандомный список взрослых и детей:\n");
 
             Random random = new Random();
