@@ -145,5 +145,14 @@
                 $"номер паспорта: {NumberPassport}, партнер: {partner}, " +
                 $"место работы: {Job}\n";
         }
+
+        /// <summary>
+        /// Метод для класса Adult.
+        /// </summary>
+        /// <returns>Строка.</returns>
+        public string GetExtraIncome()
+        {
+            return "Ищет дополнительный заработок, чтобы содержать семью";
+        }
     }
 }

@@ -18,22 +18,39 @@ namespace OOP1
             PersonList personList = new PersonList();
             Console.WriteLine("Рандомный список взрослых и детей:\n");
             
-            Random random = new Random();
+            Random random = new Random();;
             
-            int numAdults = random.Next(6, 10);
-            int numChildren = random.Next(6, 10);
-
-            for (int i = 0; i < numAdults; i++)
+            for (int i = 0; i < 7; i++)
             {
-                personList.AddPerson(PersonGenerate.GetRandomAdult());
-            }
-
-            for (int i = 0; i < numChildren; i++)
-            {
-                personList.AddPerson(PersonGenerate.GetRandomChild());
+                if (random.NextDouble() < 0.5)
+                {
+                    personList.AddPerson(PersonGenerate.GetRandomAdult());
+                }
+                else
+                {
+                    personList.AddPerson(PersonGenerate.GetRandomChild());
+                }
             }
             
             Console.WriteLine(personList.GetInfo());
+
+            if (personList.GetCountPerson() > 3)
+            {
+                var fourthPerson = personList.GetPersonAtIndex(3);
+                Console.WriteLine($"Тип четвертого человека: {fourthPerson.GetType()}");
+
+                switch (fourthPerson)
+                {
+                    case Adult adult:
+                        Console.WriteLine($"Четвертый взрослый: {adult.Surname} {adult.Name}");
+                        Console.WriteLine(adult.GetExtraIncome());
+                        break;
+                    case Child child:
+                        Console.WriteLine($"Четвертый ребенок: {child.Surname} {child.Name}");
+                        Console.WriteLine(child.GetChewingGum());
+                        break;
+                }
+            }
         }
     }
 }

@@ -98,5 +98,14 @@
             return base.GetInfo() +  $", мама: {infoMother}, " +
                 $"папа: {infoFather}, место обучения: {PlaceOfStudy}\n";
         }
+
+        /// <summary>
+        /// Метод для класса Child.
+        /// </summary>
+        /// <returns>Строка.</returns>
+        public string GetChewingGum()
+        {
+            return "Жует жвачку и не слушает преподавателя";
+        }
     }
 }
