@@ -72,7 +72,8 @@ namespace PersonLibrary
 
             set
             {
-                if (value.Length == 6 && IsSeriesOrNumberPassportValid(value))
+                if (value.Length == 6 
+                    && IsSeriesOrNumberPassportValid(value))
                 {
                     _numberPassport = value;
                 }
@@ -96,7 +97,8 @@ namespace PersonLibrary
 
             set
             {
-                if (value.Length == 4 && IsSeriesOrNumberPassportValid(value))
+                if (value.Length == 4 
+                    && IsSeriesOrNumberPassportValid(value))
                 {
                     _seriesPassport = value;
                 }

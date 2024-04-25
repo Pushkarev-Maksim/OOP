@@ -33,8 +33,11 @@ namespace OOP1
                 }
             }
 
+            // 5.b. Вывод на экран описания всех людей списка.
             Console.WriteLine(personList.GetInfo());
-
+            
+            // 5.c. Определение типа четвертого человека в списке
+            // и выполнения методов, присущих этому классу.
             if (personList.GetCountPerson() > 3)
             {
                 var fourthPerson = personList.GetPersonAtIndex(3);
