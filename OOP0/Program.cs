@@ -45,7 +45,6 @@ namespace OOP1
 
                 switch (fourthPerson)
                 {
-                    //TODO: RSDN +
                     case Adult adult:
                     {
                         Console.WriteLine($"Четвертый взрослый: {adult.Surname} {adult.Name}");
