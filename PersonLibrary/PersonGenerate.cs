@@ -127,17 +127,17 @@ namespace PersonLibrary
                 case Gender.Male:
                 {
                     person.Name = maleName
-                        [random.Next(0, maleName.Length)];
+                            [random.Next(0, maleName.Length)];
                     person.Surname = maleSurname
-                        [random.Next(0, maleSurname.Length)];
+                            [random.Next(0, maleSurname.Length)];
                     break;
                 }
                 case Gender.Female:
                 {
                     person.Name = femaleName
-                        [random.Next(0, femaleName.Length)];
+                            [random.Next(0, femaleName.Length)];
                     person.Surname = femaleSurname
-                        [random.Next(0, femaleSurname.Length)];
+                            [random.Next(0, femaleSurname.Length)];
                     break;
                 }
             }
