@@ -190,7 +190,8 @@ namespace PersonLibrary
         /// <summary>
         /// Метод генерации паспортных данных
         /// </summary>
-        /// <param name="data">Кол-во цифр.</param>
+        /// <param name="data">Кол-во цифр в номере 
+        /// или серии паспорта.</param>
         /// <returns>Строку с номером или серией паспорта.</returns>
         private static string PassportDataGeneration(int data)
         {
