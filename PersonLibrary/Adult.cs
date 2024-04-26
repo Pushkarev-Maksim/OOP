@@ -82,7 +82,7 @@ namespace PersonLibrary
 
             set
             {
-                if (value.Length == 6 
+                if (value.Length == PassportNumberDigits
                     && IsSeriesOrNumberPassportValid(value))
                 {
                     _numberPassport = value;
@@ -90,7 +90,8 @@ namespace PersonLibrary
                 else
                 {
                     throw new ArgumentException
-                        ("Номер паспорта должен содержать 6 цифр");
+                        ($"Номер паспорта должен содержать " +
+                        $"{PassportNumberDigits} цифр");
                 }
             }
         }
@@ -107,7 +108,7 @@ namespace PersonLibrary
 
             set
             {
-                if (value.Length == 4 
+                if (value.Length == PassportSeriesDigits
                     && IsSeriesOrNumberPassportValid(value))
                 {
                     _seriesPassport = value;
@@ -115,7 +116,8 @@ namespace PersonLibrary
                 else
                 {
                     throw new ArgumentException
-                        ("Серия паспорта должна содержать 4 цифры");
+                        ($"Серия паспорта должна содержать " +
+                        $"{PassportSeriesDigits} цифры");
                 }
             }
         }
@@ -134,7 +136,8 @@ namespace PersonLibrary
                 if (value != null && value.Gender == Gender)
                 {
                     throw new ArgumentException
-                        ("Однополые браки запрещены в РФ (Семейный кодекс РФ)");
+                        ("Однополые браки запрещены в РФ " +
+                        "(Семейный кодекс РФ)");
                 }
 
                 if (value != null)
