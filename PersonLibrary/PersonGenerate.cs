@@ -51,23 +51,23 @@ namespace PersonLibrary
 
             switch (person.Gender)
             {
-                //TODO: RSDN
+                //TODO: RSDN +
                 case Gender.Male:
-                    {
-                        person.Name = maleName[
-                        random.Next(0, maleName.Length)];
-                        person.Surname = maleSurname
+                {
+                    person.Name = maleName
+                            [random.Next(0, maleName.Length)];
+                    person.Surname = maleSurname
                             [random.Next(0, maleSurname.Length)];
-                        break;
-                    }
+                    break;
+                }
                 case Gender.Female:
-                    {
-                        person.Name = femaleName[
-                        random.Next(0, femaleName.Length)];
-                        person.Surname = femaleSurname
+                {
+                    person.Name = femaleName
+                            [random.Next(0, femaleName.Length)];
+                    person.Surname = femaleSurname
                             [random.Next(0, femaleSurname.Length)];
-                        break;
-                    }
+                    break;
+                }
             }
         }
 
@@ -123,23 +123,23 @@ namespace PersonLibrary
             
             switch (person.Gender)
             {
-                //TODO: RSDN
+                //TODO: RSDN +
                 case Gender.Male:
-                    {
-                        person.Name = maleName
-                            [random.Next(0, maleName.Length)];
-                        person.Surname = maleSurname
-                            [random.Next(0, maleSurname.Length)];
-                        break;
-                    }
+                {
+                    person.Name = maleName
+                        [random.Next(0, maleName.Length)];
+                    person.Surname = maleSurname
+                        [random.Next(0, maleSurname.Length)];
+                    break;
+                }
                 case Gender.Female:
-                    {
-                        person.Name = femaleName
-                            [random.Next(0, femaleName.Length)];
-                        person.Surname = femaleSurname
-                            [random.Next(0, femaleSurname.Length)];
-                        break;
-                    }
+                {
+                    person.Name = femaleName
+                        [random.Next(0, femaleName.Length)];
+                    person.Surname = femaleSurname
+                        [random.Next(0, femaleSurname.Length)];
+                    break;
+                }
             }
         }
 
@@ -164,16 +164,16 @@ namespace PersonLibrary
             adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
             string seriesPassport = "";
-            //TODO: duplication
-            for (int i = 0; i < 4; i++)
+            //TODO: duplication  +
+            for (int i = 0; i < Adult.PassportSeriesDigits; i++)
             {
                 seriesPassport += random.Next(0, 10).ToString();
             }
             adult.SeriesPassport = seriesPassport;
 
             string numberPassport = "";
-            //TODO: duplication
-            for (int i = 0; i < 6; i++)
+            //TODO: duplication +
+            for (int i = 0; i < Adult.PassportNumberDigits; i++)
             {
                 numberPassport += random.Next(0, 10).ToString();
             }
@@ -181,16 +181,19 @@ namespace PersonLibrary
 
             if (random.Next(2) == 0)
             {
-                //TODO: RSDN
+                //TODO: RSDN +
                 switch (adult.Gender)
                 {
                     case Gender.Male:
+                    {
                         adult.Partner = GetRandomAdult(Gender.Female);
                         break;
-
+                    }
                     case Gender.Female:
+                    {
                         adult.Partner = GetRandomAdult(Gender.Male);
                         break;
+                    }
                 }
             }
         }

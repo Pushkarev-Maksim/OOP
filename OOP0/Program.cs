@@ -45,17 +45,24 @@ namespace OOP1
 
                 switch (fourthPerson)
                 {
-                    //TODO: RSDN
+                    //TODO: RSDN +
                     case Adult adult:
+                    {
                         Console.WriteLine($"Четвертый взрослый: {adult.Surname} {adult.Name}");
                         Console.WriteLine(adult.GetExtraIncome());
                         break;
+                    }
                     case Child child:
+                    {
                         Console.WriteLine($"Четвертый ребенок: {child.Surname} {child.Name}");
                         Console.WriteLine(child.GetChewingGum());
                         break;
+                    }
                 }
             }
+            
+            Console.WriteLine("Для завершения программы нажмите на любую клавишу!");
+            Console.ReadKey();
         }
     }
 }
