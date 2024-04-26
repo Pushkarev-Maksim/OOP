@@ -51,6 +51,7 @@ namespace PersonLibrary
 
             switch (person.Gender)
             {
+                //TODO: RSDN
                 case Gender.Male:
                     {
                         person.Name = maleName[
@@ -122,6 +123,7 @@ namespace PersonLibrary
             
             switch (person.Gender)
             {
+                //TODO: RSDN
                 case Gender.Male:
                     {
                         person.Name = maleName
@@ -162,6 +164,7 @@ namespace PersonLibrary
             adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
             string seriesPassport = "";
+            //TODO: duplication
             for (int i = 0; i < 4; i++)
             {
                 seriesPassport += random.Next(0, 10).ToString();
@@ -169,6 +172,7 @@ namespace PersonLibrary
             adult.SeriesPassport = seriesPassport;
 
             string numberPassport = "";
+            //TODO: duplication
             for (int i = 0; i < 6; i++)
             {
                 numberPassport += random.Next(0, 10).ToString();
@@ -177,6 +181,7 @@ namespace PersonLibrary
 
             if (random.Next(2) == 0)
             {
+                //TODO: RSDN
                 switch (adult.Gender)
                 {
                     case Gender.Male:
