@@ -188,7 +188,7 @@ namespace PersonLibrary
         /// <summary>
         /// Метод генерации паспортных данных.
         /// </summary>
-        /// <param name="data">Кол-во цифр в номере 
+        /// <param name="numberOfDigits">Кол-во цифр в номере 
         /// или серии паспорта.</param>
         /// <returns>Строку с номером или серией паспорта.</returns>
         private static string PassportDataGeneration
@@ -196,13 +196,13 @@ namespace PersonLibrary
         {
             Random random = new Random
                 (Guid.NewGuid().GetHashCode());
-            string passportData = "";
+            string passportId = "";
             for (int i = 0; i < numberOfDigits; i++)
             {
-                passportData += random.Next(0, 10).ToString();
+                passportId += random.Next(0, 10).ToString();
             }
 
-            return passportData;
+            return passportId;
         }
 
         /// <summary>
