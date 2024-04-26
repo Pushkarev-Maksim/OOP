@@ -161,11 +161,9 @@ namespace PersonLibrary
 
             adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
-            //TODO: duplication +
             adult.SeriesPassport = 
                 PassportDataGeneration(Adult.PassportSeriesDigits);
 
-            //TODO: duplication +
             adult.NumberPassport = 
                 PassportDataGeneration(Adult.PassportNumberDigits);
 
@@ -193,12 +191,13 @@ namespace PersonLibrary
         /// <param name="data">Кол-во цифр в номере 
         /// или серии паспорта.</param>
         /// <returns>Строку с номером или серией паспорта.</returns>
-        private static string PassportDataGeneration(int data)
+        private static string PassportDataGeneration
+            (int numberOfDigits)
         {
             Random random = new Random
                 (Guid.NewGuid().GetHashCode());
             string passportData = "";
-            for (int i = 0; i < data; i++)
+            for (int i = 0; i < numberOfDigits; i++)
             {
                 passportData += random.Next(0, 10).ToString();
             }
