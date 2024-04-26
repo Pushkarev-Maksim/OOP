@@ -161,21 +161,13 @@ namespace PersonLibrary
 
             adult.Age = random.Next(adult.MinAge, adult.MaxAge);
 
-            //TODO: duplication
-            string seriesPassport = "";
-            for (int i = 0; i < Adult.PassportSeriesDigits; i++)
-            {
-                seriesPassport += random.Next(0, 10).ToString();
-            }
-            adult.SeriesPassport = seriesPassport;
+            //TODO: duplication +
+            adult.SeriesPassport = 
+                PassportDataGeneration(Adult.PassportSeriesDigits);
 
-            //TODO: duplication
-            string numberPassport = "";
-            for (int i = 0; i < Adult.PassportNumberDigits; i++)
-            {
-                numberPassport += random.Next(0, 10).ToString();
-            }
-            adult.NumberPassport = numberPassport;
+            //TODO: duplication +
+            adult.NumberPassport = 
+                PassportDataGeneration(Adult.PassportNumberDigits);
 
             if (random.Next(2) == 0)
             {
@@ -193,6 +185,24 @@ namespace PersonLibrary
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Метод генерации паспортных данных
+        /// </summary>
+        /// <param name="data">Кол-во цифр.</param>
+        /// <returns>Строку с номером или серией паспорта.</returns>
+        private static string PassportDataGeneration(int data)
+        {
+            Random random = new Random
+                (Guid.NewGuid().GetHashCode());
+            string passportData = "";
+            for (int i = 0; i < data; i++)
+            {
+                passportData += random.Next(0, 10).ToString();
+            }
+
+            return passportData;
         }
 
         /// <summary>
