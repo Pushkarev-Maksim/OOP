@@ -32,14 +32,14 @@ namespace PersonLibrary
         public override int MinAge { get; } = 18;
 
         /// <summary>
-        /// Количество цифр в номере паспорта.
-        /// </summary>
-        public const int PassportNumberDigits = 6;
-
-        /// <summary>
         /// Количество цифр в серии паспорта.
         /// </summary>
         public const int PassportSeriesDigits = 4;
+
+        /// <summary>
+        /// Количество цифр в номере паспорта.
+        /// </summary>
+        public const int PassportNumberDigits = 6;
 
         /// <summary>
         /// Конструктор класса Adult.
