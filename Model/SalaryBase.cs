@@ -16,5 +16,11 @@ namespace Model
         /// </summary>
         /// <returns></returns>
         public abstract double SalaryCalculation();
+
+
+        public static double Check(double value)
+        {
+
+        }
     }
 }
