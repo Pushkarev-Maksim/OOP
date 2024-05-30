@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// Класс для оплаты по окладу за месяц
     /// </summary>
-    internal class SalaryMonthly : SalaryBase
+    public class SalaryMonthly : SalaryBase
     {
         /// <summary>
         /// Оклад за полный месяц.

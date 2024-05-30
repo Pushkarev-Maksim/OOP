@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// Класс для оплаты по часовой тарифной ставке.
     /// </summary>
-    internal class SalaryHourlyRate : SalaryBase
+    public class SalaryHourlyRate : SalaryBase
     {
         /// <summary>
         /// Размер часовой тарифной ставки.
