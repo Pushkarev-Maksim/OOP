@@ -3,14 +3,8 @@
     /// <summary>
     /// Основной класс программы.
     /// </summary>
-    internal class Program
+    internal abstract class Program
     {
-        /// <summary>
-        /// Точка входа в программу.
-        /// </summary>
-        private static void Main()
-        {
-            DFDVD
-        }
+
     }
 }
