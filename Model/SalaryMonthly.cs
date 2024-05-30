@@ -17,7 +17,7 @@ namespace Model
         private double _fixedSalary;
 
         /// <summary>
-        /// Количество рабочих дней месяце.
+        /// Количество рабочих дней в месяце.
         /// </summary>
         private int _monthlyWorkingDays;
 
@@ -37,6 +37,11 @@ namespace Model
             }
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Оклад за полный месяц " +
+                        "не может быть отрицательным!");
+                }
                 _fixedSalary = value;
             }
         }
@@ -52,12 +57,19 @@ namespace Model
             }
             set
             {
+                if (value < 0 || value > 31)
+                {
+                    throw new ArgumentException("Количество рабочих дней " +
+                        "в месяце не может быть отрицательным или " +
+                        "больше 31!");
+                }
                 _monthlyWorkingDays = value;
             }
         }
 
         /// <summary>
-        /// Задание количества фактически отработанных дней.
+        /// Задание количества фактически отработанных дней
+        /// в месяце.
         /// </summary>
         public int ActualWorkedDays
         {
@@ -67,6 +79,12 @@ namespace Model
             }
             set
             {
+                if (value < 0 || value > 31)
+                {
+                    throw new ArgumentException("Количество фактически " +
+                        "отработанных дней в месяце не может быть отрицательным " +
+                        "или больше 31!");
+                }
                 _actualWorkedDays = value;
             }
         }

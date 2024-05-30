@@ -31,13 +31,18 @@ namespace Model
                 return _hourlyRate;
             }
             set 
-            { 
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Почасовая тарифная ставка " +
+                        "не может быть отрицательной!");
+                }
                 _hourlyRate = value; 
             }
         }
 
         /// <summary>
-        /// Задание количества отработанных дней.
+        /// Задание количества отработанных часов.
         /// </summary>
         public int Hours
         {
@@ -47,6 +52,11 @@ namespace Model
             }
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Количество отработанных " +
+                        "часов не может быть отрицательным!");
+                }
                 _hours = value;
             }
         }

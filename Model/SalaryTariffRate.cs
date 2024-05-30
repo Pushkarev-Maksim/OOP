@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// Класс для оплаты по тарифной ставке.
     /// </summary>
-    public class SallaryTariffRate : SalaryBase
+    public class SalaryTariffRate : SalaryBase
     {
         /// <summary>
         /// Размер тарифной ставки.
@@ -32,6 +32,11 @@ namespace Model
             }
             set
             {
+                if (value < 0) 
+                {
+                    throw new ArgumentException("Тарифная ставка " +
+                        "не может быть отрицательной!");
+                }
                 _tariffRate = value;
             }
         }
@@ -47,6 +52,11 @@ namespace Model
             }
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Количество отработанных дней" +
+                        "не может быть отрицательным!");
+                }
                 _days = value;
             }
         }
