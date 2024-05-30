@@ -27,6 +27,51 @@ namespace Model
         private int _actualWorkedDays;
 
         /// <summary>
+        /// Задание оклада за полный месяц.
+        /// </summary>
+        public double FixedSalary
+        {
+            get 
+            { 
+                return _fixedSalary; 
+            }
+            set
+            {
+                _fixedSalary = value;
+            }
+        }
+
+        /// <summary>
+        /// Задание количества рабочих дней в месяце.
+        /// </summary>
+        public int MonthlyWorkingDays
+        {
+            get
+            {
+                return _monthlyWorkingDays;
+            }
+            set
+            {
+                _monthlyWorkingDays = value;
+            }
+        }
+
+        /// <summary>
+        /// Задание количества фактически отработанных дней.
+        /// </summary>
+        public int ActualWorkedDays
+        {
+            get
+            {
+                return _actualWorkedDays;
+            }
+            set
+            {
+                _actualWorkedDays = value;
+            }
+        }
+
+        /// <summary>
         /// Вычисление заработной платы по окладу за месяц.
         /// </summary>
         /// <returns></returns>

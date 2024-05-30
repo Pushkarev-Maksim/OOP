@@ -22,6 +22,36 @@ namespace Model
         private int _days;
 
         /// <summary>
+        /// Задание размера тарифной ставки.
+        /// </summary>
+        public double TariffRate
+        {
+            get 
+            {
+                return _tariffRate; 
+            }
+            set
+            {
+                _tariffRate = value;
+            }
+        }
+
+        /// <summary>
+        /// Задание количества отработанных дней.
+        /// </summary>
+        public int Days
+        {
+            get
+            {
+                return _days;
+            }
+            set
+            {
+                _days = value;
+            }
+        }
+
+        /// <summary>
         /// Вычисление заработной платы по тарифной ставке.
         /// </summary>
         /// <returns></returns>

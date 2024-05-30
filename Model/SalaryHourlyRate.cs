@@ -22,6 +22,36 @@ namespace Model
         private int _hours;
 
         /// <summary>
+        /// Задание размера часовой тарифной ставки.
+        /// </summary>
+        public double HourlyRate
+        {
+            get
+            {
+                return _hourlyRate;
+            }
+            set 
+            { 
+                _hourlyRate = value; 
+            }
+        }
+
+        /// <summary>
+        /// Задание количества отработанных дней.
+        /// </summary>
+        public int Hours
+        {
+            get
+            {
+                return _hours;
+            }
+            set
+            {
+                _hours = value;
+            }
+        }
+        
+        /// <summary>
         /// Вычисление заработной платы по часовой тарифной ставке.
         /// </summary>
         /// <returns></returns>
