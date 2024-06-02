@@ -39,7 +39,7 @@ namespace OOP1
                 }
 
                 SalaryBase motion = SalaryReader.ReadSalary();
-                Console.WriteLine($"Координата: " +
+                Console.WriteLine($"Размер зарплаты: " +
                     $"{Math.Round(motion.CalculateSalary(), 2)}\n");
             }
         }
