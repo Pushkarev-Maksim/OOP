@@ -31,10 +31,7 @@ namespace Model
         /// </summary>
         public double FixedSalary
         {
-            get 
-            { 
-                return _fixedSalary; 
-            }
+            get { return _fixedSalary; }
             set
             {
                 CheckNegativeNumber(value, "Размер оклада за полный месяц");
@@ -47,10 +44,7 @@ namespace Model
         /// </summary>
         public int MonthlyWorkingDays
         {
-            get
-            {
-                return _monthlyWorkingDays;
-            }
+            get { return _monthlyWorkingDays; }
             set
             {
                 CheckNegativeNumber(value, "Количество рабочих дней в месяце");
@@ -67,10 +61,7 @@ namespace Model
         /// </summary>
         public int ActualWorkedDays
         {
-            get
-            {
-                return _actualWorkedDays;
-            }
+            get { return _actualWorkedDays; }
             set
             {
                 CheckNegativeNumber(value, "Количество фактически " +

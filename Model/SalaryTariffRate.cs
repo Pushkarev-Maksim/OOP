@@ -26,10 +26,7 @@ namespace Model
         /// </summary>
         public double TariffRate
         {
-            get 
-            {
-                return _tariffRate; 
-            }
+            get { return _tariffRate; }
             set
             {
                 CheckNegativeNumber(value, "Размер тарифной ставки");
@@ -42,10 +39,7 @@ namespace Model
         /// </summary>
         public int Days
         {
-            get
-            {
-                return _days;
-            }
+            get { return _days; }
             set
             {
                 CheckNegativeNumber(value, "Количество отработанных дней");

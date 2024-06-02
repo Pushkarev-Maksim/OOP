@@ -26,10 +26,7 @@ namespace Model
         /// </summary>
         public double HourlyRate
         {
-            get
-            {
-                return _hourlyRate;
-            }
+            get { return _hourlyRate; }
             set 
             {
                 CheckNegativeNumber(value, "Размер часовой тарифной ставки");
@@ -42,10 +39,7 @@ namespace Model
         /// </summary>
         public int Hours
         {
-            get
-            {
-                return _hours;
-            }
+            get { return _hours; }
             set
             {
                 CheckNegativeNumber(value, "Количество отработанных часов");
