@@ -85,7 +85,7 @@ namespace Model
         {
             if (value > 31)
             {
-                throw new ArgumentOutOfRangeException("Количество дней в месяце " +
+                throw new ArgumentException("Количество дней в месяце " +
                     "не может быть больше 31");
             }
             return true;

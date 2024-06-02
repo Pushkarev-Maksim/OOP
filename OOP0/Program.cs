@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Model;
 
 namespace OOP1
@@ -16,7 +15,7 @@ namespace OOP1
         {
             while (true)
             {
-                Console.WriteLine("Для выхода из программы нажмите \'x\'\n" +
+                Console.WriteLine("Для выхода из программы нажмите 'x'\n" +
                     "Для начала работы нажмите любую другую клавишу...");
 
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
@@ -28,14 +27,14 @@ namespace OOP1
                     case 'x':
                     case 'X':
                     case 'Х':
-                        {
-                            return;
-                        }
+                    {
+                        return;
+                    }
 
                     default:
-                        {
-                            break;
-                        }
+                    {
+                        break;
+                    }
                 }
 
                 SalaryBase motion = SalaryReader.ReadSalary();

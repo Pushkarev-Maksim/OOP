@@ -38,18 +38,24 @@ namespace OOP1
                     {
                         case 1:
                         {
+                            Console.WriteLine("Расчет оплаты по часовой " +
+                                "тарифной ставке: ");
                             salary = SalaryHourlyRate();
                             break;
                         }
 
                         case 2:
                         {
+                            Console.WriteLine("Расчет оплаты по окладу " +
+                                "за месяц: ");
                             salary = ReadSalaryMonthly();
                             break;
                         }
 
                         case 3:
                         {
+                            Console.WriteLine("Расчет оплаты по тарифной " +
+                                "ставке: ");
                             salary = ReadSalaryTariffRate();
                             break;
                         }
