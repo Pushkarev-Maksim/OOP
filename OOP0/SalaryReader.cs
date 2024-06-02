@@ -14,7 +14,7 @@ namespace OOP1
         /// </summary>
         /// <returns>Способ начисления зарплаты.</returns>
         /// <exception cref="ArgumentException">Неправильный выбор
-        /// способа зачисления зарплаты</exception>
+        /// способа зачисления зарплаты.</exception>
         public static SalaryBase ReadSalary()
         {
             SalaryBase salary = new SalaryHourlyRate();
