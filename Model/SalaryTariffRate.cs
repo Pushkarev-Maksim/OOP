@@ -32,11 +32,7 @@ namespace Model
             }
             set
             {
-                if (value < 0) 
-                {
-                    throw new ArgumentException("Тарифная ставка " +
-                        "не может быть отрицательной!");
-                }
+                CheckNegativeNumber(value, "Размер тарифной ставки");
                 _tariffRate = value;
             }
         }
@@ -52,11 +48,7 @@ namespace Model
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Количество отработанных дней" +
-                        "не может быть отрицательным!");
-                }
+                CheckNegativeNumber(value, "Количество отработанных дней");
                 _days = value;
             }
         }
@@ -65,7 +57,7 @@ namespace Model
         /// Вычисление заработной платы по тарифной ставке.
         /// </summary>
         /// <returns></returns>
-        public override double SalaryCalculation()
+        public override double CalculateSalary()
         {
             return _tariffRate * _days;
         }

@@ -32,11 +32,7 @@ namespace Model
             }
             set 
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Почасовая тарифная ставка " +
-                        "не может быть отрицательной!");
-                }
+                CheckNegativeNumber(value, "Размер часовой тарифной ставки");
                 _hourlyRate = value; 
             }
         }
@@ -52,11 +48,7 @@ namespace Model
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Количество отработанных " +
-                        "часов не может быть отрицательным!");
-                }
+                CheckNegativeNumber(value, "Количество отработанных часов");
                 _hours = value;
             }
         }
@@ -65,7 +57,7 @@ namespace Model
         /// Вычисление заработной платы по часовой тарифной ставке.
         /// </summary>
         /// <returns></returns>
-        public override double SalaryCalculation()
+        public override double CalculateSalary()
         {
             return _hourlyRate * _hours;
         }

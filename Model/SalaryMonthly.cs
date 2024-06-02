@@ -37,11 +37,7 @@ namespace Model
             }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Оклад за полный месяц " +
-                        "не может быть отрицательным!");
-                }
+                CheckNegativeNumber(value, "Размер оклада за полный месяц");
                 _fixedSalary = value;
             }
         }
@@ -57,13 +53,11 @@ namespace Model
             }
             set
             {
-                if (value < 0 || value > 31)
+                CheckNegativeNumber(value, "Количество рабочих дней в месяце");
+                if (CheckDayInMonth(value))
                 {
-                    throw new ArgumentException("Количество рабочих дней " +
-                        "в месяце не может быть отрицательным или " +
-                        "больше 31!");
+                    _monthlyWorkingDays = value;
                 }
-                _monthlyWorkingDays = value;
             }
         }
 
@@ -79,21 +73,38 @@ namespace Model
             }
             set
             {
-                if (value < 0 || value > 31)
+                CheckNegativeNumber(value, "Количество фактически " +
+                    "отработанных дней в месяце");
+                if (CheckDayInMonth(value))
                 {
-                    throw new ArgumentException("Количество фактически " +
-                        "отработанных дней в месяце не может быть отрицательным " +
-                        "или больше 31!");
+                    _actualWorkedDays = value;
                 }
-                _actualWorkedDays = value;
             }
+        }
+
+        /// <summary>
+        /// Проверка количества дней в месяце.
+        /// </summary>
+        /// <param name="value">Кол-во введенных дней.</param>
+        /// <returns>true, если кол-во дней не больше 31,
+        /// false - исключение.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Кол-во дней в
+        /// месяце больше 31</exception>
+        private bool CheckDayInMonth(int value)
+        {
+            if (value > 31)
+            {
+                throw new ArgumentOutOfRangeException("Количество дней в месяце " +
+                    "не может быть больше 31");
+            }
+            return true;
         }
 
         /// <summary>
         /// Вычисление заработной платы по окладу за месяц.
         /// </summary>
         /// <returns></returns>
-        public override double SalaryCalculation()
+        public override double CalculateSalary()
         {
             return _fixedSalary / _monthlyWorkingDays * _actualWorkedDays;
         }
