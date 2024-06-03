@@ -23,7 +23,7 @@ namespace OOP1
 
                 switch (userInput.KeyChar)
                 {
-                    case '1': 2
+                    case '1':
                         {
                             return;
                         }
