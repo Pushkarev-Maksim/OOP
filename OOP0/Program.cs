@@ -15,26 +15,28 @@ namespace OOP1
         {
             while (true)
             {
-                Console.WriteLine("Для выхода из программы нажмите 'x'\n" +
-                    "Для начала работы нажмите любую другую клавишу...");
+                Console.WriteLine("Для выхода из программы нажмите '1'\n" +
+                    "Для начала работы нажмите '2'");
 
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 Console.WriteLine();
 
                 switch (userInput.KeyChar)
                 {
-                    case 'х':
-                    case 'x':
-                    case 'X':
-                    case 'Х':
-                    {
-                        return;
-                    }
+                    case '1': 2
+                        {
+                            return;
+                        }
+
+                    case '2':
+                        {
+                            break;
+                        }
 
                     default:
-                    {
-                        break;
-                    }
+                        {
+                            continue;
+                        }
                 }
 
                 SalaryBase motion = SalaryReader.ReadSalary();
