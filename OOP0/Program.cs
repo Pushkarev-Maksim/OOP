@@ -13,11 +13,10 @@ namespace OOP1
         /// </summary>
         public static void Main()
         {
-            Console.WriteLine("Для выхода из программы нажмите '1'\n" +
-                    "Для начала работы нажмите '2'");
-
             while (true)
             {
+                Console.WriteLine("Для выхода из программы нажмите '1'\n" +
+                                  "Для начала работы нажмите '2'");
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 Console.WriteLine();
 
@@ -35,7 +34,6 @@ namespace OOP1
 
                     default:
                     {
-                        Console.WriteLine("Введите 1 или 2!");
                         continue;
                     }
                 }

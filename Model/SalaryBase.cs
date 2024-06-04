@@ -34,7 +34,7 @@ namespace Model
             if (number.CompareTo(default(T)) < 0)
             {
                 throw new ArgumentException($"{name} " +
-                    "не могут быть отрицательными числами!");
+                    "не может быть отрицательным числом!");
             }
             return number;
         }
