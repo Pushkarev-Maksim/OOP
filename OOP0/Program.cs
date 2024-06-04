@@ -13,30 +13,31 @@ namespace OOP1
         /// </summary>
         public static void Main()
         {
-            while (true)
-            {
-                Console.WriteLine("Для выхода из программы нажмите '1'\n" +
+            Console.WriteLine("Для выхода из программы нажмите '1'\n" +
                     "Для начала работы нажмите '2'");
 
+            while (true)
+            {
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
                 Console.WriteLine();
 
                 switch (userInput.KeyChar)
                 {
                     case '1':
-                        {
-                            return;
-                        }
+                    {
+                        return;
+                    }
 
                     case '2':
-                        {
-                            break;
-                        }
+                    {
+                        break;
+                    }
 
                     default:
-                        {
-                            continue;
-                        }
+                    {
+                        Console.WriteLine("Введите 1 или 2!");
+                        continue;
+                    }
                 }
 
                 SalaryBase motion = SalaryReader.ReadSalary();
