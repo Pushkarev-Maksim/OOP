@@ -74,7 +74,7 @@ namespace View
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(38, 348);
+            this.buttonAdd.Location = new System.Drawing.Point(38, 346);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(222, 31);
             this.buttonAdd.TabIndex = 2;
@@ -184,6 +184,7 @@ namespace View
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

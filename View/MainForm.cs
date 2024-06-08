@@ -17,6 +17,7 @@ namespace View
             InitializeComponent();
             BackColor = Color.AliceBlue;
             dataGridViewSpace.BackgroundColor = Color.LightGray;
+            StartPosition = FormStartPosition.CenterScreen;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
