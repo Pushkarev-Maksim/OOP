@@ -32,108 +32,144 @@ namespace View
         private void InitializeComponent()
         {
             this.payrollMethod = new System.Windows.Forms.GroupBox();
-            this.selectionSalary = new System.Windows.Forms.ComboBox();
-            this.parametersSalary = new System.Windows.Forms.GroupBox();
-            this.salaryHourlyRateUserControl = new View.SalaryHourlyRateUserControl();
-            this.salaryMonthlyUserControl = new View.SalaryMonthlyUserControl();
-            this.salaryTariffRateUserControl = new View.SalaryTariffRateUserControl();
+            this.salaryTariffRate = new System.Windows.Forms.RadioButton();
+            this.salaryMonthly = new System.Windows.Forms.RadioButton();
+            this.salaryHourlyRate = new System.Windows.Forms.RadioButton();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.parametersSalary = new System.Windows.Forms.GroupBox();
+            this.salaryTariffRateUserControl = new View.SalaryTariffRateUserControl();
+            this.salaryMonthlyUserControl = new View.SalaryMonthlyUserControl();
+            this.salaryHourlyRateUserControl = new View.SalaryHourlyRateUserControl();
             this.payrollMethod.SuspendLayout();
             this.parametersSalary.SuspendLayout();
             this.SuspendLayout();
             // 
             // payrollMethod
             // 
-            this.payrollMethod.Controls.Add(this.selectionSalary);
-            this.payrollMethod.Location = new System.Drawing.Point(44, 28);
+            this.payrollMethod.Controls.Add(this.salaryTariffRate);
+            this.payrollMethod.Controls.Add(this.salaryMonthly);
+            this.payrollMethod.Controls.Add(this.salaryHourlyRate);
+            this.payrollMethod.Location = new System.Drawing.Point(11, 11);
+            this.payrollMethod.Margin = new System.Windows.Forms.Padding(2);
             this.payrollMethod.Name = "payrollMethod";
-            this.payrollMethod.Size = new System.Drawing.Size(314, 112);
+            this.payrollMethod.Padding = new System.Windows.Forms.Padding(2);
+            this.payrollMethod.Size = new System.Drawing.Size(264, 114);
             this.payrollMethod.TabIndex = 7;
             this.payrollMethod.TabStop = false;
-            this.payrollMethod.Text = "Способ начисления зарплаты";
-            //this.payrollMethod.Enter += new System.EventHandler(this.payrollMethod_Enter);
+            this.payrollMethod.Text = "Выберите способ начисления зарплаты";
             // 
-            // parametersSalary
+            // salaryTariffRate
             // 
-            this.parametersSalary.Controls.Add(this.salaryHourlyRateUserControl);
-            this.parametersSalary.Controls.Add(this.salaryMonthlyUserControl);
-            this.parametersSalary.Controls.Add(this.salaryTariffRateUserControl);
-            this.parametersSalary.Location = new System.Drawing.Point(44, 146);
-            this.parametersSalary.Name = "parametersSalary";
-            this.parametersSalary.Size = new System.Drawing.Size(314, 150);
-            this.parametersSalary.TabIndex = 10;
-            this.parametersSalary.TabStop = false;
-            this.parametersSalary.Text = "Параметры начисления зарплаты";
-            //this.accrualParameters.Enter += new System.EventHandler(this.accrualParameters_Enter);
+            this.salaryTariffRate.AutoSize = true;
+            this.salaryTariffRate.Location = new System.Drawing.Point(6, 67);
+            this.salaryTariffRate.Name = "salaryTariffRate";
+            this.salaryTariffRate.Size = new System.Drawing.Size(131, 19);
+            this.salaryTariffRate.TabIndex = 12;
+            this.salaryTariffRate.Text = "Тарифная ставка";
+            this.salaryTariffRate.UseVisualStyleBackColor = true;
+            this.salaryTariffRate.CheckedChanged += new System.EventHandler(this.salaryTariffRate_CheckedChanged);
             // 
-            // selectionSalary
+            // salaryMonthly
             // 
-            this.selectionSalary.FormattingEnabled = true;
-            this.selectionSalary.Location = new System.Drawing.Point(22, 49);
-            this.selectionSalary.Name = "selectionSalary";
-            this.selectionSalary.Size = new System.Drawing.Size(269, 28);
-            this.selectionSalary.TabIndex = 9;
-            //this.selectionSalary.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSalarySelection);
+            this.salaryMonthly.AutoSize = true;
+            this.salaryMonthly.Location = new System.Drawing.Point(6, 43);
+            this.salaryMonthly.Name = "salaryMonthly";
+            this.salaryMonthly.Size = new System.Drawing.Size(119, 19);
+            this.salaryMonthly.TabIndex = 11;
+            this.salaryMonthly.Text = "Оклад за месяц";
+            this.salaryMonthly.UseVisualStyleBackColor = true;
+            this.salaryMonthly.CheckedChanged += new System.EventHandler(this.salaryMonthly_CheckedChanged);
+            // 
+            // salaryHourlyRate
+            // 
+            this.salaryHourlyRate.AutoSize = true;
+            this.salaryHourlyRate.Location = new System.Drawing.Point(6, 19);
+            this.salaryHourlyRate.Name = "salaryHourlyRate";
+            this.salaryHourlyRate.Size = new System.Drawing.Size(183, 19);
+            this.salaryHourlyRate.TabIndex = 10;
+            this.salaryHourlyRate.Text = "Часовая тарифная ставка";
+            this.salaryHourlyRate.CheckedChanged += new System.EventHandler(this.salaryHourlyRate_CheckedChanged);
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(50, 302);
+            this.buttonOk.Location = new System.Drawing.Point(379, 129);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(129, 33);
+            this.buttonOk.Size = new System.Drawing.Size(97, 28);
             this.buttonOk.TabIndex = 13;
-            this.buttonOk.Text = "ОК";
+            this.buttonOk.Text = "Ок";
             this.buttonOk.UseVisualStyleBackColor = true;
-            //this.buttonOk.Click += new System.EventHandler(this.ButtonOk);
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(217, 302);
+            this.buttonClose.Location = new System.Drawing.Point(480, 129);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(129, 33);
+            this.buttonClose.Size = new System.Drawing.Size(97, 28);
             this.buttonClose.TabIndex = 14;
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
-            //this.buttonClose.Click += new System.EventHandler(this.ButtonClose);
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // salaryHourlyRateUserControl
+            // parametersSalary
             // 
-            this.salaryHourlyRateUserControl.Location = new System.Drawing.Point(6, 26);
-            this.salaryHourlyRateUserControl.Name = "salaryHourlyRateUserControl";
-            this.salaryHourlyRateUserControl.Size = new System.Drawing.Size(296, 118);
-            this.salaryHourlyRateUserControl.TabIndex = 1;
-            // 
-            // salaryMonthlyUserControl
-            // 
-            this.salaryMonthlyUserControl.Location = new System.Drawing.Point(6, 40);
-            this.salaryMonthlyUserControl.Name = "salaryMonthlyUserControl";
-            this.salaryMonthlyUserControl.Size = new System.Drawing.Size(302, 91);
-            this.salaryMonthlyUserControl.TabIndex = 2;
-            //this.salaryMonthlyUserControl.Load += new System.EventHandler(this.wageRateUserControl1_Load);
+            this.parametersSalary.Controls.Add(this.salaryTariffRateUserControl);
+            this.parametersSalary.Controls.Add(this.salaryMonthlyUserControl);
+            this.parametersSalary.Controls.Add(this.salaryHourlyRateUserControl);
+            this.parametersSalary.Location = new System.Drawing.Point(294, 11);
+            this.parametersSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.parametersSalary.Name = "parametersSalary";
+            this.parametersSalary.Padding = new System.Windows.Forms.Padding(2);
+            this.parametersSalary.Size = new System.Drawing.Size(283, 114);
+            this.parametersSalary.TabIndex = 10;
+            this.parametersSalary.TabStop = false;
+            this.parametersSalary.Text = "Параметры начисления зарплаты";
             // 
             // salaryTariffRateUserControl
             // 
-            this.salaryTariffRateUserControl.Location = new System.Drawing.Point(6, 26);
+            this.salaryTariffRateUserControl.Location = new System.Drawing.Point(4, 23);
+            this.salaryTariffRateUserControl.Margin = new System.Windows.Forms.Padding(2);
             this.salaryTariffRateUserControl.Name = "salaryTariffRateUserControl";
-            this.salaryTariffRateUserControl.Size = new System.Drawing.Size(302, 90);
-            this.salaryTariffRateUserControl.TabIndex = 0;
+            this.salaryTariffRateUserControl.Size = new System.Drawing.Size(259, 86);
+            this.salaryTariffRateUserControl.TabIndex = 2;
+            this.salaryTariffRateUserControl.Visible = false;
+            // 
+            // salaryMonthlyUserControl
+            // 
+            this.salaryMonthlyUserControl.Location = new System.Drawing.Point(4, 23);
+            this.salaryMonthlyUserControl.Margin = new System.Windows.Forms.Padding(2);
+            this.salaryMonthlyUserControl.Name = "salaryMonthlyUserControl";
+            this.salaryMonthlyUserControl.Size = new System.Drawing.Size(261, 79);
+            this.salaryMonthlyUserControl.TabIndex = 1;
+            this.salaryMonthlyUserControl.Visible = false;
+            // 
+            // salaryHourlyRateUserControl
+            // 
+            this.salaryHourlyRateUserControl.Location = new System.Drawing.Point(4, 23);
+            this.salaryHourlyRateUserControl.Margin = new System.Windows.Forms.Padding(2);
+            this.salaryHourlyRateUserControl.Name = "salaryHourlyRateUserControl";
+            this.salaryHourlyRateUserControl.Size = new System.Drawing.Size(258, 79);
+            this.salaryHourlyRateUserControl.TabIndex = 0;
+            this.salaryHourlyRateUserControl.Visible = false;
             // 
             // AddSalary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 410);
+            this.ClientSize = new System.Drawing.Size(588, 168);
             this.Controls.Add(this.payrollMethod);
             this.Controls.Add(this.parametersSalary);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "AddSalary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление зарплаты";
-            //this.Load += new System.EventHandler(this.SalaryLoad);
             this.payrollMethod.ResumeLayout(false);
+            this.payrollMethod.PerformLayout();
             this.parametersSalary.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -142,12 +178,14 @@ namespace View
         #endregion
 
         private GroupBox payrollMethod;
-        private GroupBox parametersSalary;
-        private ComboBox selectionSalary;
         private Button buttonOk;
         private Button buttonClose;
-        private SalaryHourlyRateUserControl salaryHourlyRateUserControl;
-        private SalaryMonthlyUserControl salaryMonthlyUserControl;
+        private RadioButton salaryTariffRate;
+        private RadioButton salaryMonthly;
+        private RadioButton salaryHourlyRate;
+        private GroupBox parametersSalary;
         private SalaryTariffRateUserControl salaryTariffRateUserControl;
+        private SalaryMonthlyUserControl salaryMonthlyUserControl;
+        private SalaryHourlyRateUserControl salaryHourlyRateUserControl;
     }
 }

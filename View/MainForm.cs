@@ -19,20 +19,6 @@ namespace View
             dataGridViewSpace.BackgroundColor = Color.LightGray;
             StartPosition = FormStartPosition.CenterScreen;
         }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBoxCalculator_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewSpace_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {

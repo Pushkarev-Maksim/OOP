@@ -58,7 +58,6 @@ namespace View
             this.groupBoxCalculator.Size = new System.Drawing.Size(554, 235);
             this.groupBoxCalculator.TabIndex = 0;
             this.groupBoxCalculator.TabStop = false;
-            this.groupBoxCalculator.Enter += new System.EventHandler(this.groupBoxCalculator_Enter);
             // 
             // dataGridViewSpace
             // 
@@ -73,7 +72,6 @@ namespace View
             this.dataGridViewSpace.RowTemplate.Height = 25;
             this.dataGridViewSpace.Size = new System.Drawing.Size(545, 221);
             this.dataGridViewSpace.TabIndex = 1;
-            this.dataGridViewSpace.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSpace_CellContentClick);
             // 
             // buttonAdd
             // 
@@ -188,14 +186,12 @@ namespace View
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Калькулятор заработных плат";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBoxCalculator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSpace)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -207,10 +203,10 @@ namespace View
         private Button buttonCleanList;
         private Button buttonFilter;
         private Button buttonResetFilter;
-        private Button buttonRandomSalary;           
+        private Button buttonRandomSalary;
         private ToolStripDropDownButton toolStripDropDownButton;
-        private ToolStrip toolStrip;
-        private ToolStripMenuItem openToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStrip toolStrip;
     }
 }
