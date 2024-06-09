@@ -58,16 +58,16 @@ namespace View
             // 
             // textBoxHourlyRate
             // 
-            this.textBoxHourlyRate.Location = new System.Drawing.Point(152, 13);
-            this.textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxHourlyRate.Location = new System.Drawing.Point(159, 13);
+            this.textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHourlyRate.Name = "textBoxHourlyRate";
-            this.textBoxHourlyRate.Size = new System.Drawing.Size(54, 20);
+            this.textBoxHourlyRate.Size = new System.Drawing.Size(47, 20);
             this.textBoxHourlyRate.TabIndex = 2;
             // 
             // textBoxHours
             // 
-            this.textBoxHours.Location = new System.Drawing.Point(172, 40);
-            this.textBoxHours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxHours.Location = new System.Drawing.Point(173, 37);
+            this.textBoxHours.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHours.Name = "textBoxHours";
             this.textBoxHours.Size = new System.Drawing.Size(33, 20);
             this.textBoxHours.TabIndex = 3;
@@ -80,11 +80,12 @@ namespace View
             this.Controls.Add(this.textBoxHourlyRate);
             this.Controls.Add(this.labelHours);
             this.Controls.Add(this.labelHourlyRate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryHourlyRateUserControl";
             this.Size = new System.Drawing.Size(219, 79);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

@@ -49,7 +49,7 @@ namespace View
             // labelDays
             // 
             this.labelDays.AutoSize = true;
-            this.labelDays.Location = new System.Drawing.Point(21, 37);
+            this.labelDays.Location = new System.Drawing.Point(21, 34);
             this.labelDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDays.Name = "labelDays";
             this.labelDays.Size = new System.Drawing.Size(142, 13);
@@ -61,12 +61,12 @@ namespace View
             this.textBoxTariffRate.Location = new System.Drawing.Point(121, 7);
             this.textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTariffRate.Name = "textBoxTariffRate";
-            this.textBoxTariffRate.Size = new System.Drawing.Size(145, 20);
+            this.textBoxTariffRate.Size = new System.Drawing.Size(86, 20);
             this.textBoxTariffRate.TabIndex = 2;
             // 
             // textBoxDays
             // 
-            this.textBoxDays.Location = new System.Drawing.Point(234, 31);
+            this.textBoxDays.Location = new System.Drawing.Point(175, 31);
             this.textBoxDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDays.Name = "textBoxDays";
             this.textBoxDays.Size = new System.Drawing.Size(32, 20);
@@ -76,15 +76,16 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 62);
             this.Controls.Add(this.labelTariffRate);
             this.Controls.Add(this.labelDays);
             this.Controls.Add(this.textBoxTariffRate);
             this.Controls.Add(this.textBoxDays);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryTariffRateUserControl";
+            this.Size = new System.Drawing.Size(219, 79);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

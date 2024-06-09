@@ -51,7 +51,7 @@ namespace View
             // labelMonthlyWorkingDays
             // 
             this.labelMonthlyWorkingDays.AutoSize = true;
-            this.labelMonthlyWorkingDays.Location = new System.Drawing.Point(10, 34);
+            this.labelMonthlyWorkingDays.Location = new System.Drawing.Point(10, 36);
             this.labelMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMonthlyWorkingDays.Name = "labelMonthlyWorkingDays";
             this.labelMonthlyWorkingDays.Size = new System.Drawing.Size(161, 13);
@@ -70,15 +70,15 @@ namespace View
             // 
             // textBoxFixedSalary
             // 
-            this.textBoxFixedSalary.Location = new System.Drawing.Point(144, 12);
+            this.textBoxFixedSalary.Location = new System.Drawing.Point(150, 11);
             this.textBoxFixedSalary.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFixedSalary.Name = "textBoxFixedSalary";
-            this.textBoxFixedSalary.Size = new System.Drawing.Size(161, 20);
+            this.textBoxFixedSalary.Size = new System.Drawing.Size(55, 20);
             this.textBoxFixedSalary.TabIndex = 0;
             // 
             // textBoxMonthlyWorkingDays
             // 
-            this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(275, 34);
+            this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(175, 33);
             this.textBoxMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMonthlyWorkingDays.Name = "textBoxMonthlyWorkingDays";
             this.textBoxMonthlyWorkingDays.Size = new System.Drawing.Size(30, 20);
@@ -86,7 +86,7 @@ namespace View
             // 
             // textBoxActualWorkedDays
             // 
-            this.textBoxActualWorkedDays.Location = new System.Drawing.Point(275, 57);
+            this.textBoxActualWorkedDays.Location = new System.Drawing.Point(175, 54);
             this.textBoxActualWorkedDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxActualWorkedDays.Name = "textBoxActualWorkedDays";
             this.textBoxActualWorkedDays.Size = new System.Drawing.Size(30, 20);
@@ -104,7 +104,7 @@ namespace View
             this.Controls.Add(this.textBoxActualWorkedDays);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryMonthlyUserControl";
-            this.Size = new System.Drawing.Size(317, 86);
+            this.Size = new System.Drawing.Size(219, 79);
             this.ResumeLayout(false);
             this.PerformLayout();
 

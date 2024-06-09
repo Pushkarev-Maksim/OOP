@@ -52,9 +52,9 @@ namespace View
             // 
             this.groupBoxCalculator.Controls.Add(this.dataGridViewSpace);
             this.groupBoxCalculator.Location = new System.Drawing.Point(23, 32);
-            this.groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxCalculator.Name = "groupBoxCalculator";
-            this.groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxCalculator.Size = new System.Drawing.Size(554, 235);
             this.groupBoxCalculator.TabIndex = 0;
             this.groupBoxCalculator.TabStop = false;
@@ -67,7 +67,7 @@ namespace View
             this.dataGridViewSpace.AllowUserToResizeRows = false;
             this.dataGridViewSpace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSpace.Location = new System.Drawing.Point(4, 10);
-            this.dataGridViewSpace.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewSpace.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSpace.Name = "dataGridViewSpace";
             this.dataGridViewSpace.RowHeadersWidth = 51;
             this.dataGridViewSpace.RowTemplate.Height = 25;
@@ -78,17 +78,18 @@ namespace View
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(28, 281);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(166, 25);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(217, 281);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(166, 25);
             this.buttonDelete.TabIndex = 3;
@@ -98,7 +99,7 @@ namespace View
             // buttonCleanList
             // 
             this.buttonCleanList.Location = new System.Drawing.Point(406, 281);
-            this.buttonCleanList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCleanList.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCleanList.Name = "buttonCleanList";
             this.buttonCleanList.Size = new System.Drawing.Size(166, 25);
             this.buttonCleanList.TabIndex = 4;
@@ -118,7 +119,7 @@ namespace View
             // buttonResetFilter
             // 
             this.buttonResetFilter.Location = new System.Drawing.Point(217, 314);
-            this.buttonResetFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonResetFilter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonResetFilter.Name = "buttonResetFilter";
             this.buttonResetFilter.Size = new System.Drawing.Size(166, 25);
             this.buttonResetFilter.TabIndex = 6;
@@ -183,7 +184,7 @@ namespace View
             this.Controls.Add(this.buttonResetFilter);
             this.Controls.Add(this.buttonRandomSalary);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Калькулятор заработных плат";

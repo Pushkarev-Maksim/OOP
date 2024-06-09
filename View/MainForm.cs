@@ -33,5 +33,12 @@ namespace View
         {
 
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            AddSalary addSalary = new AddSalary();
+
+            addSalary.ShowDialog();
+        }
     }
 }
