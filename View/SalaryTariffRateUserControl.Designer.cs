@@ -43,7 +43,7 @@ namespace View
             this.labelTariffRate.Location = new System.Drawing.Point(21, 10);
             this.labelTariffRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTariffRate.Name = "labelTariffRate";
-            this.labelTariffRate.Size = new System.Drawing.Size(43, 13);
+            this.labelTariffRate.Size = new System.Drawing.Size(96, 13);
             this.labelTariffRate.TabIndex = 1;
             this.labelTariffRate.Text = "Тарифная ставка";
             // 
@@ -53,14 +53,14 @@ namespace View
             this.labelDays.Location = new System.Drawing.Point(21, 37);
             this.labelDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(147, 13);
+            this.labelDays.Size = new System.Drawing.Size(142, 13);
             this.labelDays.TabIndex = 0;
             this.labelDays.Text = "Кол-во отработанных дней";
             // 
             // textBoxTariffRate
             // 
             this.textBoxTariffRate.Location = new System.Drawing.Point(67, 10);
-            this.textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTariffRate.Name = "textBoxTariffRate";
             this.textBoxTariffRate.Size = new System.Drawing.Size(145, 20);
             this.textBoxTariffRate.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace View
             // textBoxDays
             // 
             this.textBoxDays.Location = new System.Drawing.Point(180, 37);
-            this.textBoxDays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDays.Name = "textBoxDays";
             this.textBoxDays.Size = new System.Drawing.Size(32, 20);
             this.textBoxDays.TabIndex = 3;
@@ -82,10 +82,11 @@ namespace View
             this.Controls.Add(this.labelDays);
             this.Controls.Add(this.textBoxTariffRate);
             this.Controls.Add(this.textBoxDays);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryTariffRateUserControl";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
