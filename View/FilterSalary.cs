@@ -18,10 +18,5 @@ namespace View
             BackColor = Color.AliceBlue;
             StartPosition = FormStartPosition.CenterScreen;
         }
-
-        private void FilterSalary_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

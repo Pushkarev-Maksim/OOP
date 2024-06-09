@@ -26,5 +26,12 @@ namespace View
 
             addSalary.ShowDialog();
         }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            FilterSalary filterSalary = new FilterSalary();
+
+            filterSalary.ShowDialog();
+        }
     }
 }
