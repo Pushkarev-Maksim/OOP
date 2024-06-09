@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class SalaryMonthlyUserControl : Form
+    public partial class SalaryMonthlyUserControl : UserControl
     {
         public SalaryMonthlyUserControl()
         {

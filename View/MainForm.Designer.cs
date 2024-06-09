@@ -51,9 +51,11 @@ namespace View
             // groupBoxCalculator
             // 
             this.groupBoxCalculator.Controls.Add(this.dataGridViewSpace);
-            this.groupBoxCalculator.Location = new System.Drawing.Point(31, 39);
+            this.groupBoxCalculator.Location = new System.Drawing.Point(23, 32);
+            this.groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxCalculator.Name = "groupBoxCalculator";
-            this.groupBoxCalculator.Size = new System.Drawing.Size(739, 278);
+            this.groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxCalculator.Size = new System.Drawing.Size(554, 235);
             this.groupBoxCalculator.TabIndex = 0;
             this.groupBoxCalculator.TabStop = false;
             this.groupBoxCalculator.Enter += new System.EventHandler(this.groupBoxCalculator_Enter);
@@ -64,66 +66,71 @@ namespace View
             this.dataGridViewSpace.AllowUserToResizeColumns = false;
             this.dataGridViewSpace.AllowUserToResizeRows = false;
             this.dataGridViewSpace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSpace.Location = new System.Drawing.Point(6, 12);
+            this.dataGridViewSpace.Location = new System.Drawing.Point(4, 10);
+            this.dataGridViewSpace.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewSpace.Name = "dataGridViewSpace";
             this.dataGridViewSpace.RowHeadersWidth = 51;
             this.dataGridViewSpace.RowTemplate.Height = 25;
-            this.dataGridViewSpace.Size = new System.Drawing.Size(727, 260);
+            this.dataGridViewSpace.Size = new System.Drawing.Size(545, 221);
             this.dataGridViewSpace.TabIndex = 1;
             this.dataGridViewSpace.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSpace_CellContentClick);
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(38, 346);
+            this.buttonAdd.Location = new System.Drawing.Point(28, 281);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(222, 31);
+            this.buttonAdd.Size = new System.Drawing.Size(166, 25);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(289, 346);
+            this.buttonDelete.Location = new System.Drawing.Point(217, 281);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(222, 31);
+            this.buttonDelete.Size = new System.Drawing.Size(166, 25);
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
             // 
             // buttonCleanList
             // 
-            this.buttonCleanList.Location = new System.Drawing.Point(541, 346);
+            this.buttonCleanList.Location = new System.Drawing.Point(406, 281);
+            this.buttonCleanList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCleanList.Name = "buttonCleanList";
-            this.buttonCleanList.Size = new System.Drawing.Size(222, 31);
+            this.buttonCleanList.Size = new System.Drawing.Size(166, 25);
             this.buttonCleanList.TabIndex = 4;
             this.buttonCleanList.Text = "Очистить список";
             this.buttonCleanList.UseVisualStyleBackColor = true;
             // 
             // buttonFilter
             // 
-            this.buttonFilter.Location = new System.Drawing.Point(38, 386);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonFilter.Location = new System.Drawing.Point(28, 314);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(222, 31);
+            this.buttonFilter.Size = new System.Drawing.Size(166, 25);
             this.buttonFilter.TabIndex = 5;
             this.buttonFilter.Text = "Фильтр";
             this.buttonFilter.UseVisualStyleBackColor = true;
             // 
             // buttonResetFilter
             // 
-            this.buttonResetFilter.Location = new System.Drawing.Point(289, 386);
+            this.buttonResetFilter.Location = new System.Drawing.Point(217, 314);
+            this.buttonResetFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonResetFilter.Name = "buttonResetFilter";
-            this.buttonResetFilter.Size = new System.Drawing.Size(222, 31);
+            this.buttonResetFilter.Size = new System.Drawing.Size(166, 25);
             this.buttonResetFilter.TabIndex = 6;
             this.buttonResetFilter.Text = "Сбросить фильтр";
             this.buttonResetFilter.UseVisualStyleBackColor = true;
             // 
             // buttonRandomSalary
             // 
-            this.buttonRandomSalary.Location = new System.Drawing.Point(541, 386);
-            this.buttonRandomSalary.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonRandomSalary.Location = new System.Drawing.Point(406, 314);
+            this.buttonRandomSalary.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonRandomSalary.Name = "buttonRandomSalary";
-            this.buttonRandomSalary.Size = new System.Drawing.Size(222, 31);
+            this.buttonRandomSalary.Size = new System.Drawing.Size(166, 25);
             this.buttonRandomSalary.TabIndex = 7;
             this.buttonRandomSalary.Text = "Случайная зарплата";
             this.buttonRandomSalary.UseVisualStyleBackColor = true;
@@ -136,19 +143,19 @@ namespace View
             this.openToolStripMenuItem});
             this.toolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton.Name = "toolStripDropDownButton";
-            this.toolStripDropDownButton.Size = new System.Drawing.Size(59, 24);
+            this.toolStripDropDownButton.Size = new System.Drawing.Size(49, 22);
             this.toolStripDropDownButton.Text = "Файл";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.saveToolStripMenuItem.Text = "Сохранить";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.openToolStripMenuItem.Text = "Загрузить";
             // 
             // toolStrip
@@ -158,15 +165,15 @@ namespace View
             this.toolStripDropDownButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(801, 27);
+            this.toolStrip.Size = new System.Drawing.Size(601, 25);
             this.toolStrip.TabIndex = 8;
             this.toolStrip.Text = "toolStrip";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 451);
+            this.ClientSize = new System.Drawing.Size(601, 366);
             this.Controls.Add(this.groupBoxCalculator);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonDelete);
@@ -175,6 +182,9 @@ namespace View
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.buttonResetFilter);
             this.Controls.Add(this.buttonRandomSalary);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Калькулятор заработных плат";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -185,9 +195,6 @@ namespace View
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            
-            this.MaximizeBox = false;
         }
 
         #endregion

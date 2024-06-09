@@ -1,19 +1,18 @@
 ﻿using System.Windows.Forms;
-using View.Properties;
 
 namespace View
 {
     partial class SalaryMonthlyUserControl
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,11 +22,11 @@ namespace View
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Код, автоматически созданный конструктором компонентов
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
@@ -97,7 +96,6 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 82);
             this.Controls.Add(this.labelFixedSalary);
             this.Controls.Add(this.labelMonthlyWorkingDays);
             this.Controls.Add(this.labelActualWorkedDays);
@@ -106,6 +104,7 @@ namespace View
             this.Controls.Add(this.textBoxActualWorkedDays);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryMonthlyUserControl";
+            this.Size = new System.Drawing.Size(317, 86);
             this.ResumeLayout(false);
             this.PerformLayout();
 

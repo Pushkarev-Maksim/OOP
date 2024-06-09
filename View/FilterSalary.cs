@@ -15,6 +15,13 @@ namespace View
         public FilterSalary()
         {
             InitializeComponent();
+            BackColor = Color.AliceBlue;
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void FilterSalary_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

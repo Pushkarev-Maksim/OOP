@@ -67,19 +67,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryHourlyRateUserControl.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SalaryHourlyRateUserControl.Designer.cs">
       <DependentUpon>SalaryHourlyRateUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SalaryMonthlyUserControl.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SalaryMonthlyUserControl.Designer.cs">
       <DependentUpon>SalaryMonthlyUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SalaryTariffRateUserControl.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SalaryTariffRateUserControl.Designer.cs">
       <DependentUpon>SalaryTariffRateUserControl.cs</DependentUpon>
