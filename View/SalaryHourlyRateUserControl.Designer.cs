@@ -59,7 +59,7 @@ namespace View
             // 
             // textBoxHourlyRate
             // 
-            this.textBoxHourlyRate.Location = new System.Drawing.Point(104, 13);
+            this.textBoxHourlyRate.Location = new System.Drawing.Point(159, 13);
             this.textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHourlyRate.Name = "textBoxHourlyRate";
             this.textBoxHourlyRate.Size = new System.Drawing.Size(102, 20);
@@ -67,7 +67,7 @@ namespace View
             // 
             // textBoxHour
             // 
-            this.textBoxHour.Location = new System.Drawing.Point(172, 40);
+            this.textBoxHour.Location = new System.Drawing.Point(228, 40);
             this.textBoxHour.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHour.Name = "textBoxHour";
             this.textBoxHour.Size = new System.Drawing.Size(33, 20);
@@ -77,7 +77,7 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(207, 53);
+            this.ClientSize = new System.Drawing.Size(275, 70);
             this.Controls.Add(this.labelHour);
             this.Controls.Add(this.labelHourlyRate);
             this.Controls.Add(this.textBoxHour);

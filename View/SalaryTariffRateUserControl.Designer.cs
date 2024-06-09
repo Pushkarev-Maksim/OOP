@@ -59,7 +59,7 @@ namespace View
             // 
             // textBoxTariffRate
             // 
-            this.textBoxTariffRate.Location = new System.Drawing.Point(67, 10);
+            this.textBoxTariffRate.Location = new System.Drawing.Point(121, 7);
             this.textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTariffRate.Name = "textBoxTariffRate";
             this.textBoxTariffRate.Size = new System.Drawing.Size(145, 20);
@@ -67,7 +67,7 @@ namespace View
             // 
             // textBoxDays
             // 
-            this.textBoxDays.Location = new System.Drawing.Point(180, 37);
+            this.textBoxDays.Location = new System.Drawing.Point(234, 31);
             this.textBoxDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDays.Name = "textBoxDays";
             this.textBoxDays.Size = new System.Drawing.Size(32, 20);
@@ -77,7 +77,7 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 65);
+            this.ClientSize = new System.Drawing.Size(287, 62);
             this.Controls.Add(this.labelTariffRate);
             this.Controls.Add(this.labelDays);
             this.Controls.Add(this.textBoxTariffRate);

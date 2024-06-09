@@ -71,7 +71,7 @@ namespace View
             // 
             // textBoxFixedSalary
             // 
-            this.textBoxFixedSalary.Location = new System.Drawing.Point(52, 9);
+            this.textBoxFixedSalary.Location = new System.Drawing.Point(144, 12);
             this.textBoxFixedSalary.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFixedSalary.Name = "textBoxFixedSalary";
             this.textBoxFixedSalary.Size = new System.Drawing.Size(161, 20);
@@ -79,7 +79,7 @@ namespace View
             // 
             // textBoxMonthlyWorkingDays
             // 
-            this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(184, 34);
+            this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(275, 34);
             this.textBoxMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMonthlyWorkingDays.Name = "textBoxMonthlyWorkingDays";
             this.textBoxMonthlyWorkingDays.Size = new System.Drawing.Size(30, 20);
@@ -87,7 +87,7 @@ namespace View
             // 
             // textBoxActualWorkedDays
             // 
-            this.textBoxActualWorkedDays.Location = new System.Drawing.Point(184, 57);
+            this.textBoxActualWorkedDays.Location = new System.Drawing.Point(275, 57);
             this.textBoxActualWorkedDays.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxActualWorkedDays.Name = "textBoxActualWorkedDays";
             this.textBoxActualWorkedDays.Size = new System.Drawing.Size(30, 20);
@@ -97,7 +97,7 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 90);
+            this.ClientSize = new System.Drawing.Size(316, 82);
             this.Controls.Add(this.labelFixedSalary);
             this.Controls.Add(this.labelMonthlyWorkingDays);
             this.Controls.Add(this.labelActualWorkedDays);
