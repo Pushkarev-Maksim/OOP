@@ -1,4 +1,7 @@
-﻿namespace View
+﻿using System.Windows.Forms;
+using View.Properties;
+
+namespace View
 {
     partial class AddSalary
     {
@@ -42,5 +45,15 @@
         }
 
         #endregion
+
+        private GroupBox payrollMethod;
+        private GroupBox parametersSalary;
+        private ComboBox selectionSalary;
+        private Button buttonOk;
+        private Button buttonClose;
+        private SalaryHourlyRateUserControl salaryHourlyRateUserControl;
+        //private SalaryUserControl salaryUserControl;
+        //private WageRateUserControl wageRateUserControl;
+        //private HourlyWageRateUserControl hourlyWageRateUserControl;
     }
 }
