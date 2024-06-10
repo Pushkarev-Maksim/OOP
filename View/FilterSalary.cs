@@ -22,81 +22,26 @@ namespace View
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
-        //private void buttonSearch_Click(object sender, EventArgs e)
-        //{
-            //_listWagesFilter = new BindingList<WagesBase>();
+        /// <summary>
+        /// Лист зарплат
+        /// </summary>
+        private readonly BindingList<SalaryBase> _listSalary;
 
-            //int count = 0;
-            //if (!checkBoxHourlyWageRate.Checked
-                //&& !checkBoxWageRate.Checked
-                //&& !checkBoxSalary.Checked
-                //&& !checkBoxInput.Checked)
-            //{
-                //MessageBox.Show("Критерии для поиска не введены!",
-                    //"Внимание", MessageBoxButtons.OK,
-                    //MessageBoxIcon.Warning);
-                //return;
-            //}
+        /// <summary>
+        /// Лист отфильтрованных зарплат
+        /// </summary>
+        private BindingList<SalaryBase> _listSalaryFilter;
 
-            //foreach (WagesBase figure in _listWages)
-            //{
+        /// <summary>
+        /// Обработчик события
+        /// </summary>
+        public EventHandler<EventArgs> SalaryFiltered;
 
-                //switch (figure)
-                //{
-                    //case HourlyWageRate when checkBoxHourlyWageRate.Checked:
-                    //case WageRate when checkBoxWageRate.Checked:
-                    //case Salary when checkBoxSalary.Checked:
-                        //{
-                            //if (checkBoxInput.Checked)
-                            //{
-                                //if (figure.Wages == _wage)
-                                //{
-                                    //count++;
-                                    //_listWagesFilter.Add(figure);
-                                    //break;
-                                //}
-                                //break;
-                            //}
-                            //else
-                            //{
-                                //count++;
-                                //_listWagesFilter.Add(figure);
-                                //break;
-                            //}
-                        //}
-                //}
-
-                //if (!checkBoxHourlyWageRate.Checked
-                    //&& !checkBoxWageRate.Checked
-                    //&& !checkBoxSalary.Checked)
-                //{
-                    //if (checkBoxInput.Checked && figure.Wages == _wage)
-                    //{
-                        //count++;
-                        //_listWagesFilter.Add(figure);
-                    //}
-                //}
-            //}
-
-            //WageListEventArgs eventArgs;
-
-            //if (count > 0)
-            //{
-                //eventArgs = new WageListEventArgs(_listWagesFilter);
-            //}
-            //else
-            //{
-                //MessageBox.Show("Зарплат с такими параметрами не " +
-                    //"существует", "Введите другие параметры",
-                    //MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //eventArgs = new WageListEventArgs(_listWagesFilter);
-                //return;
-            //}
-
-            //WagesFiltered?.Invoke(this, eventArgs);
-            //Close();
-        //}
-
+        /// <summary>
+        /// Зарплата
+        /// </summary>
+        private double _salary;
+        
         private void checkBoxInput_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxInput.Checked)

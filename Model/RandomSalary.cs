@@ -19,9 +19,9 @@ namespace Model
         /// <summary>
         /// Генерация случайного числа double через int.
         /// </summary>
-        /// <param name="minValue"></param>
-        /// <param name="maxValue"></param>
-        /// <returns></returns>
+        /// <param name="minValue">Минимальное значение.</param>
+        /// <param name="maxValue">Максимальное значение.</param>
+        /// <returns>Сгенерированное число типа double.</returns>
         public static double GetRandomDouble(int minValue, int maxValue)
         {
             var randomValue = Convert.ToDouble(_random.Next(minValue, maxValue));
@@ -31,9 +31,9 @@ namespace Model
         /// <summary>
         /// Генерация случайного числа int.
         /// </summary>
-        /// <param name="minValue"></param>
-        /// <param name="maxValue"></param>
-        /// <returns></returns>
+        /// <param name="minValue">Минимальное значение.</param>
+        /// <param name="maxValue">Максимальное значение.</param>
+        /// <returns>Сгенерированное число типа int.</returns>
         public static int GetRandomInt(int minValue, int maxValue)
         {
             var randomValue = _random.Next(minValue, maxValue);
@@ -44,7 +44,6 @@ namespace Model
         /// Генерация случайной зарплаты
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
         public static SalaryBase GetRandomSalary()
         {
             var salaryType = GetRandomInt(0, 3);
@@ -68,7 +67,7 @@ namespace Model
         /// <summary>
         /// Генерация случайной часовой тарифной ставки.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Параметры расчета зарплаты.</returns>
         public static SalaryBase RandomSalaryHourlyRate()
         {
             SalaryHourlyRate salaryHourlyRate = new SalaryHourlyRate
@@ -82,7 +81,7 @@ namespace Model
         /// <summary>
         /// Генерация случайного оклада за месяц.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Параметры расчета зарплаты.</returns>
         public static SalaryBase RandomSalaryMonthly()
         {
             SalaryMonthly salaryMonthly = new SalaryMonthly
@@ -97,7 +96,7 @@ namespace Model
         /// <summary>
         /// Генерация случайной тарифной ставки.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Параметры расчета зарплаты.</returns>
         public static SalaryBase RandomSalaryTariffRate()
         {
             SalaryTariffRate salaryTariffRate = new SalaryTariffRate

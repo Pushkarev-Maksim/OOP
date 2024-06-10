@@ -41,27 +41,25 @@ namespace View
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             AddSalary addSalary = new AddSalary();
-
             addSalary.ShowDialog();
         }
 
         private void buttonFilter_Click(object sender, EventArgs e)
         {
             FilterSalary filterSalary = new FilterSalary();
-
             filterSalary.ShowDialog();
         }
 
         /// <summary>
         /// Создание таблицы DataGrid.
         /// </summary>
-        /// <param name="wages"></param>
+        /// <param name="salary"></param>
         /// <param name="dataGridView"></param>
-        public static void CreateTable(BindingList<SalaryBase> wages,
+        public static void CreateTable(BindingList<SalaryBase> salary,
               DataGridView dataGridView)
         {
             dataGridView.RowHeadersVisible = false;
-            var source = new BindingSource(wages, null);
+            var source = new BindingSource(salary, null);
             dataGridView.DataSource = source;
 
             dataGridView.DefaultCellStyle.Alignment =
@@ -80,7 +78,7 @@ namespace View
         }
 
         /// <summary>
-        /// Загрузка формы 
+        /// Загрузка формы.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -107,7 +105,6 @@ namespace View
                 foreach (DataGridViewRow row in dataGridViewSpace.SelectedRows)
                 {
                     _salaryList.Remove(row.DataBoundItem as SalaryBase);
-
                     _listSalaryFilter.Remove(row.DataBoundItem as SalaryBase);
                 }
             }

@@ -111,8 +111,8 @@ namespace Model
             get
             {
                 return $"Оклад за месяц = {FixedSalary}, " +
-                       $"Кол-во рабочих дней в месяце = {MonthlyWorkingDays}, " +
-                       $"Кол-во фактически отработанных дней = {ActualWorkedDays}";
+                       $"\nКол-во рабочих дней в месяце = {MonthlyWorkingDays}, " +
+                       $"\nКол-во фактически отработанных дней = {ActualWorkedDays}";
             }
         }
     }

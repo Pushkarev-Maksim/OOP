@@ -17,6 +17,7 @@ namespace View
             InitializeComponent();
             BackColor = Color.AliceBlue;
             StartPosition = FormStartPosition.CenterScreen;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         private void salaryHourlyRate_CheckedChanged(object sender, EventArgs e)
