@@ -51,9 +51,24 @@ namespace Model
         /// Вычисление заработной платы по часовой тарифной ставке.
         /// </summary>
         /// <returns></returns>
-        public override double CalculateSalary()
+        public override double CalculateSalary => 
+            Math.Round(HourlyRate * Hours, 2);
+
+        /// <summary>
+        /// Способ начисления зарплаты.
+        /// </summary>
+        public override string SalaryType => "Часовая тарифная ставка";
+
+        /// <summary>
+        /// Параметры для расчета зарплаты.
+        /// </summary>
+        public override string SalaryParameters
         {
-            return _hourlyRate * _hours;
+            get
+            {
+                return $"Часовая тарифная ставка = {HourlyRate}, " +
+                       $"Кол-во отработанных часов = {Hours}";
+            }
         }
     }
 }

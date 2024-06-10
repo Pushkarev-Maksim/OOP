@@ -48,12 +48,27 @@ namespace Model
         }
 
         /// <summary>
+        /// Тип заработной платы
+        /// </summary>
+        public override string SalaryType => "Тарифная ставка";
+
+        /// <summary>
         /// Вычисление заработной платы по тарифной ставке.
         /// </summary>
         /// <returns></returns>
-        public override double CalculateSalary()
+        public override double CalculateSalary =>
+            Math.Round(TariffRate * Days, 2);
+
+        /// <summary>
+        /// Параметры для расчёта заработной платы.
+        /// </summary>
+        public override string SalaryParameters
         {
-            return _tariffRate * _days;
+            get
+            {
+                return $"Тарифная ставка = {TariffRate}, " +
+                       $"Кол-во рабочих дней = {Days}";
+            }
         }
     }
 }

@@ -92,12 +92,28 @@ namespace Model
         }
 
         /// <summary>
-        /// Вычисление заработной платы по окладу за месяц.
+        /// Вычисление заработной платы.
         /// </summary>
         /// <returns></returns>
-        public override double CalculateSalary()
+        public override double CalculateSalary =>
+            Math.Round(FixedSalary / MonthlyWorkingDays * ActualWorkedDays, 2);
+
+        /// <summary>
+        /// Способ начисления зарплаты.
+        /// </summary>
+        public override string SalaryType => "Оклад за месяц";
+
+        /// <summary>
+        /// Параметры для расчёта заработной платы.
+        /// </summary>
+        public override string SalaryParameters
         {
-            return _fixedSalary / _monthlyWorkingDays * _actualWorkedDays;
+            get
+            {
+                return $"Оклад за месяц = {FixedSalary}, " +
+                       $"Кол-во рабочих дней в месяце = {MonthlyWorkingDays}, " +
+                       $"Кол-во фактически отработанных дней = {ActualWorkedDays}";
+            }
         }
     }
 }

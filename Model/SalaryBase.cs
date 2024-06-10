@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,22 @@ namespace Model
     public abstract class SalaryBase
     {
         /// <summary>
-        /// Вычисление заработной платы.
+        /// Способ начисления зарплаты
         /// </summary>
-        public abstract double CalculateSalary();
+        [DisplayName ("Способ начисления зарплаты")]
+        public virtual string SalaryType { get; }
+
+        /// <summary>
+        /// Параметры для расчета зарплаты
+        /// </summary>
+        [DisplayName ("Параметры для расчета зарплаты")]
+        public virtual string SalaryParameters { get; }
+
+        /// <summary>
+        /// Вычисление зарплаты
+        /// </summary>
+        [DisplayName ("Заработная плата, руб")]
+        public abstract double CalculateSalary { get; }
 
         /// <summary>
         /// Проверка на отрицательные числа.

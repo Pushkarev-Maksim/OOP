@@ -41,60 +41,57 @@ namespace View
             // labelFixedSalary
             // 
             this.labelFixedSalary.AutoSize = true;
-            this.labelFixedSalary.Location = new System.Drawing.Point(8, 14);
-            this.labelFixedSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFixedSalary.Location = new System.Drawing.Point(11, 3);
             this.labelFixedSalary.Name = "labelFixedSalary";
-            this.labelFixedSalary.Size = new System.Drawing.Size(145, 15);
+            this.labelFixedSalary.Size = new System.Drawing.Size(161, 16);
             this.labelFixedSalary.TabIndex = 1;
             this.labelFixedSalary.Text = "Оклад за полный месяц";
             // 
             // labelMonthlyWorkingDays
             // 
             this.labelMonthlyWorkingDays.AutoSize = true;
-            this.labelMonthlyWorkingDays.Location = new System.Drawing.Point(8, 36);
-            this.labelMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMonthlyWorkingDays.Location = new System.Drawing.Point(11, 31);
             this.labelMonthlyWorkingDays.Name = "labelMonthlyWorkingDays";
-            this.labelMonthlyWorkingDays.Size = new System.Drawing.Size(184, 15);
+            this.labelMonthlyWorkingDays.Size = new System.Drawing.Size(204, 16);
             this.labelMonthlyWorkingDays.TabIndex = 2;
             this.labelMonthlyWorkingDays.Text = "Кол-во рабочих дней в месяце";
             // 
             // labelActualWorkedDays
             // 
             this.labelActualWorkedDays.AutoSize = true;
-            this.labelActualWorkedDays.Location = new System.Drawing.Point(8, 58);
-            this.labelActualWorkedDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelActualWorkedDays.Location = new System.Drawing.Point(11, 57);
             this.labelActualWorkedDays.Name = "labelActualWorkedDays";
-            this.labelActualWorkedDays.Size = new System.Drawing.Size(166, 15);
+            this.labelActualWorkedDays.Size = new System.Drawing.Size(182, 16);
             this.labelActualWorkedDays.TabIndex = 3;
             this.labelActualWorkedDays.Text = "Кол-во отработанных дней";
             // 
             // textBoxFixedSalary
             // 
-            this.textBoxFixedSalary.Location = new System.Drawing.Point(195, 11);
-            this.textBoxFixedSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFixedSalary.Location = new System.Drawing.Point(232, 5);
+            this.textBoxFixedSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxFixedSalary.Name = "textBoxFixedSalary";
-            this.textBoxFixedSalary.Size = new System.Drawing.Size(55, 20);
+            this.textBoxFixedSalary.Size = new System.Drawing.Size(72, 22);
             this.textBoxFixedSalary.TabIndex = 0;
             // 
             // textBoxMonthlyWorkingDays
             // 
-            this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(195, 33);
-            this.textBoxMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(233, 31);
+            this.textBoxMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMonthlyWorkingDays.Name = "textBoxMonthlyWorkingDays";
-            this.textBoxMonthlyWorkingDays.Size = new System.Drawing.Size(54, 20);
+            this.textBoxMonthlyWorkingDays.Size = new System.Drawing.Size(71, 22);
             this.textBoxMonthlyWorkingDays.TabIndex = 4;
             // 
             // textBoxActualWorkedDays
             // 
-            this.textBoxActualWorkedDays.Location = new System.Drawing.Point(195, 55);
-            this.textBoxActualWorkedDays.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxActualWorkedDays.Location = new System.Drawing.Point(234, 57);
+            this.textBoxActualWorkedDays.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxActualWorkedDays.Name = "textBoxActualWorkedDays";
-            this.textBoxActualWorkedDays.Size = new System.Drawing.Size(54, 20);
+            this.textBoxActualWorkedDays.Size = new System.Drawing.Size(71, 22);
             this.textBoxActualWorkedDays.TabIndex = 5;
             // 
             // SalaryMonthlyUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelFixedSalary);
             this.Controls.Add(this.labelMonthlyWorkingDays);
@@ -102,9 +99,9 @@ namespace View
             this.Controls.Add(this.textBoxFixedSalary);
             this.Controls.Add(this.textBoxMonthlyWorkingDays);
             this.Controls.Add(this.textBoxActualWorkedDays);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SalaryMonthlyUserControl";
-            this.Size = new System.Drawing.Size(260, 80);
+            this.Size = new System.Drawing.Size(308, 98);
             this.ResumeLayout(false);
             this.PerformLayout();
 
