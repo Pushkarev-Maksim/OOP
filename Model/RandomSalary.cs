@@ -48,7 +48,7 @@ namespace Model
         /// <exception cref="ArgumentException"></exception>
         public static SalaryBase GetRandomSalary()
         {
-            var salaryType = _random.Next(0, 2);
+            var salaryType = GetRandomInt(0, 3);
 
             switch (salaryType)
             {
@@ -64,13 +64,18 @@ namespace Model
                     {
                         return RandomSalaryTariffRate();
                     }
+                default:
+                    {
+                        throw new ArgumentException("Способ начисления ЗП " +
+                            "отсутствует.");
+                    }
             }
 
             /// <summary>
             /// Генерация случайной часовой тарифной ставки.
             /// </summary>
             /// <returns></returns>
-            public static SalaryBase RandomSalaryHourlyRate()
+            SalaryBase RandomSalaryHourlyRate()
             {
                 SalaryHourlyRate salaryHourlyRate = new SalaryHourlyRate
                 {
@@ -81,10 +86,10 @@ namespace Model
             }
 
             /// <summary>
-            /// Генерация случайного оклада
+            /// Генерация случайного оклада за месяц.
             /// </summary>
             /// <returns></returns>
-            public static SalaryBase RandomSalaryMonthly()
+            SalaryBase RandomSalaryMonthly()
             {
                 SalaryMonthly salaryMonthly = new SalaryMonthly
                 {
@@ -99,7 +104,7 @@ namespace Model
             /// Генерация случайной тарифной ставки.
             /// </summary>
             /// <returns></returns>
-            public static SalaryBase RandomSalaryTariffRate()
+            SalaryBase RandomSalaryTariffRate()
             {
                 SalaryTariffRate salaryTariffRate = new SalaryTariffRate
                 {

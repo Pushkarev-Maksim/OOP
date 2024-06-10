@@ -84,5 +84,10 @@ namespace View
             _salaryList = new BindingList<SalaryBase>();
             CreateTable(_salaryList, dataGridViewSpace);
         }
+
+        private void buttonRandomSalary_Click(object sender, EventArgs e)
+        {
+            _salaryList.Add(RandomSalary.GetRandomSalary());
+        }
     }
 }
