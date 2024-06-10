@@ -18,11 +18,13 @@ namespace View
             InitializeComponent();
             BackColor = Color.AliceBlue;
             StartPosition = FormStartPosition.CenterScreen;
+            textBoxSalary.Enabled = false;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         //private void buttonSearch_Click(object sender, EventArgs e)
         //{
-            //_listSalaryFilter = new BindingList<SalaryBase>();
+            //_listWagesFilter = new BindingList<WagesBase>();
 
             //int count = 0;
             //if (!checkBoxHourlyWageRate.Checked
@@ -36,7 +38,7 @@ namespace View
                 //return;
             //}
 
-            //foreach (SalaryBase figure in _listSalary)
+            //foreach (WagesBase figure in _listWages)
             //{
 
                 //switch (figure)
@@ -94,5 +96,13 @@ namespace View
             //WagesFiltered?.Invoke(this, eventArgs);
             //Close();
         //}
+
+        private void checkBoxInput_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxInput.Checked)
+            {
+                textBoxSalary.Enabled = true;
+            }
+        }
     }
 }

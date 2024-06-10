@@ -24,8 +24,7 @@ namespace Model
         /// <returns></returns>
         public static double GetRandomDouble(int minValue, int maxValue)
         {
-            var randomValue = Convert.ToDouble(_random.Next(minValue,
-                maxValue));
+            var randomValue = Convert.ToDouble(_random.Next(minValue, maxValue));
             return randomValue;
         }
 
@@ -53,66 +52,60 @@ namespace Model
             switch (salaryType)
             {
                 case 0:
-                    {
-                        return RandomSalaryHourlyRate();
-                    }
+                {
+                    return RandomSalaryHourlyRate();
+                }
                 case 1:
-                    {
-                        return RandomSalaryMonthly();
-                    }
-                case 2:
-                    {
-                        return RandomSalaryTariffRate();
-                    }
+                {
+                    return RandomSalaryMonthly();
+                }
                 default:
-                    {
-                        throw new ArgumentException("Способ начисления ЗП " +
-                            "отсутствует.");
-                    }
-            }
-
-            /// <summary>
-            /// Генерация случайной часовой тарифной ставки.
-            /// </summary>
-            /// <returns></returns>
-            SalaryBase RandomSalaryHourlyRate()
-            {
-                SalaryHourlyRate salaryHourlyRate = new SalaryHourlyRate
                 {
-                    HourlyRate = GetRandomDouble(300, 1000),
-                    Hours = GetRandomInt(1, 100),
-                };
-                return salaryHourlyRate;
+                    return RandomSalaryTariffRate();
+                }
             }
-
-            /// <summary>
-            /// Генерация случайного оклада за месяц.
-            /// </summary>
-            /// <returns></returns>
-            SalaryBase RandomSalaryMonthly()
+        }
+        /// <summary>
+        /// Генерация случайной часовой тарифной ставки.
+        /// </summary>
+        /// <returns></returns>
+        public static SalaryBase RandomSalaryHourlyRate()
+        {
+            SalaryHourlyRate salaryHourlyRate = new SalaryHourlyRate
             {
-                SalaryMonthly salaryMonthly = new SalaryMonthly
-                {
-                    FixedSalary = GetRandomDouble(5000, 100000),
-                    MonthlyWorkingDays = GetRandomInt(20, 31),
-                    ActualWorkedDays = GetRandomInt(1, 20),
-                };
-                return salaryMonthly;
-            }
+                HourlyRate = GetRandomDouble(300, 1000),
+                Hours = GetRandomInt(1, 100),
+            };
+            return salaryHourlyRate;
+        }
 
-            /// <summary>
-            /// Генерация случайной тарифной ставки.
-            /// </summary>
-            /// <returns></returns>
-            SalaryBase RandomSalaryTariffRate()
+        /// <summary>
+        /// Генерация случайного оклада за месяц.
+        /// </summary>
+        /// <returns></returns>
+        public static SalaryBase RandomSalaryMonthly()
+        {
+            SalaryMonthly salaryMonthly = new SalaryMonthly
             {
-                SalaryTariffRate salaryTariffRate = new SalaryTariffRate
-                {
-                    TariffRate = GetRandomDouble(500, 5000),
-                    Days = GetRandomInt(1, 100),
-                };
-                return salaryTariffRate;
-            }
+                FixedSalary = GetRandomDouble(5000, 100000),
+                MonthlyWorkingDays = GetRandomInt(20, 31),
+                ActualWorkedDays = GetRandomInt(1, 20),
+            };
+            return salaryMonthly;
+        }
+
+        /// <summary>
+        /// Генерация случайной тарифной ставки.
+        /// </summary>
+        /// <returns></returns>
+        public static SalaryBase RandomSalaryTariffRate()
+        {
+            SalaryTariffRate salaryTariffRate = new SalaryTariffRate
+            {
+                TariffRate = GetRandomDouble(500, 5000),
+                Days = GetRandomInt(1, 100),
+            };
+            return salaryTariffRate;
         }
     }
 }
