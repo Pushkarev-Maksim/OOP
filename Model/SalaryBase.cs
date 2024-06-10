@@ -4,12 +4,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Model
 {
     /// <summary>
     /// Класс начисления заработной платы.
     /// </summary>
+    [XmlInclude(typeof(SalaryHourlyRate))]
+    [XmlInclude(typeof(SalaryMonthly))]
+    [XmlInclude(typeof(SalaryTariffRate))]
     public abstract class SalaryBase
     {
         /// <summary>

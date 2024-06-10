@@ -52,9 +52,9 @@ namespace View
             // 
             this.groupBoxCalculator.Controls.Add(this.dataGridViewSpace);
             this.groupBoxCalculator.Location = new System.Drawing.Point(23, 32);
-            this.groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxCalculator.Name = "groupBoxCalculator";
-            this.groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxCalculator.Size = new System.Drawing.Size(554, 235);
             this.groupBoxCalculator.TabIndex = 0;
             this.groupBoxCalculator.TabStop = false;
@@ -66,7 +66,7 @@ namespace View
             this.dataGridViewSpace.AllowUserToResizeRows = false;
             this.dataGridViewSpace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSpace.Location = new System.Drawing.Point(4, 10);
-            this.dataGridViewSpace.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewSpace.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSpace.Name = "dataGridViewSpace";
             this.dataGridViewSpace.RowHeadersWidth = 51;
             this.dataGridViewSpace.RowTemplate.Height = 25;
@@ -76,35 +76,35 @@ namespace View
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(28, 281);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(166, 25);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAdd.Click += new System.EventHandler(this.ВuttonAdd_Click);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(217, 281);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(166, 25);
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.ВuttonDelete_Click);
             // 
             // buttonCleanList
             // 
             this.buttonCleanList.Location = new System.Drawing.Point(406, 281);
-            this.buttonCleanList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCleanList.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCleanList.Name = "buttonCleanList";
             this.buttonCleanList.Size = new System.Drawing.Size(166, 25);
             this.buttonCleanList.TabIndex = 4;
             this.buttonCleanList.Text = "Очистить список";
             this.buttonCleanList.UseVisualStyleBackColor = true;
-            this.buttonCleanList.Click += new System.EventHandler(this.buttonCleanList_Click);
+            this.buttonCleanList.Click += new System.EventHandler(this.ВuttonCleanList_Click);
             // 
             // buttonFilter
             // 
@@ -115,18 +115,18 @@ namespace View
             this.buttonFilter.TabIndex = 5;
             this.buttonFilter.Text = "Фильтр";
             this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            this.buttonFilter.Click += new System.EventHandler(this.ВuttonFilter_Click);
             // 
             // buttonResetFilter
             // 
             this.buttonResetFilter.Location = new System.Drawing.Point(217, 314);
-            this.buttonResetFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonResetFilter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonResetFilter.Name = "buttonResetFilter";
             this.buttonResetFilter.Size = new System.Drawing.Size(166, 25);
             this.buttonResetFilter.TabIndex = 6;
             this.buttonResetFilter.Text = "Сбросить фильтр";
             this.buttonResetFilter.UseVisualStyleBackColor = true;
-            this.buttonResetFilter.Click += new System.EventHandler(this.buttonResetFilter_Click);
+            this.buttonResetFilter.Click += new System.EventHandler(this.ВuttonResetFilter_Click);
             // 
             // buttonRandomSalary
             // 
@@ -137,7 +137,7 @@ namespace View
             this.buttonRandomSalary.TabIndex = 7;
             this.buttonRandomSalary.Text = "Случайная зарплата";
             this.buttonRandomSalary.UseVisualStyleBackColor = true;
-            this.buttonRandomSalary.Click += new System.EventHandler(this.buttonRandomSalary_Click);
+            this.buttonRandomSalary.Click += new System.EventHandler(this.ВuttonRandomSalary_Click);
             // 
             // toolStripDropDownButton
             // 
@@ -153,14 +153,16 @@ namespace View
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Сохранить";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Загрузить";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
@@ -187,7 +189,7 @@ namespace View
             this.Controls.Add(this.buttonResetFilter);
             this.Controls.Add(this.buttonRandomSalary);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Калькулятор заработных плат";
