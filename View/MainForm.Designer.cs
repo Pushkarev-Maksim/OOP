@@ -187,13 +187,13 @@ namespace View
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Калькулятор заработных плат";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBoxCalculator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSpace)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
