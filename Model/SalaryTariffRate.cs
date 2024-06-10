@@ -66,7 +66,7 @@ namespace Model
         {
             get
             {
-                return $"Тарифная ставка = {TariffRate}, " +
+                return $"Тарифная ставка = {TariffRate}," +
                        $"\nКол-во рабочих дней = {Days}";
             }
         }

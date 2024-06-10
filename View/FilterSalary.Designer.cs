@@ -85,7 +85,7 @@ namespace View
             this.checkBoxInput.TabIndex = 3;
             this.checkBoxInput.Text = "Введите необходимую сумму";
             this.checkBoxInput.UseVisualStyleBackColor = true;
-            this.checkBoxInput.CheckedChanged += new System.EventHandler(this.checkBoxInput_CheckedChanged);
+            this.checkBoxInput.CheckedChanged += new System.EventHandler(this.СheckBoxInput_CheckedChanged);
             // 
             // checkBoxSalaryMonthly
             // 

@@ -66,7 +66,7 @@ namespace Model
         {
             get
             {
-                return $"Часовая тарифная ставка = {HourlyRate}, " +
+                return $"Часовая тарифная ставка = {HourlyRate}," +
                        $"\nКол-во отработанных часов = {Hours}";
             }
         }
