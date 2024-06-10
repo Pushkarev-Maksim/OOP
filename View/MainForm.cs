@@ -39,12 +39,22 @@ namespace View
         private readonly XmlSerializer _serializer =
             new XmlSerializer(typeof(BindingList<SalaryBase>));
 
+        /// <summary>
+        /// Переход в форму добавления новой зарплаты.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ВuttonAdd_Click(object sender, EventArgs e)
         {
             AddSalary addSalary = new AddSalary();
             addSalary.ShowDialog();
         }
 
+        /// <summary>
+        /// Переход в форму фильтрации.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ВuttonFilter_Click(object sender, EventArgs e)
         {
             FilterSalary filterSalary = new FilterSalary();
@@ -89,16 +99,31 @@ namespace View
             CreateTable(_salaryList, dataGridViewSpace);
         }
 
+        /// <summary>
+        /// Добавление в список случайной зарплаты.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ВuttonRandomSalary_Click(object sender, EventArgs e)
         {
             _salaryList.Add(RandomSalary.GetRandomSalary());
         }
 
+        /// <summary>
+        /// Очистить список.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ВuttonCleanList_Click(object sender, EventArgs e)
         {
             _salaryList.Clear();
         }
 
+        /// <summary>
+        /// Удаление позиции.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ВuttonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridViewSpace.SelectedCells.Count != 0)
@@ -111,6 +136,11 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Сброс наcтроек фильтра.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ВuttonResetFilter_Click(object sender, EventArgs e)
         {
             CreateTable(_salaryList, dataGridViewSpace);

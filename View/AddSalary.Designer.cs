@@ -68,7 +68,7 @@ namespace View
             this.salaryTariffRate.TabIndex = 12;
             this.salaryTariffRate.Text = "Тарифная ставка";
             this.salaryTariffRate.UseVisualStyleBackColor = true;
-            this.salaryTariffRate.CheckedChanged += new System.EventHandler(this.salaryTariffRate_CheckedChanged);
+            this.salaryTariffRate.CheckedChanged += new System.EventHandler(this.SalaryTariffRate_CheckedChanged);
             // 
             // salaryMonthly
             // 
@@ -79,7 +79,7 @@ namespace View
             this.salaryMonthly.TabIndex = 11;
             this.salaryMonthly.Text = "Оклад за месяц";
             this.salaryMonthly.UseVisualStyleBackColor = true;
-            this.salaryMonthly.CheckedChanged += new System.EventHandler(this.salaryMonthly_CheckedChanged);
+            this.salaryMonthly.CheckedChanged += new System.EventHandler(this.SalaryMonthly_CheckedChanged);
             // 
             // salaryHourlyRate
             // 
@@ -89,7 +89,7 @@ namespace View
             this.salaryHourlyRate.Size = new System.Drawing.Size(183, 19);
             this.salaryHourlyRate.TabIndex = 10;
             this.salaryHourlyRate.Text = "Часовая тарифная ставка";
-            this.salaryHourlyRate.CheckedChanged += new System.EventHandler(this.salaryHourlyRate_CheckedChanged);
+            this.salaryHourlyRate.CheckedChanged += new System.EventHandler(this.SalaryHourlyRate_CheckedChanged);
             // 
             // buttonOk
             // 
@@ -110,7 +110,7 @@ namespace View
             this.buttonClose.TabIndex = 14;
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // parametersSalary
             // 

@@ -23,26 +23,11 @@ namespace View
         }
 
         /// <summary>
-        /// Лист зарплат
+        /// Активация поля ввода зарплаты для поиска.
         /// </summary>
-        private readonly BindingList<SalaryBase> _listSalary;
-
-        /// <summary>
-        /// Лист отфильтрованных зарплат
-        /// </summary>
-        private BindingList<SalaryBase> _listSalaryFilter;
-
-        /// <summary>
-        /// Обработчик события
-        /// </summary>
-        public EventHandler<EventArgs> SalaryFiltered;
-
-        /// <summary>
-        /// Зарплата
-        /// </summary>
-        private double _salary;
-        
-        private void checkBoxInput_CheckedChanged(object sender, EventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void СheckBoxInput_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxInput.Checked)
             {

@@ -17,19 +17,19 @@ namespace Model
     public abstract class SalaryBase
     {
         /// <summary>
-        /// Способ начисления зарплаты
+        /// Способ начисления зарплаты.
         /// </summary>
         [DisplayName ("Способ начисления зарплаты")]
         public virtual string SalaryType { get; }
 
         /// <summary>
-        /// Параметры для расчета зарплаты
+        /// Параметры для расчета зарплаты.
         /// </summary>
         [DisplayName ("Параметры для расчета зарплаты")]
         public virtual string SalaryParameters { get; }
 
         /// <summary>
-        /// Вычисление зарплаты
+        /// Вычисление зарплаты.
         /// </summary>
         [DisplayName ("Заработная плата, руб")]
         public abstract double CalculateSalary { get; }
@@ -49,7 +49,7 @@ namespace Model
         public static T CheckNegativeNumber<T>(T number, string name) 
             where T : IComparable<T>
         {
-            if (number.CompareTo(default(T)) < 0)
+            if (number.CompareTo(default) < 0)
             {
                 throw new ArgumentException($"{name} " +
                     "не может быть отрицательным числом!");
