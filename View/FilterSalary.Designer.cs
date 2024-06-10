@@ -127,7 +127,6 @@ namespace View
             this.buttonSearch.TabIndex = 5;
             this.buttonSearch.Text = "Найти";
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // FilterSalary
             // 
