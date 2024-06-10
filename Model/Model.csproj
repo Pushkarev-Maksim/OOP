@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RandomSalary.cs" />
     <Compile Include="SalaryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryHourlyRate.cs" />
