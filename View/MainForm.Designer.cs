@@ -93,6 +93,7 @@ namespace View
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonCleanList
             // 
@@ -103,6 +104,7 @@ namespace View
             this.buttonCleanList.TabIndex = 4;
             this.buttonCleanList.Text = "Очистить список";
             this.buttonCleanList.UseVisualStyleBackColor = true;
+            this.buttonCleanList.Click += new System.EventHandler(this.buttonCleanList_Click);
             // 
             // buttonFilter
             // 
@@ -124,6 +126,7 @@ namespace View
             this.buttonResetFilter.TabIndex = 6;
             this.buttonResetFilter.Text = "Сбросить фильтр";
             this.buttonResetFilter.UseVisualStyleBackColor = true;
+            this.buttonResetFilter.Click += new System.EventHandler(this.buttonResetFilter_Click);
             // 
             // buttonRandomSalary
             // 

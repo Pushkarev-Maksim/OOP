@@ -28,6 +28,11 @@ namespace View
         private BindingList<SalaryBase> _salaryList = new BindingList<SalaryBase>();
 
         /// <summary>
+        /// Список отфильтрованных зарплат.
+        /// </summary>
+        private BindingList<SalaryBase> _listSalaryFilter = new BindingList<SalaryBase>();
+
+        /// <summary>
         /// Для файлов.
         /// </summary>
         private readonly XmlSerializer _serializer =
@@ -88,6 +93,29 @@ namespace View
         private void buttonRandomSalary_Click(object sender, EventArgs e)
         {
             _salaryList.Add(RandomSalary.GetRandomSalary());
+        }
+
+        private void buttonCleanList_Click(object sender, EventArgs e)
+        {
+            _salaryList.Clear();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewSpace.SelectedCells.Count != 0)
+            {
+                foreach (DataGridViewRow row in dataGridViewSpace.SelectedRows)
+                {
+                    _salaryList.Remove(row.DataBoundItem as SalaryBase);
+
+                    _listSalaryFilter.Remove(row.DataBoundItem as SalaryBase);
+                }
+            }
+        }
+
+        private void buttonResetFilter_Click(object sender, EventArgs e)
+        {
+            CreateTable(_salaryList, dataGridViewSpace);
         }
     }
 }
