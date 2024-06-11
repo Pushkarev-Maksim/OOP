@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace View
 {
+    //TODO: XML
     public partial class SalaryTariffRateUserControl : UserControl
     {
+        //TODO: XML
         public SalaryTariffRateUserControl()
         {
             InitializeComponent();

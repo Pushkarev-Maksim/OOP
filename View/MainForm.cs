@@ -13,8 +13,10 @@ using Model;
 
 namespace View
 {
+    //TODO: XML
     public partial class MainForm : Form
     {
+        //TODO: XML
         public MainForm()
         {
             InitializeComponent();

@@ -11,8 +11,10 @@ using Model;
 
 namespace View
 {
+    //TODO: XML
     public partial class FilterSalary : Form
     {
+        //TODO: XML
         public FilterSalary()
         {
             InitializeComponent();
