@@ -34,6 +34,42 @@ namespace View
             StartPosition = FormStartPosition.CenterScreen;
             textBoxSalary.Enabled = false;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            DeactivateElements();
+
+            checkBoxSalaryHourlyRate.CheckedChanged += ActivateElements;
+            checkBoxSalaryMonthly.CheckedChanged += ActivateElements;
+            checkBoxSalaryTariffRate.CheckedChanged += ActivateElements;
+            checkBoxInput.CheckedChanged += ActivateSalaryBox;
+        }
+
+        /// <summary>
+        /// Деактивирует элементы управления на форме.
+        /// </summary>
+        private void DeactivateElements()
+        {
+            checkBoxInput.Enabled = false;
+            textBoxSalary.Enabled = false;
+        }
+
+        /// <summary>
+        /// Активирует или деактивирует элементы управления
+        /// в зависимости от состояния чекбоксов типа фигуры.
+        /// </summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Объект <see cref="EventArgs"/>,
+        /// содержащий данные события.</param>
+        private void ActivateElements(object sender, EventArgs e)
+        {
+            bool activate = checkBoxSalaryHourlyRate.Checked
+                || checkBoxSalaryMonthly.Checked
+                || checkBoxSalaryTariffRate.Checked;
+
+            checkBoxInput.Enabled = activate;
+        }
+
+        private void ActivateSalaryBox(object sender, EventArgs e)
+        {
+            textBoxSalary.Enabled = checkBoxInput.Checked;
         }
 
         /// <summary>
@@ -51,54 +87,54 @@ namespace View
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            bool checkClick = checkBoxSalaryHourlyRate.Checked
-               || checkBoxSalaryMonthly.Checked
-               || checkBoxSalaryTariffRate.Checked
-               || checkBoxInput.Checked;
+            _filteredSalaryList = new BindingList<SalaryBase>();
 
-            if (checkClick)
+            if (checkBoxSalaryHourlyRate.Checked)
             {
-                _filteredSalaryList = new BindingList<SalaryBase>();
-
-                if (checkBoxSalaryHourlyRate.Checked)
-                {
-                    FilterByType(_salaryList,
-                        _filteredSalaryList,
-                        typeof(SalaryHourlyRate));
-                }
-
-                if (checkBoxSalaryMonthly.Checked)
-                {
-                    FilterByType(_salaryList,
-                        _filteredSalaryList,
-                        typeof(SalaryMonthly));
-                }
-
-                if (checkBoxSalaryTariffRate.Checked)
-                {
-                    FilterByType(_salaryList,
-                        _filteredSalaryList,
-                        typeof(SalaryTariffRate));
-                }
-
-                CheckedData();
-
-                if (_filteredSalaryList.Count == 0
-                    || _filteredSalaryList is null)
-                {
-                    MessageBox.Show("Совпадений не найдено.", "Информация",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                SalaryFiltered?.Invoke(
-                    this, new SalaryFilterEvent(_filteredSalaryList));
+                FilterByType(_salaryList,
+                    _filteredSalaryList,
+                    typeof(SalaryHourlyRate));
             }
-            else
+
+            if (checkBoxSalaryMonthly.Checked)
             {
-                MessageBox.Show("Заполните критерии поиска.", "Предупреждение",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                FilterByType(_salaryList,
+                    _filteredSalaryList,
+                    typeof(SalaryMonthly));
             }
+
+            if (checkBoxSalaryTariffRate.Checked)
+            {
+                FilterByType(_salaryList,
+                    _filteredSalaryList,
+                    typeof(SalaryTariffRate));
+            }
+
+            if (checkBoxInput.Checked)
+            {
+                if (!string.IsNullOrEmpty(textBoxSalary.Text))
+                {
+                    _filteredSalaryList = 
+                        FilterByInitialValue(_filteredSalaryList,
+                    Convert.ToDouble(textBoxSalary.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Введите заработную плату.", "Предупреждение",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (_filteredSalaryList.Count == 0
+                || _filteredSalaryList is null)
+            {
+                MessageBox.Show("Совпадений не найдено.", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            SalaryFiltered?.Invoke(
+                this, new SalaryFilterEvent(_filteredSalaryList));
         }
 
         private static void FilterByType(
@@ -115,55 +151,19 @@ namespace View
             }
         }
 
-        private void CheckedData()
-        {
-            BindingList<SalaryBase> salaryList = new BindingList<SalaryBase>();
-
-            bool statusCheckBox = checkBoxSalaryHourlyRate.Checked
-                || checkBoxSalaryMonthly.Checked
-                || checkBoxSalaryTariffRate.Checked;
-
-            if (statusCheckBox)
-            {
-                salaryList = new BindingList<SalaryBase>(_filteredSalaryList);
-                _filteredSalaryList = new BindingList<SalaryBase>();
-            }
-            else
-            {
-                salaryList = new BindingList<SalaryBase>(_salaryList);
-            }
-
-            if (checkBoxInput.Checked)
-            {
-                if (!string.IsNullOrEmpty(textBoxSalary.Text))
-                {
-                    FilterByInitialValue(salaryList, _filteredSalaryList,
-                    Convert.ToDouble(textBoxSalary.Text));
-                }
-                else
-                {
-                    MessageBox.Show("Введите заработную плату.", "Предупреждение",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else 
-            {
-                FilterByInitialValue(salaryList, _filteredSalaryList,
-                Convert.ToDouble(textBoxSalary.Text));
-            }
-        }
-
-        private static void FilterByInitialValue(
-            BindingList<SalaryBase> salaryList, 
+        private static BindingList<SalaryBase> FilterByInitialValue(
             BindingList<SalaryBase> filteredSalaryList, double initialValue)
         {
-            foreach (var item in salaryList)
+            BindingList<SalaryBase> filteredList = new BindingList<SalaryBase>();
+            foreach (var item in filteredSalaryList)
             {
                 if (item.CalculateSalary == initialValue)
                 {
-                    filteredSalaryList.Add(item);
+                    filteredList.Add(item);
                 }
             }
+
+            return filteredList;
         }
     }
 }
