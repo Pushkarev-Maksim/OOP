@@ -86,7 +86,7 @@ namespace View
                         typeof(SalaryTariffRate));
                 }
 
-                // CheckedData();
+                CheckedData();
 
                 if (_filteredSalaryList.Count == 0
                     || _filteredSalaryList is null)
