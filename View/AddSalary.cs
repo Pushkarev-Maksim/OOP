@@ -1,12 +1,6 @@
 ﻿using Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
@@ -32,7 +26,6 @@ namespace View
         /// <param name="e"></param>
         private void SalaryHourlyRate_CheckedChanged(object sender, EventArgs e)
         {
-            //TODO: refactor
             salaryHourlyRateUserControl.Visible = true;
             salaryMonthlyUserControl.Visible = false;
             salaryTariffRateUserControl.Visible = false;
@@ -79,38 +72,54 @@ namespace View
         /// <param name="e"></param>
         private void AddButtonClick(object sender, EventArgs e)
         {
-            SalaryBase salaryBase = null;
-
-            if (salaryHourlyRateUserControl.Visible)
+            try
             {
-                salaryBase = new SalaryHourlyRate()
+                SalaryBase salaryBase = null;
+
+                if (salaryHourlyRateUserControl.Visible)
                 {
-                    HourlyRate = Convert.ToDouble(salaryHourlyRateUserControl.textBoxHourlyRate.Text),
-                    Hours = Convert.ToInt32(salaryHourlyRateUserControl.textBoxHours.Text),
-                };
+                    salaryBase = new SalaryHourlyRate()
+                    {
+                        HourlyRate = Convert.ToDouble(
+                            salaryHourlyRateUserControl.textBoxHourlyRate.Text),
+                        Hours = Convert.ToInt32(
+                            salaryHourlyRateUserControl.textBoxHours.Text),
+                    };
+                }
+
+                if (salaryMonthlyUserControl.Visible)
+                {
+                    salaryBase = new SalaryMonthly()
+                    {
+                        FixedSalary = Convert.ToDouble(
+                            salaryMonthlyUserControl.textBoxFixedSalary.Text),
+                        MonthlyWorkingDays = Convert.ToInt32(
+                            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Text),
+                        ActualWorkedDays = Convert.ToInt32(
+                            salaryMonthlyUserControl.textBoxActualWorkedDays.Text),
+
+                    };
+                }
+
+                if (salaryTariffRateUserControl.Visible)
+                {
+                    salaryBase = new SalaryTariffRate()
+                    {
+                        TariffRate = Convert.ToDouble(
+                            salaryTariffRateUserControl.textBoxTariffRate.Text),
+                        Days = Convert.ToInt32(
+                            salaryTariffRateUserControl.textBoxDays.Text),
+                    };
+                }
+
+                SalaryAdded?.Invoke(this, new SalaryAddedEvent(salaryBase));
             }
 
-            if (salaryMonthlyUserControl.Visible)
+            catch
             {
-                salaryBase = new SalaryMonthly()
-                {
-                    FixedSalary = Convert.ToDouble(salaryMonthlyUserControl.textBoxFixedSalary.Text),
-                    MonthlyWorkingDays = Convert.ToInt32(salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Text),
-                    ActualWorkedDays = Convert.ToInt32(salaryMonthlyUserControl.textBoxActualWorkedDays.Text),
-
-                };
+                MessageBox.Show("Введите данные.", "Предупреждение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            if (salaryTariffRateUserControl.Visible)
-            {
-                salaryBase = new SalaryTariffRate()
-                {
-                    TariffRate = Convert.ToDouble(salaryTariffRateUserControl.textBoxTariffRate.Text),
-                    Days = Convert.ToInt32(salaryTariffRateUserControl.textBoxDays.Text),
-                };
-            }
-
-            SalaryAdded?.Invoke(this, new SalaryAddedEvent(salaryBase));
         }
     }
 }
