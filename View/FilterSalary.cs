@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 
@@ -55,7 +51,6 @@ namespace View
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-
             bool checkClick = checkBoxSalaryHourlyRate.Checked
                || checkBoxSalaryMonthly.Checked
                || checkBoxSalaryTariffRate.Checked
@@ -131,33 +126,44 @@ namespace View
             if (statusCheckBox)
             {
                 salaryList = new BindingList<SalaryBase>(_filteredSalaryList);
+                _filteredSalaryList = new BindingList<SalaryBase>();
             }
             else
             {
                 salaryList = new BindingList<SalaryBase>(_salaryList);
             }
 
-            // if (checkBoxInitialValue.Checked)
-            // {
-            //     if (!string.IsNullOrEmpty(textBoxInitialValue.Text))
-            //     {
-            //         FilterByInitialValue(motionList,
-            //         Convert.ToDouble(textBoxInitialValue.Text));
-            //         _filteredMotionList = motionList;
-            //     }
-            //     else
-            //     {
-            //         MessageBox.Show("Введите начальную координату.", "Предупреждение",
-            //             MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //     }
-            // }
+            if (checkBoxInput.Checked)
+            {
+                if (!string.IsNullOrEmpty(textBoxSalary.Text))
+                {
+                    FilterByInitialValue(salaryList, _filteredSalaryList,
+                    Convert.ToDouble(textBoxSalary.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Введите заработную плату.", "Предупреждение",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else 
+            {
+                FilterByInitialValue(salaryList, _filteredSalaryList,
+                Convert.ToDouble(textBoxSalary.Text));
+            }
         }
 
-
-        //_filteredSalaryList = _salaryList;
-        //
-        //_filteredSalaryList.Add(_salaryList[1]);
-        //
-        //SalaryFiltered?.Invoke(this, new SalaryFilterEvent(_filteredSalaryList));
+        private static void FilterByInitialValue(
+            BindingList<SalaryBase> salaryList, 
+            BindingList<SalaryBase> filteredSalaryList, double initialValue)
+        {
+            foreach (var item in salaryList)
+            {
+                if (item.CalculateSalary == initialValue)
+                {
+                    filteredSalaryList.Add(item);
+                }
+            }
+        }
     }
 }

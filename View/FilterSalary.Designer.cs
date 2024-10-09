@@ -139,6 +139,7 @@ namespace View
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.groupBoxParameters);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FilterSalary";
             this.Text = "Фильтр по типу зарплаты";
             this.groupBoxParameters.ResumeLayout(false);

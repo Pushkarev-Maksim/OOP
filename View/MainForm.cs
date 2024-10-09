@@ -16,15 +16,6 @@ namespace View
     //TODO: XML
     public partial class MainForm : Form
     {
-        //TODO: XML
-        public MainForm()
-        {
-            InitializeComponent();
-            BackColor = Color.AliceBlue;
-            dataGridViewSpace.BackgroundColor = Color.LightGray;
-            StartPosition = FormStartPosition.CenterScreen;
-        }
-
         /// <summary>
         /// Список зарплат.
         /// </summary>
@@ -40,6 +31,15 @@ namespace View
         /// </summary>
         private readonly XmlSerializer _serializer =
             new XmlSerializer(typeof(BindingList<SalaryBase>));
+
+        //TODO: XML
+        public MainForm()
+        {
+            InitializeComponent();
+            BackColor = Color.AliceBlue;
+            dataGridViewSpace.BackgroundColor = Color.LightGray;
+            StartPosition = FormStartPosition.CenterScreen;
+        }
 
         /// <summary>
         /// Переход в форму добавления новой зарплаты.
@@ -61,7 +61,7 @@ namespace View
         private void ВuttonFilter_Click(object sender, EventArgs e)
         {
             FilterSalary filterSalary = new FilterSalary(_salaryList);
-            // filterSalary.SalaryAdded += AddedSalary;
+            filterSalary.SalaryFiltered += FilterSalary;
             filterSalary.Show();
         }
 
@@ -235,7 +235,12 @@ namespace View
                 salaryList as SalaryFilterEvent;
 
             _listSalaryFilter = filterEventArgs?.FilteredSalaryList;
+            CreateTable(_listSalaryFilter, dataGridViewSpace);
         }
 
+        private void ResetFilter(object sender, EventArgs e)
+        {
+            CreateTable(_salaryList, dataGridViewSpace);
+        }
     }
 }

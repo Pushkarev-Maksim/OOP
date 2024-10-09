@@ -33,8 +33,6 @@ namespace View
         private void SalaryHourlyRate_CheckedChanged(object sender, EventArgs e)
         {
             //TODO: refactor
-            var currentRadioButton = (RadioButton)sender;
-
             salaryHourlyRateUserControl.Visible = true;
             salaryMonthlyUserControl.Visible = false;
             salaryTariffRateUserControl.Visible = false;
