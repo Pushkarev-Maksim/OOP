@@ -17,6 +17,35 @@ namespace View
             BackColor = Color.AliceBlue;
             StartPosition = FormStartPosition.CenterScreen;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            salaryHourlyRateUserControl.textBoxHourlyRate.Tag = "double";
+            salaryHourlyRateUserControl.textBoxHours.Tag = "int";
+            salaryMonthlyUserControl.textBoxFixedSalary.Tag = "double";
+            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Tag = "int";
+            salaryMonthlyUserControl.textBoxActualWorkedDays.Tag = "int";
+            salaryTariffRateUserControl.textBoxTariffRate.Tag = "double";
+            salaryTariffRateUserControl.textBoxDays.Tag = "int";
+
+            salaryHourlyRateUserControl.textBoxHourlyRate.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
+
+            salaryHourlyRateUserControl.textBoxHours.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
+
+            salaryMonthlyUserControl.textBoxFixedSalary.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
+
+            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
+
+            salaryMonthlyUserControl.textBoxActualWorkedDays.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
+            
+            salaryTariffRateUserControl.textBoxTariffRate.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
+            
+            salaryTariffRateUserControl.textBoxDays.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
         }
 
         /// <summary>
@@ -119,6 +148,43 @@ namespace View
             {
                 MessageBox.Show("Введите данные.", "Предупреждение",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Проверка данных вводимых в textBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            string dataType = textBox.Tag as string;
+
+            if (dataType == "int")
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (dataType == "double")
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == ',' && textBox.Text.Contains(","))
+                {
+                    e.Handled = true;
+                }
+            }
+
+            if (e.KeyChar == '0' && string.IsNullOrEmpty(textBox.Text.Trim('0')))
+            {
+                e.Handled = true;
             }
         }
     }
