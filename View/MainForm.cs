@@ -49,7 +49,8 @@ namespace View
         private void ВuttonAdd_Click(object sender, EventArgs e)
         {
             AddSalary addSalary = new AddSalary();
-            addSalary.ShowDialog();
+            addSalary.SalaryAdded += AddedSalary;
+            addSalary.Show();
         }
 
         /// <summary>
@@ -59,8 +60,9 @@ namespace View
         /// <param name="e"></param>
         private void ВuttonFilter_Click(object sender, EventArgs e)
         {
-            FilterSalary filterSalary = new FilterSalary();
-            filterSalary.ShowDialog();
+            FilterSalary filterSalary = new FilterSalary(_salaryList);
+            // filterSalary.SalaryAdded += AddedSalary;
+            filterSalary.Show();
         }
 
         /// <summary>
@@ -218,5 +220,22 @@ namespace View
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void AddedSalary(object sender, EventArgs salaryBase)
+        {
+            SalaryAddedEvent addedEventArgs =
+                salaryBase as SalaryAddedEvent;
+
+            _salaryList.Add(addedEventArgs?.SalaryBase);
+        }
+
+        private void FilterSalary(object sender, EventArgs salaryList)
+        {
+            SalaryFilterEvent filterEventArgs =
+                salaryList as SalaryFilterEvent;
+
+            _listSalaryFilter = filterEventArgs?.FilteredSalaryList;
+        }
+
     }
 }

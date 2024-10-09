@@ -90,9 +90,9 @@ namespace View
 
         #endregion
 
-        private Label labelTariffRate;
-        private Label labelDays;
-        private TextBox textBoxTariffRate;
-        private TextBox textBoxDays;
+        internal Label labelTariffRate;
+        internal Label labelDays;
+        internal TextBox textBoxTariffRate;
+        internal TextBox textBoxDays;
     }
 }

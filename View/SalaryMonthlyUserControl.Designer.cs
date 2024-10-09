@@ -112,11 +112,11 @@ namespace View
 
         #endregion
 
-        private Label labelFixedSalary;
-        private Label labelMonthlyWorkingDays;
-        private Label labelActualWorkedDays;
-        private TextBox textBoxFixedSalary;
-        private TextBox textBoxMonthlyWorkingDays;
-        private TextBox textBoxActualWorkedDays;
+        internal Label labelFixedSalary;
+        internal Label labelMonthlyWorkingDays;
+        internal Label labelActualWorkedDays;
+        internal TextBox textBoxFixedSalary;
+        internal TextBox textBoxMonthlyWorkingDays;
+        internal TextBox textBoxActualWorkedDays;
     }
 }

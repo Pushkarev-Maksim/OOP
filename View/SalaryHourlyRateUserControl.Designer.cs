@@ -90,9 +90,9 @@ namespace View
 
         #endregion
 
-        private Label labelHourlyRate;
-        private Label labelHours;
-        private TextBox textBoxHourlyRate;
-        private TextBox textBoxHours;
+        internal Label labelHourlyRate;
+        internal Label labelHours;
+        internal TextBox textBoxHourlyRate;
+        internal TextBox textBoxHours;
     }
 }

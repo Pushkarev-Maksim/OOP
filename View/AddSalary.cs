@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace View
     //TODO: XML
     public partial class AddSalary : Form
     {
+        public EventHandler SalaryAdded;
+
         //TODO: XML
         public AddSalary()
         {
@@ -69,6 +72,47 @@ namespace View
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        /// <summary>
+        /// Кнопка добавить.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddButtonClick(object sender, EventArgs e)
+        {
+            SalaryBase salaryBase = null;
+
+            if (salaryHourlyRateUserControl.Visible)
+            {
+                salaryBase = new SalaryHourlyRate()
+                {
+                    HourlyRate = Convert.ToDouble(salaryHourlyRateUserControl.textBoxHourlyRate.Text),
+                    Hours = Convert.ToInt32(salaryHourlyRateUserControl.textBoxHours.Text),
+                };
+            }
+
+            if (salaryMonthlyUserControl.Visible)
+            {
+                salaryBase = new SalaryMonthly()
+                {
+                    FixedSalary = Convert.ToDouble(salaryMonthlyUserControl.textBoxFixedSalary.Text),
+                    MonthlyWorkingDays = Convert.ToInt32(salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Text),
+                    ActualWorkedDays = Convert.ToInt32(salaryMonthlyUserControl.textBoxActualWorkedDays.Text),
+
+                };
+            }
+
+            if (salaryTariffRateUserControl.Visible)
+            {
+                salaryBase = new SalaryTariffRate()
+                {
+                    TariffRate = Convert.ToDouble(salaryTariffRateUserControl.textBoxTariffRate.Text),
+                    Days = Convert.ToInt32(salaryTariffRateUserControl.textBoxDays.Text),
+                };
+            }
+
+            SalaryAdded?.Invoke(this, new SalaryAddedEvent(salaryBase));
         }
     }
 }

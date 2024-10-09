@@ -64,7 +64,7 @@ namespace View
             this.salaryTariffRate.AutoSize = true;
             this.salaryTariffRate.Location = new System.Drawing.Point(6, 67);
             this.salaryTariffRate.Name = "salaryTariffRate";
-            this.salaryTariffRate.Size = new System.Drawing.Size(131, 19);
+            this.salaryTariffRate.Size = new System.Drawing.Size(114, 17);
             this.salaryTariffRate.TabIndex = 12;
             this.salaryTariffRate.Text = "Тарифная ставка";
             this.salaryTariffRate.UseVisualStyleBackColor = true;
@@ -75,7 +75,7 @@ namespace View
             this.salaryMonthly.AutoSize = true;
             this.salaryMonthly.Location = new System.Drawing.Point(6, 43);
             this.salaryMonthly.Name = "salaryMonthly";
-            this.salaryMonthly.Size = new System.Drawing.Size(119, 19);
+            this.salaryMonthly.Size = new System.Drawing.Size(107, 17);
             this.salaryMonthly.TabIndex = 11;
             this.salaryMonthly.Text = "Оклад за месяц";
             this.salaryMonthly.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@ namespace View
             this.salaryHourlyRate.AutoSize = true;
             this.salaryHourlyRate.Location = new System.Drawing.Point(6, 19);
             this.salaryHourlyRate.Name = "salaryHourlyRate";
-            this.salaryHourlyRate.Size = new System.Drawing.Size(183, 19);
+            this.salaryHourlyRate.Size = new System.Drawing.Size(159, 17);
             this.salaryHourlyRate.TabIndex = 10;
             this.salaryHourlyRate.Text = "Часовая тарифная ставка";
             this.salaryHourlyRate.CheckedChanged += new System.EventHandler(this.SalaryHourlyRate_CheckedChanged);
@@ -100,6 +100,7 @@ namespace View
             this.buttonOk.TabIndex = 13;
             this.buttonOk.Text = "Ок";
             this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.AddButtonClick);
             // 
             // buttonClose
             // 
