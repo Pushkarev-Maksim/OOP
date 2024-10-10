@@ -30,6 +30,11 @@ namespace View
         private readonly XmlSerializer _serializer =
             new XmlSerializer(typeof(BindingList<SalaryBase>));
 
+        /// <summary>
+        ///  Поле для хранения состояния формы FindForm.
+        /// </summary>
+        private bool _isFindFormOpen = false;
+
         //TODO: XML +
         /// <summary>
         /// Конструктор MainForm.
@@ -49,9 +54,15 @@ namespace View
         /// <param name="e"></param>
         private void ClickВuttonAdd(object sender, EventArgs e)
         {
-            AddSalary addSalary = new AddSalary();
-            addSalary.SalaryAdded += AddedSalary;
-            addSalary.Show();
+            if (!_isFindFormOpen)
+            {
+                _isFindFormOpen = true;
+               
+                AddSalary addSalary = new AddSalary();
+                addSalary.FormClosed += (s, args) => { _isFindFormOpen = false; };
+                addSalary.SalaryAdded += AddedSalary;
+                addSalary.Show();
+            }
         }
 
         /// <summary>
@@ -61,9 +72,15 @@ namespace View
         /// <param name="e"></param>
         private void ClickВuttonFilter(object sender, EventArgs e)
         {
-            FilterSalary filterSalary = new FilterSalary(_salaryList);
-            filterSalary.SalaryFiltered += FilteredSalary;
-            filterSalary.Show();
+            if (!_isFindFormOpen)
+            {
+                _isFindFormOpen = true;
+
+                FilterSalary addSalary = new FilterSalary(_salaryList);
+                addSalary.FormClosed += (s, args) => { _isFindFormOpen = false; };
+                addSalary.SalaryFiltered += FilteredSalary;
+                addSalary.Show();
+            }
         }
 
         /// <summary>
