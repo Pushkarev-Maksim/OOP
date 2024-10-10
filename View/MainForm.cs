@@ -84,7 +84,7 @@ namespace View
             if (!_isFilterFormOpen)
             {
                 _isFilterFormOpen = true;
-
+                buttonAdd.Enabled = false;
                 FilterSalary filterSalary = new FilterSalary(_salaryList);
                 filterSalary.FormClosed += (s, args) => 
                     { _isFilterFormOpen = false; };
@@ -177,6 +177,7 @@ namespace View
         {
             CreateTable(_salaryList, dataGridViewSpace);
             _isFilter = false;
+            buttonAdd.Enabled = true;
         }
 
         /// <summary>
