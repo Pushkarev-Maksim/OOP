@@ -48,8 +48,8 @@ namespace View
         /// <summary>
         /// Переход в форму добавления новой зарплаты.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickВuttonAdd(object sender, EventArgs e)
         {
             if (!_isFindFormOpen)
@@ -66,8 +66,8 @@ namespace View
         /// <summary>
         /// Переход в форму фильтрации.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickВuttonFilter(object sender, EventArgs e)
         {
             if (!_isFindFormOpen)
@@ -84,8 +84,8 @@ namespace View
         /// <summary>
         /// Создание таблицы DataGrid.
         /// </summary>
-        /// <param name="salary"></param>
-        /// <param name="dataGridView"></param>
+        /// <param name="salary">Список зарплат.</param>
+        /// <param name="dataGridView">Сетка.</param>
         public static void CreateTable(BindingList<SalaryBase> salary,
               DataGridView dataGridView)
         {
@@ -111,8 +111,8 @@ namespace View
         /// <summary>
         /// Загрузка формы.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void LoadMainForm(object sender, EventArgs e)
         {
             _salaryList = new BindingList<SalaryBase>();
@@ -122,8 +122,8 @@ namespace View
         /// <summary>
         /// Добавление в список случайной зарплаты.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickВuttonRandomSalary(object sender, EventArgs e)
         {
             _salaryList.Add(RandomSalary.GetRandomSalary());
@@ -132,8 +132,8 @@ namespace View
         /// <summary>
         /// Очистить список.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickВuttonCleanList(object sender, EventArgs e)
         {
             _salaryList.Clear();
@@ -142,8 +142,8 @@ namespace View
         /// <summary>
         /// Удаление позиции.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickВuttonDelete(object sender, EventArgs e)
         {
             if (dataGridViewSpace.SelectedCells.Count != 0)
@@ -159,8 +159,8 @@ namespace View
         /// <summary>
         /// Сброс наcтроек фильтра.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickВuttonResetFilter(object sender, EventArgs e)
         {
             CreateTable(_salaryList, dataGridViewSpace);
@@ -169,8 +169,8 @@ namespace View
         /// <summary>
         /// Сохранение списка в файл.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickSaveToolStripMenuItem(object sender, EventArgs e)
         {
             if (_salaryList.Count == 0)
@@ -202,8 +202,8 @@ namespace View
         /// <summary>
         /// Открытие файла со списком.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickOpenToolStripMenuItem(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
@@ -240,8 +240,8 @@ namespace View
         /// <summary>
         /// Обработчик добавления данных в лист.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="salaryBase"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="salaryBase">Объект класса SalaryBase.</param>
         private void AddedSalary(object sender, EventArgs salaryBase)
         {
             SalaryAddedEvent addedEventArgs =
@@ -253,8 +253,8 @@ namespace View
         /// <summary>
         /// Обработчик фильтрации данных.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="salaryList"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="salaryList">Список зарплат.</param>
         private void FilteredSalary(object sender, EventArgs salaryList)
         {
             SalaryFilterEvent filterEventArgs =
@@ -267,8 +267,8 @@ namespace View
         /// <summary>
         /// Метод нажатия на кнопку "Сбросить".
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ResetFilter(object sender, EventArgs e)
         {
             CreateTable(_salaryList, dataGridViewSpace);

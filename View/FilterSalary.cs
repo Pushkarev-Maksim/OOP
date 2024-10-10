@@ -64,8 +64,8 @@ namespace View
         /// Активирация или деактивация элементов управления
         /// в зависимости от состояния чекбоксов типа ЗП.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ActivateElements(object sender, EventArgs e)
         {
             bool activate = checkBoxSalaryHourlyRate.Checked
@@ -78,8 +78,8 @@ namespace View
         /// <summary>
         /// Активация поля ввода значения ЗП.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ActivateSalaryBox(object sender, EventArgs e)
         {
             textBoxSalary.Enabled = checkBoxInput.Checked;
@@ -88,8 +88,8 @@ namespace View
         /// <summary>
         /// Активация поля ввода зарплаты для поиска.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ActivateTextBox(object sender, EventArgs e)
         {
             if (checkBoxInput.Checked)
@@ -101,8 +101,8 @@ namespace View
         /// <summary>
         /// Фильтрация списка.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void Filter(object sender, EventArgs e)
         {
             _filteredSalaryList = new BindingList<SalaryBase>();
