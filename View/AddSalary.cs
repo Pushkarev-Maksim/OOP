@@ -5,12 +5,21 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Класс AddSalary.
+    /// </summary>
     public partial class AddSalary : Form
     {
+        /// <summary>
+        /// Поле для обработки события добавления.
+        /// </summary>
         public EventHandler SalaryAdded;
 
-        //TODO: XML
+        //TODO: XML +
+        /// <summary>
+        /// Конструктор AddSalary.
+        /// </summary>
         public AddSalary()
         {
             InitializeComponent();

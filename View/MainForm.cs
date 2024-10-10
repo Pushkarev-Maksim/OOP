@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using Model;
 
 namespace View
 {
-    //TODO: XML
+    // TODO: XML +
+    /// <summary>
+    /// Класс MainForm
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
@@ -32,7 +30,10 @@ namespace View
         private readonly XmlSerializer _serializer =
             new XmlSerializer(typeof(BindingList<SalaryBase>));
 
-        //TODO: XML
+        //TODO: XML +
+        /// <summary>
+        /// Конструктор MainForm.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -221,6 +222,11 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Обработчик добавления данных в лист.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="salaryBase"></param>
         private void AddedSalary(object sender, EventArgs salaryBase)
         {
             SalaryAddedEvent addedEventArgs =
@@ -229,6 +235,11 @@ namespace View
             _salaryList.Add(addedEventArgs?.SalaryBase);
         }
 
+        /// <summary>
+        /// Обработчик фильтрации данных.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="salaryList"></param>
         private void FilterSalary(object sender, EventArgs salaryList)
         {
             SalaryFilterEvent filterEventArgs =
@@ -238,6 +249,11 @@ namespace View
             CreateTable(_listSalaryFilter, dataGridViewSpace);
         }
 
+        /// <summary>
+        /// Метод нажатия на кнопку "Сбросить".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ResetFilter(object sender, EventArgs e)
         {
             CreateTable(_salaryList, dataGridViewSpace);

@@ -42,7 +42,7 @@ namespace View
             this.labelTariffRate.Location = new System.Drawing.Point(8, 5);
             this.labelTariffRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTariffRate.Name = "labelTariffRate";
-            this.labelTariffRate.Size = new System.Drawing.Size(110, 15);
+            this.labelTariffRate.Size = new System.Drawing.Size(96, 13);
             this.labelTariffRate.TabIndex = 1;
             this.labelTariffRate.Text = "Тарифная ставка";
             // 
@@ -52,7 +52,7 @@ namespace View
             this.labelDays.Location = new System.Drawing.Point(8, 29);
             this.labelDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(166, 15);
+            this.labelDays.Size = new System.Drawing.Size(142, 13);
             this.labelDays.TabIndex = 0;
             this.labelDays.Text = "Кол-во отработанных дней";
             // 

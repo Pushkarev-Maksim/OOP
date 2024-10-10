@@ -44,7 +44,7 @@ namespace View
             this.labelFixedSalary.Location = new System.Drawing.Point(8, 3);
             this.labelFixedSalary.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFixedSalary.Name = "labelFixedSalary";
-            this.labelFixedSalary.Size = new System.Drawing.Size(145, 15);
+            this.labelFixedSalary.Size = new System.Drawing.Size(130, 13);
             this.labelFixedSalary.TabIndex = 1;
             this.labelFixedSalary.Text = "Оклад за полный месяц";
             // 
@@ -54,7 +54,7 @@ namespace View
             this.labelMonthlyWorkingDays.Location = new System.Drawing.Point(8, 28);
             this.labelMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMonthlyWorkingDays.Name = "labelMonthlyWorkingDays";
-            this.labelMonthlyWorkingDays.Size = new System.Drawing.Size(184, 15);
+            this.labelMonthlyWorkingDays.Size = new System.Drawing.Size(161, 13);
             this.labelMonthlyWorkingDays.TabIndex = 2;
             this.labelMonthlyWorkingDays.Text = "Кол-во рабочих дней в месяце";
             // 
@@ -64,7 +64,7 @@ namespace View
             this.labelActualWorkedDays.Location = new System.Drawing.Point(8, 52);
             this.labelActualWorkedDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelActualWorkedDays.Name = "labelActualWorkedDays";
-            this.labelActualWorkedDays.Size = new System.Drawing.Size(166, 15);
+            this.labelActualWorkedDays.Size = new System.Drawing.Size(142, 13);
             this.labelActualWorkedDays.TabIndex = 3;
             this.labelActualWorkedDays.Text = "Кол-во отработанных дней";
             // 

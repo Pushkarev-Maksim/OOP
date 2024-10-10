@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -7,7 +6,10 @@ using Model;
 
 namespace View
 {
-    //TODO: XML
+    // TODO: XML +
+    /// <summary>
+    /// Класс FilterSalary.
+    /// </summary>
     public partial class FilterSalary : Form
     {
         /// <summary>
@@ -25,7 +27,12 @@ namespace View
         /// </summary>
         public EventHandler SalaryFiltered;
 
-        //TODO: XML
+        //TODO: XML +
+        /// <summary>
+        /// Конструктор FilterSalary.
+        /// </summary>
+        /// <param name="salaryList">Список заработных плат
+        /// для фильтрации.</param>
         public FilterSalary(BindingList<SalaryBase> salaryList)
         {
             InitializeComponent();
@@ -43,7 +50,7 @@ namespace View
         }
 
         /// <summary>
-        /// Деактивирует элементы управления на форме.
+        /// Деактивация элементов управления на форме.
         /// </summary>
         private void DeactivateElements()
         {
@@ -52,12 +59,11 @@ namespace View
         }
 
         /// <summary>
-        /// Активирует или деактивирует элементы управления
-        /// в зависимости от состояния чекбоксов типа фигуры.
+        /// Активирация или деактивация элементов управления
+        /// в зависимости от состояния чекбоксов типа ЗП.
         /// </summary>
-        /// <param name="sender">Источник события.</param>
-        /// <param name="e">Объект <see cref="EventArgs"/>,
-        /// содержащий данные события.</param>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ActivateElements(object sender, EventArgs e)
         {
             bool activate = checkBoxSalaryHourlyRate.Checked
@@ -66,7 +72,12 @@ namespace View
 
             checkBoxInput.Enabled = activate;
         }
-
+        
+        /// <summary>
+        /// Активация поля ввода значения ЗП.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ActivateSalaryBox(object sender, EventArgs e)
         {
             textBoxSalary.Enabled = checkBoxInput.Checked;
@@ -77,7 +88,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void СheckBoxInput_CheckedChanged(object sender, EventArgs e)
+        private void ActivateTextBox(object sender, EventArgs e)
         {
             if (checkBoxInput.Checked)
             {
@@ -85,7 +96,12 @@ namespace View
             }
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Фильтрация списка.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Filter(object sender, EventArgs e)
         {
             _filteredSalaryList = new BindingList<SalaryBase>();
 
@@ -114,8 +130,8 @@ namespace View
             {
                 if (!string.IsNullOrEmpty(textBoxSalary.Text))
                 {
-                    _filteredSalaryList = 
-                        FilterByInitialValue(_filteredSalaryList,
+                    _filteredSalaryList =
+                        FilterBySalaryValue(_filteredSalaryList,
                     Convert.ToDouble(textBoxSalary.Text));
                 }
                 else
@@ -137,8 +153,15 @@ namespace View
                 this, new SalaryFilterEvent(_filteredSalaryList));
         }
 
+        /// <summary>
+        /// Фильтрация списка по типу.
+        /// </summary>
+        /// <param name="salaryList">ист подлежащий фильтрации.</param>
+        /// <param name="filteredSalaryList">Список, в который будут добавленны
+        /// отфильтрованные значения.</param>
+        /// <param name="salaryType">Тип отфильтрованных значений.</param>
         private static void FilterByType(
-            BindingList<SalaryBase> salaryList, 
+            BindingList<SalaryBase> salaryList,
             BindingList<SalaryBase> filteredSalaryList, 
             Type salaryType)
         {
@@ -151,7 +174,13 @@ namespace View
             }
         }
 
-        private static BindingList<SalaryBase> FilterByInitialValue(
+        /// <summary>
+        /// Фильтрация списка по значению ЗП.
+        /// </summary>
+        /// <param name="filteredSalaryList">Лист подлежащий фильтрации.</param>
+        /// <param name="initialValue">Значение ЗП.</param>
+        /// <returns>Отфильтрованный список.</returns>
+        private static BindingList<SalaryBase> FilterBySalaryValue(
             BindingList<SalaryBase> filteredSalaryList, double initialValue)
         {
             BindingList<SalaryBase> filteredList = new BindingList<SalaryBase>();

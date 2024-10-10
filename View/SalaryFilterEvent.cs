@@ -4,6 +4,9 @@ using Model;
 
 namespace View
 {
+    /// <summary>
+    /// Класс отдает данные событию при фильтрации ЗП.
+    /// </summary>
     internal class SalaryFilterEvent : EventArgs
     {
         /// <summary>
@@ -15,7 +18,7 @@ namespace View
         /// Конструктор.
         /// </summary>
         /// <param name="filterTransportList">Отфильтрованный список
-        /// транспорта.</param>
+        /// ЗП.</param>
         /// <exception cref="ArgumentNullException">Проверка списка
         /// на null</exception>
         public SalaryFilterEvent(BindingList<SalaryBase>
@@ -28,7 +31,5 @@ namespace View
 
             FilteredSalaryList = filterSalaryList;
         }
-
-
     }
 }

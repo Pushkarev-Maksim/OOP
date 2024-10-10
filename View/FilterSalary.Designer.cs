@@ -85,7 +85,7 @@ namespace View
             this.checkBoxInput.TabIndex = 3;
             this.checkBoxInput.Text = "Введите необходимую сумму";
             this.checkBoxInput.UseVisualStyleBackColor = true;
-            this.checkBoxInput.CheckedChanged += new System.EventHandler(this.СheckBoxInput_CheckedChanged);
+            this.checkBoxInput.CheckedChanged += new System.EventHandler(this.ActivateTextBox);
             // 
             // checkBoxSalaryMonthly
             // 
@@ -129,7 +129,7 @@ namespace View
             this.buttonSearch.TabIndex = 5;
             this.buttonSearch.Text = "Найти";
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.Filter);
             // 
             // FilterSalary
             // 

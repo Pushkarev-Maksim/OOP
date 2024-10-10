@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML
+    //TODO: XML +
+    /// <summary>
+    /// Форма для ввода параметров оплаты по часовой тарифной ставке.
+    /// </summary>
     public partial class SalaryHourlyRateUserControl : UserControl
     {
-        //TODO: XML
+        //TODO: XML +
+        /// <summary>
+        /// Конструуктор SalaryHourlyRateUserControl.
+        /// </summary>
         public SalaryHourlyRateUserControl()
         {
             InitializeComponent();
