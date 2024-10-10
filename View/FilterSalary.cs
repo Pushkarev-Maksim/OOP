@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Model;
+using View;
 
 namespace View
 {
@@ -14,7 +16,7 @@ namespace View
         /// <summary>
         /// Исходный список транспорта.
         /// </summary>
-        private BindingList<SalaryBase> _salaryList;
+        private readonly BindingList<SalaryBase> _salaryList;
 
         /// <summary>
         /// Отфильтрованный список транспорта.
@@ -107,24 +109,27 @@ namespace View
         {
             _filteredSalaryList = new BindingList<SalaryBase>();
 
+            BindingList<SalaryBase> tempFilteredList = 
+                new BindingList<SalaryBase>();
+
             if (checkBoxSalaryHourlyRate.Checked)
             {
-                FilterByType(_salaryList,
-                    _filteredSalaryList,
+                FilterByType(_salaryList, 
+                    tempFilteredList, 
                     typeof(SalaryHourlyRate));
             }
 
             if (checkBoxSalaryMonthly.Checked)
             {
-                FilterByType(_salaryList,
-                    _filteredSalaryList,
+                FilterByType(_salaryList, 
+                    tempFilteredList,
                     typeof(SalaryMonthly));
             }
 
             if (checkBoxSalaryTariffRate.Checked)
             {
                 FilterByType(_salaryList,
-                    _filteredSalaryList,
+                    tempFilteredList, 
                     typeof(SalaryTariffRate));
             }
 
@@ -132,27 +137,35 @@ namespace View
             {
                 if (!string.IsNullOrEmpty(textBoxSalary.Text))
                 {
-                    _filteredSalaryList =
-                        FilterBySalaryValue(_filteredSalaryList,
-                    Convert.ToDouble(textBoxSalary.Text));
+                    tempFilteredList = 
+                        FilterBySalaryValue(tempFilteredList, 
+                        Convert.ToDouble(textBoxSalary.Text));
                 }
                 else
                 {
-                    MessageBox.Show("Введите заработную плату.", "Предупреждение",
+                    MessageBox.Show("Введите заработную плату.", "Предупреждение", 
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
             }
 
-            if (_filteredSalaryList.Count == 0
+            foreach (var salary in _salaryList)
+            {
+                if (tempFilteredList.Contains(salary))
+                {
+                    _filteredSalaryList.Add(salary);
+                }
+            }
+
+            if (_filteredSalaryList.Count == 0 
                 || _filteredSalaryList is null)
             {
-                MessageBox.Show("Совпадений не найдено.", "Информация",
+                MessageBox.Show("Совпадений не найдено.", "Информация", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            SalaryFiltered?.Invoke(
-                this, new SalaryFilterEvent(_filteredSalaryList));
+            SalaryFiltered?.Invoke(this, new SalaryFilterEvent(_filteredSalaryList));
         }
 
         /// <summary>
@@ -193,7 +206,6 @@ namespace View
                     filteredList.Add(item);
                 }
             }
-
             return filteredList;
         }
     }

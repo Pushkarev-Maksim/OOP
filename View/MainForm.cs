@@ -30,9 +30,19 @@ namespace View
             new XmlSerializer(typeof(BindingList<SalaryBase>));
 
         /// <summary>
-        ///  Поле для хранения состояния формы FindForm.
+        /// Поле для хранения состояния формы добавления.
         /// </summary>
-        private bool _isFindFormOpen = false;
+        private bool _isAddFormOpen = false;
+
+        /// <summary>
+        /// Поле для хранения состояния формы фильтра.
+        /// </summary>
+        private bool _isFilterFormOpen = false;
+
+        /// <summary>
+        /// Поле для хранения состояния фильтрации.
+        /// </summary>
+        private bool _isFilter = false;
 
         /// <summary>
         /// Конструктор MainForm.
@@ -52,12 +62,13 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonAdd(object sender, EventArgs e)
         {
-            if (!_isFindFormOpen)
+            if (_isAddFormOpen == false && _isFilter == false)
             {
-                _isFindFormOpen = true;
+                _isAddFormOpen = true;
                
                 AddSalary addSalary = new AddSalary();
-                addSalary.FormClosed += (s, args) => { _isFindFormOpen = false; };
+                addSalary.FormClosed += (s, args) => 
+                    { _isAddFormOpen = false; };
                 addSalary.SalaryAdded += AddedSalary;
                 addSalary.Show();
             }
@@ -70,14 +81,15 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonFilter(object sender, EventArgs e)
         {
-            if (!_isFindFormOpen)
+            if (!_isFilterFormOpen)
             {
-                _isFindFormOpen = true;
+                _isFilterFormOpen = true;
 
-                FilterSalary addSalary = new FilterSalary(_salaryList);
-                addSalary.FormClosed += (s, args) => { _isFindFormOpen = false; };
-                addSalary.SalaryFiltered += FilteredSalary;
-                addSalary.Show();
+                FilterSalary filterSalary = new FilterSalary(_salaryList);
+                filterSalary.FormClosed += (s, args) => 
+                    { _isFilterFormOpen = false; };
+                filterSalary.SalaryFiltered += FilteredSalary;
+                filterSalary.Show();
             }
         }
 
@@ -164,6 +176,7 @@ namespace View
         private void ClickВuttonResetFilter(object sender, EventArgs e)
         {
             CreateTable(_salaryList, dataGridViewSpace);
+            _isFilter = false;
         }
 
         /// <summary>
@@ -261,17 +274,8 @@ namespace View
                 salaryList as SalaryFilterEvent;
 
             _listSalaryFilter = filterEventArgs?.FilteredSalaryList;
+            _isFilter = true;
             CreateTable(_listSalaryFilter, dataGridViewSpace);
-        }
-
-        /// <summary>
-        /// Метод нажатия на кнопку "Сбросить".
-        /// </summary>
-        /// <param name="sender">Данные.</param>
-        /// <param name="e">Данные о событие.</param>
-        private void ResetFilter(object sender, EventArgs e)
-        {
-            CreateTable(_salaryList, dataGridViewSpace);
         }
     }
 }

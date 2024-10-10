@@ -45,7 +45,7 @@ namespace Model
         public static T CheckNegativeNumber<T>(T number, string name) 
             where T : IComparable<T>
         {
-            if (number.CompareTo(default) < 0)
+            if (number.CompareTo(default) < 0 /* || double.IsNaN(number.CompareTo(default))*/)
             {
                 throw new ArgumentException($"{name} " +
                     "не может быть отрицательным числом!");
