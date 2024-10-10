@@ -87,6 +87,7 @@
     <Compile Include="SalaryTariffRateUserControl.Designer.cs">
       <DependentUpon>SalaryTariffRateUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextBoxHandler.cs" />
     <EmbeddedResource Include="AddSalary.resx">
       <DependentUpon>AddSalary.cs</DependentUpon>
     </EmbeddedResource>
