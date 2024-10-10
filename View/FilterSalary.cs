@@ -7,7 +7,7 @@ using Model;
 namespace View
 {
     /// <summary>
-    /// Класс FilterSalary.
+    /// Класс для настройки фильтрации.
     /// </summary>
     public partial class FilterSalary : Form
     {

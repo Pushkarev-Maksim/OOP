@@ -9,7 +9,7 @@ using Model;
 namespace View
 {
     /// <summary>
-    /// Класс MainForm
+    /// Класс основной программы.
     /// </summary>
     public partial class MainForm : Form
     {

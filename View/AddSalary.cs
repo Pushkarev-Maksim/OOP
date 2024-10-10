@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace View
 {
     /// <summary>
-    /// Класс AddSalary.
+    /// Класс для добавления зарплаты.
     /// </summary>
     public partial class AddSalary : Form
     {
@@ -25,13 +25,13 @@ namespace View
             StartPosition = FormStartPosition.CenterScreen;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-            salaryHourlyRateUserControl.textBoxHourlyRate.Tag = "double";
-            salaryHourlyRateUserControl.textBoxHours.Tag = "int";
-            salaryMonthlyUserControl.textBoxFixedSalary.Tag = "double";
-            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Tag = "int";
-            salaryMonthlyUserControl.textBoxActualWorkedDays.Tag = "int";
-            salaryTariffRateUserControl.textBoxTariffRate.Tag = "double";
-            salaryTariffRateUserControl.textBoxDays.Tag = "int";
+            salaryHourlyRateUserControl.textBoxHourlyRate.Tag = typeof(double);
+            salaryHourlyRateUserControl.textBoxHours.Tag = typeof(int);
+            salaryMonthlyUserControl.textBoxFixedSalary.Tag = typeof(double);
+            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Tag = typeof(int);
+            salaryMonthlyUserControl.textBoxActualWorkedDays.Tag = typeof(int);
+            salaryTariffRateUserControl.textBoxTariffRate.Tag = typeof(double);
+            salaryTariffRateUserControl.textBoxDays.Tag = typeof(int);
 
             salaryHourlyRateUserControl.textBoxHourlyRate.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
@@ -58,8 +58,8 @@ namespace View
         /// <summary>
         /// Загрузка формы часовой тарифной ставки.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ChangeSalaryHourlyRate(object sender, EventArgs e)
         {
             salaryHourlyRateUserControl.Visible = true;
@@ -70,8 +70,8 @@ namespace View
         /// <summary>
         /// Загрузка формы оклада за месяц.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ChangeSalaryMonthly(object sender, EventArgs e)
         {
             salaryHourlyRateUserControl.Visible = false;
@@ -82,8 +82,8 @@ namespace View
         /// <summary>
         /// Загрузка формы тарифной ставки.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ChangeSalaryTariffRate(object sender, EventArgs e)
         {
             salaryHourlyRateUserControl.Visible = false;
@@ -94,8 +94,8 @@ namespace View
         /// <summary>
         /// Кнопка закрыть.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickButtonClose(object sender, EventArgs e)
         {
             Close();
@@ -104,8 +104,8 @@ namespace View
         /// <summary>
         /// Кнопка добавить.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Данные.</param>
+        /// <param name="e">Данные о событие.</param>
         private void ClickButtonAdd(object sender, EventArgs e)
         {
             try
