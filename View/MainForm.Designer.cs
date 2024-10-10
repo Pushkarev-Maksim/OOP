@@ -38,7 +38,9 @@ namespace View
             this.buttonCleanList = new System.Windows.Forms.Button();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.buttonResetFilter = new System.Windows.Forms.Button();
+#if DEBUG
             this.buttonRandomSalary = new System.Windows.Forms.Button();
+#endif            
             this.toolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,6 +129,7 @@ namespace View
             this.buttonResetFilter.Text = "Сбросить фильтр";
             this.buttonResetFilter.UseVisualStyleBackColor = true;
             this.buttonResetFilter.Click += new System.EventHandler(this.ClickВuttonResetFilter);
+#if DEBUG        
             // 
             // buttonRandomSalary
             // 
@@ -138,6 +141,7 @@ namespace View
             this.buttonRandomSalary.Text = "Случайная зарплата";
             this.buttonRandomSalary.UseVisualStyleBackColor = true;
             this.buttonRandomSalary.Click += new System.EventHandler(this.ClickВuttonRandomSalary);
+#endif            
             // 
             // toolStripDropDownButton
             // 
@@ -187,7 +191,9 @@ namespace View
             this.Controls.Add(this.buttonFilter);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.buttonResetFilter);
+#if DEBUG
             this.Controls.Add(this.buttonRandomSalary);
+#endif            
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -210,9 +216,11 @@ namespace View
         private Button buttonAdd;
         private Button buttonDelete;
         private Button buttonCleanList;
-        private Button buttonFilter;
+        private Button buttonFilter;        
         private Button buttonResetFilter;
+#if DEBUG
         private Button buttonRandomSalary;
+#endif
         private ToolStripDropDownButton toolStripDropDownButton;
         private ToolStripMenuItem saveToolStripMenuItem;
         private ToolStripMenuItem openToolStripMenuItem;

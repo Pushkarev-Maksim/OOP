@@ -41,6 +41,8 @@ namespace View
             StartPosition = FormStartPosition.CenterScreen;
             textBoxSalary.Enabled = false;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            textBoxSalary.KeyPress += new
+                KeyPressEventHandler(TextBoxKeyPress);
             DeactivateElements();
 
             checkBoxSalaryHourlyRate.CheckedChanged += ActivateElements;
@@ -193,6 +195,31 @@ namespace View
             }
 
             return filteredList;
+        }
+
+        /// <summary>
+        /// Проверка данных вводимых в textBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '0' && string.IsNullOrEmpty(textBox.Text.Trim('0')))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
