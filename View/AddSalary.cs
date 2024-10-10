@@ -62,7 +62,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SalaryHourlyRate_CheckedChanged(object sender, EventArgs e)
+        private void ChangeSalaryHourlyRate(object sender, EventArgs e)
         {
             salaryHourlyRateUserControl.Visible = true;
             salaryMonthlyUserControl.Visible = false;
@@ -74,7 +74,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SalaryMonthly_CheckedChanged(object sender, EventArgs e)
+        private void ChangeSalaryMonthly(object sender, EventArgs e)
         {
             salaryHourlyRateUserControl.Visible = false;
             salaryMonthlyUserControl.Visible = true;
@@ -86,7 +86,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SalaryTariffRate_CheckedChanged(object sender, EventArgs e)
+        private void ChangeSalaryTariffRate(object sender, EventArgs e)
         {
             salaryHourlyRateUserControl.Visible = false;
             salaryMonthlyUserControl.Visible = false;
@@ -98,7 +98,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonClose_Click(object sender, EventArgs e)
+        private void ClickButtonClose(object sender, EventArgs e)
         {
             Close();
         }
@@ -108,7 +108,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddButtonClick(object sender, EventArgs e)
+        private void ClickButtonAdd(object sender, EventArgs e)
         {
             try
             {

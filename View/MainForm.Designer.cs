@@ -82,7 +82,7 @@ namespace View
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.ВuttonAdd_Click);
+            this.buttonAdd.Click += new System.EventHandler(this.ClickВuttonAdd);
             // 
             // buttonDelete
             // 
@@ -93,7 +93,7 @@ namespace View
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.ВuttonDelete_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.ClickВuttonDelete);
             // 
             // buttonCleanList
             // 
@@ -104,7 +104,7 @@ namespace View
             this.buttonCleanList.TabIndex = 4;
             this.buttonCleanList.Text = "Очистить список";
             this.buttonCleanList.UseVisualStyleBackColor = true;
-            this.buttonCleanList.Click += new System.EventHandler(this.ВuttonCleanList_Click);
+            this.buttonCleanList.Click += new System.EventHandler(this.ClickВuttonCleanList);
             // 
             // buttonFilter
             // 
@@ -115,7 +115,7 @@ namespace View
             this.buttonFilter.TabIndex = 5;
             this.buttonFilter.Text = "Фильтр";
             this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.ВuttonFilter_Click);
+            this.buttonFilter.Click += new System.EventHandler(this.ClickВuttonFilter);
             // 
             // buttonResetFilter
             // 
@@ -126,7 +126,7 @@ namespace View
             this.buttonResetFilter.TabIndex = 6;
             this.buttonResetFilter.Text = "Сбросить фильтр";
             this.buttonResetFilter.UseVisualStyleBackColor = true;
-            this.buttonResetFilter.Click += new System.EventHandler(this.ВuttonResetFilter_Click);
+            this.buttonResetFilter.Click += new System.EventHandler(this.ClickВuttonResetFilter);
             // 
             // buttonRandomSalary
             // 
@@ -137,7 +137,7 @@ namespace View
             this.buttonRandomSalary.TabIndex = 7;
             this.buttonRandomSalary.Text = "Случайная зарплата";
             this.buttonRandomSalary.UseVisualStyleBackColor = true;
-            this.buttonRandomSalary.Click += new System.EventHandler(this.ВuttonRandomSalary_Click);
+            this.buttonRandomSalary.Click += new System.EventHandler(this.ClickВuttonRandomSalary);
             // 
             // toolStripDropDownButton
             // 
@@ -155,14 +155,14 @@ namespace View
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Сохранить";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.ClickSaveToolStripMenuItem);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Загрузить";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.ClickOpenToolStripMenuItem);
             // 
             // toolStrip
             // 
@@ -193,7 +193,7 @@ namespace View
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Калькулятор заработных плат";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Load += new System.EventHandler(this.LoadMainForm);
             this.groupBoxCalculator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSpace)).EndInit();
             this.toolStrip.ResumeLayout(false);

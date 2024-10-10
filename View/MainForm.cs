@@ -47,7 +47,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВuttonAdd_Click(object sender, EventArgs e)
+        private void ClickВuttonAdd(object sender, EventArgs e)
         {
             AddSalary addSalary = new AddSalary();
             addSalary.SalaryAdded += AddedSalary;
@@ -59,10 +59,10 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВuttonFilter_Click(object sender, EventArgs e)
+        private void ClickВuttonFilter(object sender, EventArgs e)
         {
             FilterSalary filterSalary = new FilterSalary(_salaryList);
-            filterSalary.SalaryFiltered += FilterSalary;
+            filterSalary.SalaryFiltered += FilteredSalary;
             filterSalary.Show();
         }
 
@@ -98,7 +98,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MainForm_Load(object sender, EventArgs e)
+        private void LoadMainForm(object sender, EventArgs e)
         {
             _salaryList = new BindingList<SalaryBase>();
             CreateTable(_salaryList, dataGridViewSpace);
@@ -109,7 +109,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВuttonRandomSalary_Click(object sender, EventArgs e)
+        private void ClickВuttonRandomSalary(object sender, EventArgs e)
         {
             _salaryList.Add(RandomSalary.GetRandomSalary());
         }
@@ -119,7 +119,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВuttonCleanList_Click(object sender, EventArgs e)
+        private void ClickВuttonCleanList(object sender, EventArgs e)
         {
             _salaryList.Clear();
         }
@@ -129,7 +129,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВuttonDelete_Click(object sender, EventArgs e)
+        private void ClickВuttonDelete(object sender, EventArgs e)
         {
             if (dataGridViewSpace.SelectedCells.Count != 0)
             {
@@ -146,7 +146,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВuttonResetFilter_Click(object sender, EventArgs e)
+        private void ClickВuttonResetFilter(object sender, EventArgs e)
         {
             CreateTable(_salaryList, dataGridViewSpace);
         }
@@ -156,7 +156,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ClickSaveToolStripMenuItem(object sender, EventArgs e)
         {
             if (_salaryList.Count == 0)
             {
@@ -189,7 +189,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ClickOpenToolStripMenuItem(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
             {
@@ -240,7 +240,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="salaryList"></param>
-        private void FilterSalary(object sender, EventArgs salaryList)
+        private void FilteredSalary(object sender, EventArgs salaryList)
         {
             SalaryFilterEvent filterEventArgs =
                 salaryList as SalaryFilterEvent;

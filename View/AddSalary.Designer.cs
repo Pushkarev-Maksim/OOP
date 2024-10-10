@@ -68,7 +68,7 @@ namespace View
             this.salaryTariffRate.TabIndex = 12;
             this.salaryTariffRate.Text = "Тарифная ставка";
             this.salaryTariffRate.UseVisualStyleBackColor = true;
-            this.salaryTariffRate.CheckedChanged += new System.EventHandler(this.SalaryTariffRate_CheckedChanged);
+            this.salaryTariffRate.CheckedChanged += new System.EventHandler(this.ChangeSalaryTariffRate);
             // 
             // salaryMonthly
             // 
@@ -79,7 +79,7 @@ namespace View
             this.salaryMonthly.TabIndex = 11;
             this.salaryMonthly.Text = "Оклад за месяц";
             this.salaryMonthly.UseVisualStyleBackColor = true;
-            this.salaryMonthly.CheckedChanged += new System.EventHandler(this.SalaryMonthly_CheckedChanged);
+            this.salaryMonthly.CheckedChanged += new System.EventHandler(this.ChangeSalaryMonthly);
             // 
             // salaryHourlyRate
             // 
@@ -89,7 +89,7 @@ namespace View
             this.salaryHourlyRate.Size = new System.Drawing.Size(159, 17);
             this.salaryHourlyRate.TabIndex = 10;
             this.salaryHourlyRate.Text = "Часовая тарифная ставка";
-            this.salaryHourlyRate.CheckedChanged += new System.EventHandler(this.SalaryHourlyRate_CheckedChanged);
+            this.salaryHourlyRate.CheckedChanged += new System.EventHandler(this.ChangeSalaryHourlyRate);
             // 
             // buttonOk
             // 
@@ -100,7 +100,7 @@ namespace View
             this.buttonOk.TabIndex = 13;
             this.buttonOk.Text = "Ок";
             this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.AddButtonClick);
+            this.buttonOk.Click += new System.EventHandler(this.ClickButtonAdd);
             // 
             // buttonClose
             // 
@@ -111,7 +111,7 @@ namespace View
             this.buttonClose.TabIndex = 14;
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ClickButtonClose);
             // 
             // parametersSalary
             // 

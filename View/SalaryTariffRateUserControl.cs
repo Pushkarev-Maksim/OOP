@@ -2,13 +2,13 @@
 
 namespace View
 {
-    //TODO: XML +
+    // TODO: XML +
     /// <summary>
     /// Форма для ввода параметров оплаты по тарифной ставке.
     /// </summary>
     public partial class SalaryTariffRateUserControl : UserControl
     {
-        //TODO: XML +
+        // TODO: XML +
         /// <summary>
         /// Конструктор класса SalaryTariffRateUserControl.
         /// </summary>
