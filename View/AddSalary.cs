@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML +
     /// <summary>
     /// Класс AddSalary.
     /// </summary>
@@ -16,7 +15,6 @@ namespace View
         /// </summary>
         public EventHandler SalaryAdded;
 
-        //TODO: XML +
         /// <summary>
         /// Конструктор AddSalary.
         /// </summary>
@@ -152,7 +150,6 @@ namespace View
 
                 SalaryAdded?.Invoke(this, new SalaryAddedEvent(salaryBase));
             }
-
             catch
             {
                 MessageBox.Show("Введите данные.", "Предупреждение",
@@ -180,6 +177,7 @@ namespace View
             }
             else if (dataType == "double")
             {
+                //TODO: duplication
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
                 {
                     e.Handled = true;
@@ -190,7 +188,7 @@ namespace View
                     e.Handled = true;
                 }
             }
-
+            //TODO: duplication
             if (e.KeyChar == '0' && string.IsNullOrEmpty(textBox.Text.Trim('0')))
             {
                 e.Handled = true;

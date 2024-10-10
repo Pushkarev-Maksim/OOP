@@ -6,7 +6,6 @@ using Model;
 
 namespace View
 {
-    // TODO: XML +
     /// <summary>
     /// Класс FilterSalary.
     /// </summary>
@@ -27,7 +26,6 @@ namespace View
         /// </summary>
         public EventHandler SalaryFiltered;
 
-        //TODO: XML +
         /// <summary>
         /// Конструктор FilterSalary.
         /// </summary>
@@ -206,6 +204,7 @@ namespace View
         {
             TextBox textBox = (TextBox)sender;
 
+            //TODO: duplication
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
             {
                 e.Handled = true;

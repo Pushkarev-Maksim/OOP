@@ -8,7 +8,6 @@ using Model;
 
 namespace View
 {
-    // TODO: XML +
     /// <summary>
     /// Класс MainForm
     /// </summary>
@@ -35,7 +34,6 @@ namespace View
         /// </summary>
         private bool _isFindFormOpen = false;
 
-        //TODO: XML +
         /// <summary>
         /// Конструктор MainForm.
         /// </summary>
