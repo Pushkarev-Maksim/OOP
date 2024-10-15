@@ -40,14 +40,15 @@ namespace Model
         /// необходимо проверить.</param>
         /// <returns>Размер ЗП или кол-во отработанных 
         /// дней и часов</returns>
-        /// <exception cref="ArgumentException">Отрицательное число
+        /// <exception cref="ArgumentOutOfRangeException">Отрицательное число
         /// размера ЗП или кол-ва отработанных дней и часов</exception>
         public static T CheckNegativeNumber<T>(T number, string name) 
             where T : IComparable<T>
         {
-            if (number.CompareTo(default) < 0)
+            if (number.CompareTo(default) < 0 || number.CompareTo(default) == null 
+                || double.IsNaN(number.CompareTo(default)))
             {
-                throw new ArgumentException($"{name} " +
+                throw new ArgumentOutOfRangeException($"{name} " +
                     "не может быть отрицательным числом!");
             }
             return number;

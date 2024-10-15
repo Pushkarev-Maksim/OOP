@@ -242,11 +242,11 @@ namespace View
                     "Загрузка завершена",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Не удалось загрузить файл.\n" +
                     "Файл повреждён или не соответствует формату.",
-                    "Ошибка",
+                    $"Ошибка:  {ex.Message}",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
