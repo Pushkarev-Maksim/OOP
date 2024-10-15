@@ -72,6 +72,7 @@ namespace View
             // 
             this.textBoxFixedSalary.Location = new System.Drawing.Point(194, 0);
             this.textBoxFixedSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFixedSalary.MaxLength = 7;
             this.textBoxFixedSalary.Name = "textBoxFixedSalary";
             this.textBoxFixedSalary.Size = new System.Drawing.Size(55, 20);
             this.textBoxFixedSalary.TabIndex = 0;
@@ -80,6 +81,7 @@ namespace View
             // 
             this.textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(194, 25);
             this.textBoxMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMonthlyWorkingDays.MaxLength = 7;
             this.textBoxMonthlyWorkingDays.Name = "textBoxMonthlyWorkingDays";
             this.textBoxMonthlyWorkingDays.Size = new System.Drawing.Size(55, 20);
             this.textBoxMonthlyWorkingDays.TabIndex = 4;
@@ -88,6 +90,7 @@ namespace View
             // 
             this.textBoxActualWorkedDays.Location = new System.Drawing.Point(194, 49);
             this.textBoxActualWorkedDays.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxActualWorkedDays.MaxLength = 7;
             this.textBoxActualWorkedDays.Name = "textBoxActualWorkedDays";
             this.textBoxActualWorkedDays.Size = new System.Drawing.Size(55, 20);
             this.textBoxActualWorkedDays.TabIndex = 5;

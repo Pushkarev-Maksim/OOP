@@ -42,7 +42,7 @@ namespace View
             this.labelHourlyRate.Location = new System.Drawing.Point(8, 4);
             this.labelHourlyRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHourlyRate.Name = "labelHourlyRate";
-            this.labelHourlyRate.Size = new System.Drawing.Size(162, 15);
+            this.labelHourlyRate.Size = new System.Drawing.Size(141, 13);
             this.labelHourlyRate.TabIndex = 0;
             this.labelHourlyRate.Text = "Часовая тарифная ставка";
             // 
@@ -52,7 +52,7 @@ namespace View
             this.labelHours.Location = new System.Drawing.Point(8, 29);
             this.labelHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHours.Name = "labelHours";
-            this.labelHours.Size = new System.Drawing.Size(171, 15);
+            this.labelHours.Size = new System.Drawing.Size(147, 13);
             this.labelHours.TabIndex = 1;
             this.labelHours.Text = "Кол-во отработанных часов";
             // 
@@ -60,6 +60,7 @@ namespace View
             // 
             this.textBoxHourlyRate.Location = new System.Drawing.Point(195, 2);
             this.textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxHourlyRate.MaxLength = 7;
             this.textBoxHourlyRate.Name = "textBoxHourlyRate";
             this.textBoxHourlyRate.Size = new System.Drawing.Size(55, 20);
             this.textBoxHourlyRate.TabIndex = 2;
@@ -68,6 +69,7 @@ namespace View
             // 
             this.textBoxHours.Location = new System.Drawing.Point(195, 26);
             this.textBoxHours.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxHours.MaxLength = 7;
             this.textBoxHours.Name = "textBoxHours";
             this.textBoxHours.Size = new System.Drawing.Size(55, 20);
             this.textBoxHours.TabIndex = 3;

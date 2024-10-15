@@ -60,6 +60,7 @@ namespace View
             // 
             this.textBoxTariffRate.Location = new System.Drawing.Point(195, 2);
             this.textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxTariffRate.MaxLength = 7;
             this.textBoxTariffRate.Name = "textBoxTariffRate";
             this.textBoxTariffRate.Size = new System.Drawing.Size(55, 20);
             this.textBoxTariffRate.TabIndex = 2;
@@ -68,6 +69,7 @@ namespace View
             // 
             this.textBoxDays.Location = new System.Drawing.Point(195, 26);
             this.textBoxDays.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxDays.MaxLength = 7;
             this.textBoxDays.Name = "textBoxDays";
             this.textBoxDays.Size = new System.Drawing.Size(55, 20);
             this.textBoxDays.TabIndex = 3;

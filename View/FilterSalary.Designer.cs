@@ -71,6 +71,7 @@ namespace View
             // 
             this.textBoxSalary.Location = new System.Drawing.Point(182, 93);
             this.textBoxSalary.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSalary.MaxLength = 7;
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(95, 20);
             this.textBoxSalary.TabIndex = 4;
