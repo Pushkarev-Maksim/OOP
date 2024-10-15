@@ -79,12 +79,17 @@ namespace Model
         /// месяце больше 31</exception>
         private bool CheckDayInMonth(int value)
         {
-            if (value > 31)
+            if (value > DateTime.DaysInMonth(DateTime.Now.Year, 
+                DateTime.Now.Month))
             {
-                throw new ArgumentException("Количество дней в месяце " +
-                    "не может быть больше 31");
+                throw new ArgumentOutOfRangeException(
+                    $"Количество дней в месяце не может быть больше " +
+                    $"{DateTime.DaysInMonth(DateTime.Now.Year,DateTime.Now.Month)}");
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>

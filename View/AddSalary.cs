@@ -133,7 +133,6 @@ namespace View
                             salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Text),
                         ActualWorkedDays = Convert.ToInt32(
                             salaryMonthlyUserControl.textBoxActualWorkedDays.Text),
-
                     };
                 }
 
@@ -149,6 +148,11 @@ namespace View
                 }
 
                 SalaryAdded?.Invoke(this, new SalaryAddedEvent(salaryBase));
+            }
+            catch (ArgumentOutOfRangeException exeption)
+            {
+                MessageBox.Show($"{exeption.Message}", "Предупреждение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch
             {

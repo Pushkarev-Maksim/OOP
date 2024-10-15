@@ -42,7 +42,7 @@ namespace View
             textBoxSalary.Enabled = false;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             
-            textBoxSalary.Tag = "double";
+            textBoxSalary.Tag = typeof(double);
             textBoxSalary.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
             DeactivateElements();
