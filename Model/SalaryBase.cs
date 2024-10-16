@@ -34,14 +34,15 @@ namespace Model
         /// Проверка на отрицательные числа.
         /// </summary>
         /// <typeparam name="T">Размер ЗП или кол-во отработанных 
-        /// дней и часов</typeparam>
-        /// <param name="number"></param>
+        /// дней и часов.</typeparam>
+        /// <param name="number">Параметр, который 
+        /// необходимо проверить.</param>
         /// <param name="name">Наименование параметра, который 
         /// необходимо проверить.</param>
         /// <returns>Размер ЗП или кол-во отработанных 
-        /// дней и часов</returns>
+        /// дней и часов.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Отрицательное число
-        /// размера ЗП или кол-ва отработанных дней и часов</exception>
+        /// размера ЗП или кол-ва отработанных дней и часов.</exception>
         public static T CheckNegativeNumber<T>(T number, string name) 
             where T : IComparable<T>
         {
