@@ -65,12 +65,19 @@ namespace View
             if (_isAddFormOpen == false && _isFilter == false)
             {
                 _isAddFormOpen = true;
-               
+
                 AddSalary addSalary = new AddSalary();
                 addSalary.FormClosed += (s, args) => 
                     { _isAddFormOpen = false; };
+                addSalary.FormClosed += (s, args) =>
+                { buttonFilter.Enabled = true; };
                 addSalary.SalaryAdded += AddedSalary;
                 addSalary.Show();
+
+                if (_isAddFormOpen)
+                {
+                    buttonFilter.Enabled = false;
+                }
             }
         }
 
@@ -84,14 +91,23 @@ namespace View
             if (!_isFilterFormOpen)
             {
                 _isFilterFormOpen = true;
-                buttonAdd.Enabled = false;
+                
                 FilterSalary filterSalary = new FilterSalary(_salaryList);
                 filterSalary.FormClosed += (s, args) => 
                     { _isFilterFormOpen = false; };
+                filterSalary.FormClosed += (s, args) =>
+                            { buttonAdd.Enabled = true; };
                 filterSalary.SalaryFiltered += FilteredSalary;
                 filterSalary.Show();
+
+                if (_isFilterFormOpen)
+                {
+                    buttonAdd.Enabled = false;
+                }
             }
         }
+
+
 
         /// <summary>
         /// Создание таблицы DataGrid.
@@ -177,7 +193,7 @@ namespace View
         {
             CreateTable(_salaryList, dataGridViewSpace);
             _isFilter = false;
-            buttonAdd.Enabled = true;
+            // buttonAdd.Enabled = true;
         }
 
         /// <summary>
