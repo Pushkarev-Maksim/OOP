@@ -36,7 +36,7 @@ namespace View
             this._textBoxHours = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // labelHourlyRate
+            // _labelHourlyRate
             // 
             this._labelHourlyRate.AutoSize = true;
             this._labelHourlyRate.Location = new System.Drawing.Point(8, 4);
@@ -46,7 +46,7 @@ namespace View
             this._labelHourlyRate.TabIndex = 0;
             this._labelHourlyRate.Text = "Часовая тарифная ставка";
             // 
-            // labelHours
+            // _labelHours
             // 
             this._labelHours.AutoSize = true;
             this._labelHours.Location = new System.Drawing.Point(8, 29);
@@ -56,7 +56,7 @@ namespace View
             this._labelHours.TabIndex = 1;
             this._labelHours.Text = "Кол-во отработанных часов";
             // 
-            // textBoxHourlyRate
+            // _textBoxHourlyRate
             // 
             this._textBoxHourlyRate.Location = new System.Drawing.Point(195, 2);
             this._textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2);
@@ -65,7 +65,7 @@ namespace View
             this._textBoxHourlyRate.Size = new System.Drawing.Size(55, 20);
             this._textBoxHourlyRate.TabIndex = 2;
             // 
-            // textBoxHours
+            // _textBoxHours
             // 
             this._textBoxHours.Location = new System.Drawing.Point(195, 26);
             this._textBoxHours.Margin = new System.Windows.Forms.Padding(2);

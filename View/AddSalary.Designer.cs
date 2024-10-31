@@ -45,7 +45,7 @@ namespace View
             this._parametersSalary.SuspendLayout();
             this.SuspendLayout();
             // 
-            // payrollMethod
+            // _payrollMethod
             // 
             this._payrollMethod.Controls.Add(this._salaryTariffRate);
             this._payrollMethod.Controls.Add(this._salaryMonthly);
@@ -59,7 +59,7 @@ namespace View
             this._payrollMethod.TabStop = false;
             this._payrollMethod.Text = "Выберите способ начисления зарплаты";
             // 
-            // salaryTariffRate
+            // _salaryTariffRate
             // 
             this._salaryTariffRate.AutoSize = true;
             this._salaryTariffRate.Location = new System.Drawing.Point(6, 67);
@@ -70,7 +70,7 @@ namespace View
             this._salaryTariffRate.UseVisualStyleBackColor = true;
             this._salaryTariffRate.CheckedChanged += new System.EventHandler(this.ChangeSalaryTariffRate);
             // 
-            // salaryMonthly
+            // _salaryMonthly
             // 
             this._salaryMonthly.AutoSize = true;
             this._salaryMonthly.Location = new System.Drawing.Point(6, 43);
@@ -81,7 +81,7 @@ namespace View
             this._salaryMonthly.UseVisualStyleBackColor = true;
             this._salaryMonthly.CheckedChanged += new System.EventHandler(this.ChangeSalaryMonthly);
             // 
-            // salaryHourlyRate
+            // _salaryHourlyRate
             // 
             this._salaryHourlyRate.AutoSize = true;
             this._salaryHourlyRate.Location = new System.Drawing.Point(6, 19);
@@ -91,7 +91,7 @@ namespace View
             this._salaryHourlyRate.Text = "Часовая тарифная ставка";
             this._salaryHourlyRate.CheckedChanged += new System.EventHandler(this.ChangeSalaryHourlyRate);
             // 
-            // buttonOk
+            // _buttonOk
             // 
             this._buttonOk.Location = new System.Drawing.Point(329, 113);
             this._buttonOk.Margin = new System.Windows.Forms.Padding(2);
@@ -102,7 +102,7 @@ namespace View
             this._buttonOk.UseVisualStyleBackColor = true;
             this._buttonOk.Click += new System.EventHandler(this.ClickButtonAdd);
             // 
-            // buttonClose
+            // _buttonClose
             // 
             this._buttonClose.Location = new System.Drawing.Point(430, 113);
             this._buttonClose.Margin = new System.Windows.Forms.Padding(2);
@@ -113,7 +113,7 @@ namespace View
             this._buttonClose.UseVisualStyleBackColor = true;
             this._buttonClose.Click += new System.EventHandler(this.ClickButtonClose);
             // 
-            // parametersSalary
+            // _parametersSalary
             // 
             this._parametersSalary.Controls.Add(this._salaryMonthlyUserControl);
             this._parametersSalary.Controls.Add(this._salaryMonthlyUserControl);
@@ -127,7 +127,7 @@ namespace View
             this._parametersSalary.TabStop = false;
             this._parametersSalary.Text = "Параметры начисления зарплаты";
             // 
-            // salaryTariffRateUserControl
+            // _salaryTariffRateUserControl
             // 
             this._salaryTariffRateUserControl.Location = new System.Drawing.Point(6, 19);
             this._salaryTariffRateUserControl.Margin = new System.Windows.Forms.Padding(2);
@@ -136,7 +136,7 @@ namespace View
             this._salaryTariffRateUserControl.TabIndex = 2;
             this._salaryTariffRateUserControl.Visible = false;
             // 
-            // salaryMonthlyUserControl
+            // _salaryMonthlyUserControl
             // 
             this._salaryMonthlyUserControl.Location = new System.Drawing.Point(6, 19);
             this._salaryMonthlyUserControl.Margin = new System.Windows.Forms.Padding(2);
@@ -145,7 +145,7 @@ namespace View
             this._salaryMonthlyUserControl.TabIndex = 1;
             this._salaryMonthlyUserControl.Visible = false;
             // 
-            // salaryHourlyRateUserControl
+            // _salaryHourlyRateUserControl
             // 
             this._salaryHourlyRateUserControl.Location = new System.Drawing.Point(6, 17);
             this._salaryHourlyRateUserControl.Margin = new System.Windows.Forms.Padding(2);

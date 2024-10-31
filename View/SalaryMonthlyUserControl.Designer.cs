@@ -38,7 +38,7 @@ namespace View
             this._textBoxActualWorkedDays = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // labelFixedSalary
+            // _labelFixedSalary
             // 
             this._labelFixedSalary.AutoSize = true;
             this._labelFixedSalary.Location = new System.Drawing.Point(8, 3);
@@ -48,7 +48,7 @@ namespace View
             this._labelFixedSalary.TabIndex = 1;
             this._labelFixedSalary.Text = "Оклад за полный месяц";
             // 
-            // labelMonthlyWorkingDays
+            // _labelMonthlyWorkingDays
             // 
             this._labelMonthlyWorkingDays.AutoSize = true;
             this._labelMonthlyWorkingDays.Location = new System.Drawing.Point(8, 28);
@@ -58,7 +58,7 @@ namespace View
             this._labelMonthlyWorkingDays.TabIndex = 2;
             this._labelMonthlyWorkingDays.Text = "Кол-во рабочих дней в месяце";
             // 
-            // labelActualWorkedDays
+            // _labelActualWorkedDays
             // 
             this._labelActualWorkedDays.AutoSize = true;
             this._labelActualWorkedDays.Location = new System.Drawing.Point(8, 52);
@@ -68,7 +68,7 @@ namespace View
             this._labelActualWorkedDays.TabIndex = 3;
             this._labelActualWorkedDays.Text = "Кол-во отработанных дней";
             // 
-            // textBoxFixedSalary
+            // _textBoxFixedSalary
             // 
             this._textBoxFixedSalary.Location = new System.Drawing.Point(194, 0);
             this._textBoxFixedSalary.Margin = new System.Windows.Forms.Padding(2);
@@ -77,7 +77,7 @@ namespace View
             this._textBoxFixedSalary.Size = new System.Drawing.Size(55, 20);
             this._textBoxFixedSalary.TabIndex = 0;
             // 
-            // textBoxMonthlyWorkingDays
+            // _textBoxMonthlyWorkingDays
             // 
             this._textBoxMonthlyWorkingDays.Location = new System.Drawing.Point(194, 25);
             this._textBoxMonthlyWorkingDays.Margin = new System.Windows.Forms.Padding(2);
@@ -86,7 +86,7 @@ namespace View
             this._textBoxMonthlyWorkingDays.Size = new System.Drawing.Size(55, 20);
             this._textBoxMonthlyWorkingDays.TabIndex = 4;
             // 
-            // textBoxActualWorkedDays
+            // _textBoxActualWorkedDays
             // 
             this._textBoxActualWorkedDays.Location = new System.Drawing.Point(194, 49);
             this._textBoxActualWorkedDays.Margin = new System.Windows.Forms.Padding(2);

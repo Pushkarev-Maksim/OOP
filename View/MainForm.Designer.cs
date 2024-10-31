@@ -50,7 +50,7 @@ namespace View
             this._toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxCalculator
+            // _groupBoxCalculator
             // 
             this._groupBoxCalculator.Controls.Add(this._dataGridViewSpace);
             this._groupBoxCalculator.Location = new System.Drawing.Point(23, 32);
@@ -61,7 +61,7 @@ namespace View
             this._groupBoxCalculator.TabIndex = 0;
             this._groupBoxCalculator.TabStop = false;
             // 
-            // dataGridViewSpace
+            // _dataGridViewSpace
             // 
             this._dataGridViewSpace.AllowUserToOrderColumns = true;
             this._dataGridViewSpace.AllowUserToResizeColumns = false;
@@ -75,7 +75,7 @@ namespace View
             this._dataGridViewSpace.Size = new System.Drawing.Size(545, 221);
             this._dataGridViewSpace.TabIndex = 1;
             // 
-            // buttonAdd
+            // _buttonAdd
             // 
             this._buttonAdd.Location = new System.Drawing.Point(28, 281);
             this._buttonAdd.Margin = new System.Windows.Forms.Padding(2);
@@ -86,7 +86,7 @@ namespace View
             this._buttonAdd.UseVisualStyleBackColor = true;
             this._buttonAdd.Click += new System.EventHandler(this.ClickВuttonAdd);
             // 
-            // buttonDelete
+            // _buttonDelete
             // 
             this._buttonDelete.Location = new System.Drawing.Point(217, 281);
             this._buttonDelete.Margin = new System.Windows.Forms.Padding(2);
@@ -97,7 +97,7 @@ namespace View
             this._buttonDelete.UseVisualStyleBackColor = true;
             this._buttonDelete.Click += new System.EventHandler(this.ClickВuttonDelete);
             // 
-            // buttonCleanList
+            // _buttonCleanList
             // 
             this._buttonCleanList.Location = new System.Drawing.Point(406, 281);
             this._buttonCleanList.Margin = new System.Windows.Forms.Padding(2);
@@ -108,7 +108,7 @@ namespace View
             this._buttonCleanList.UseVisualStyleBackColor = true;
             this._buttonCleanList.Click += new System.EventHandler(this.ClickВuttonCleanList);
             // 
-            // buttonFilter
+            // _buttonFilter
             // 
             this._buttonFilter.Location = new System.Drawing.Point(28, 314);
             this._buttonFilter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -119,7 +119,7 @@ namespace View
             this._buttonFilter.UseVisualStyleBackColor = true;
             this._buttonFilter.Click += new System.EventHandler(this.ClickВuttonFilter);
             // 
-            // buttonResetFilter
+            // _buttonResetFilter
             // 
             this._buttonResetFilter.Location = new System.Drawing.Point(217, 314);
             this._buttonResetFilter.Margin = new System.Windows.Forms.Padding(2);
@@ -131,7 +131,7 @@ namespace View
             this._buttonResetFilter.Click += new System.EventHandler(this.ClickВuttonResetFilter);
 #if DEBUG        
             // 
-            // buttonRandomSalary
+            // _buttonRandomSalary
             // 
             this._buttonRandomSalary.Location = new System.Drawing.Point(406, 314);
             this._buttonRandomSalary.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -143,7 +143,7 @@ namespace View
             this._buttonRandomSalary.Click += new System.EventHandler(this.ClickВuttonRandomSalary);
 #endif            
             // 
-            // toolStripDropDownButton
+            // _toolStripDropDownButton
             // 
             this._toolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this._toolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -154,21 +154,21 @@ namespace View
             this._toolStripDropDownButton.Size = new System.Drawing.Size(59, 24);
             this._toolStripDropDownButton.Text = "Файл";
             // 
-            // saveToolStripMenuItem
+            // _saveToolStripMenuItem
             // 
             this._saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this._saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this._saveToolStripMenuItem.Text = "Сохранить";
             this._saveToolStripMenuItem.Click += new System.EventHandler(this.ClickSaveToolStripMenuItem);
             // 
-            // openToolStripMenuItem
+            // _openToolStripMenuItem
             // 
             this._openToolStripMenuItem.Name = "openToolStripMenuItem";
             this._openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this._openToolStripMenuItem.Text = "Загрузить";
             this._openToolStripMenuItem.Click += new System.EventHandler(this.ClickOpenToolStripMenuItem);
             // 
-            // toolStrip
+            // _toolStrip
             // 
             this._toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this._toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {

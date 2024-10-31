@@ -36,7 +36,7 @@ namespace View
             this._textBoxDays = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // labelTariffRate
+            // _labelTariffRate
             // 
             this._labelTariffRate.AutoSize = true;
             this._labelTariffRate.Location = new System.Drawing.Point(8, 5);
@@ -46,7 +46,7 @@ namespace View
             this._labelTariffRate.TabIndex = 1;
             this._labelTariffRate.Text = "Тарифная ставка";
             // 
-            // labelDays
+            // _labelDays
             // 
             this._labelDays.AutoSize = true;
             this._labelDays.Location = new System.Drawing.Point(8, 29);
@@ -56,7 +56,7 @@ namespace View
             this._labelDays.TabIndex = 0;
             this._labelDays.Text = "Кол-во отработанных дней";
             // 
-            // textBoxTariffRate
+            // _textBoxTariffRate
             // 
             this._textBoxTariffRate.Location = new System.Drawing.Point(195, 2);
             this._textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
@@ -65,7 +65,7 @@ namespace View
             this._textBoxTariffRate.Size = new System.Drawing.Size(55, 20);
             this._textBoxTariffRate.TabIndex = 2;
             // 
-            // textBoxDays
+            // _textBoxDays
             // 
             this._textBoxDays.Location = new System.Drawing.Point(195, 26);
             this._textBoxDays.Margin = new System.Windows.Forms.Padding(2);

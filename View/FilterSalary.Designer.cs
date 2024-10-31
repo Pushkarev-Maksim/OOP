@@ -40,7 +40,7 @@ namespace View
             this._groupBoxParameters.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxParameters
+            // _groupBoxParameters
             // 
             this._groupBoxParameters.Controls.Add(this._label);
             this._groupBoxParameters.Controls.Add(this._textBoxSalary);
@@ -57,7 +57,7 @@ namespace View
             this._groupBoxParameters.TabStop = false;
             this._groupBoxParameters.Text = "Параметры фильтрации";
             // 
-            // label
+            // _label
             // 
             this._label.AutoSize = true;
             this._label.Location = new System.Drawing.Point(281, 96);
@@ -67,7 +67,7 @@ namespace View
             this._label.TabIndex = 5;
             this._label.Text = "руб.";
             // 
-            // textBoxSalary
+            // _textBoxSalary
             // 
             this._textBoxSalary.Location = new System.Drawing.Point(182, 93);
             this._textBoxSalary.Margin = new System.Windows.Forms.Padding(2);
@@ -76,7 +76,7 @@ namespace View
             this._textBoxSalary.Size = new System.Drawing.Size(95, 20);
             this._textBoxSalary.TabIndex = 4;
             // 
-            // checkBoxInput
+            // _checkBoxInput
             // 
             this._checkBoxInput.AutoSize = true;
             this._checkBoxInput.Location = new System.Drawing.Point(10, 94);
@@ -88,7 +88,7 @@ namespace View
             this._checkBoxInput.UseVisualStyleBackColor = true;
             this._checkBoxInput.CheckedChanged += new System.EventHandler(this.ActivateTextBox);
             // 
-            // checkBoxSalaryMonthly
+            // _checkBoxSalaryMonthly
             // 
             this._checkBoxSalaryMonthly.AutoSize = true;
             this._checkBoxSalaryMonthly.Location = new System.Drawing.Point(10, 48);
@@ -99,7 +99,7 @@ namespace View
             this._checkBoxSalaryMonthly.Text = "Оклад за месяц";
             this._checkBoxSalaryMonthly.UseVisualStyleBackColor = true;
             // 
-            // checkBoxSalaryTariffRate
+            // _checkBoxSalaryTariffRate
             // 
             this._checkBoxSalaryTariffRate.AutoSize = true;
             this._checkBoxSalaryTariffRate.Location = new System.Drawing.Point(10, 71);
@@ -110,7 +110,7 @@ namespace View
             this._checkBoxSalaryTariffRate.Text = "Тарифная ставка";
             this._checkBoxSalaryTariffRate.UseVisualStyleBackColor = true;
             // 
-            // checkBoxSalaryHourlyRate
+            // _checkBoxSalaryHourlyRate
             // 
             this._checkBoxSalaryHourlyRate.AutoSize = true;
             this._checkBoxSalaryHourlyRate.Location = new System.Drawing.Point(10, 25);
@@ -121,7 +121,7 @@ namespace View
             this._checkBoxSalaryHourlyRate.Text = "Часовая тарифная ставка";
             this._checkBoxSalaryHourlyRate.UseVisualStyleBackColor = true;
             // 
-            // buttonSearch
+            // _buttonSearch
             // 
             this._buttonSearch.Location = new System.Drawing.Point(8, 135);
             this._buttonSearch.Margin = new System.Windows.Forms.Padding(2);
