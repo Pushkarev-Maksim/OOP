@@ -28,7 +28,8 @@ namespace View
             }
             else if (dataType == typeof(double))
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) 
+                    && e.KeyChar != ',')
                 {
                     e.Handled = true;
                 }

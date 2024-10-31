@@ -30,58 +30,58 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTariffRate = new System.Windows.Forms.Label();
-            this.labelDays = new System.Windows.Forms.Label();
-            this.textBoxTariffRate = new System.Windows.Forms.TextBox();
-            this.textBoxDays = new System.Windows.Forms.TextBox();
+            this._labelTariffRate = new System.Windows.Forms.Label();
+            this._labelDays = new System.Windows.Forms.Label();
+            this._textBoxTariffRate = new System.Windows.Forms.TextBox();
+            this._textBoxDays = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelTariffRate
             // 
-            this.labelTariffRate.AutoSize = true;
-            this.labelTariffRate.Location = new System.Drawing.Point(8, 5);
-            this.labelTariffRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelTariffRate.Name = "labelTariffRate";
-            this.labelTariffRate.Size = new System.Drawing.Size(96, 13);
-            this.labelTariffRate.TabIndex = 1;
-            this.labelTariffRate.Text = "Тарифная ставка";
+            this._labelTariffRate.AutoSize = true;
+            this._labelTariffRate.Location = new System.Drawing.Point(8, 5);
+            this._labelTariffRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._labelTariffRate.Name = "labelTariffRate";
+            this._labelTariffRate.Size = new System.Drawing.Size(96, 13);
+            this._labelTariffRate.TabIndex = 1;
+            this._labelTariffRate.Text = "Тарифная ставка";
             // 
             // labelDays
             // 
-            this.labelDays.AutoSize = true;
-            this.labelDays.Location = new System.Drawing.Point(8, 29);
-            this.labelDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(142, 13);
-            this.labelDays.TabIndex = 0;
-            this.labelDays.Text = "Кол-во отработанных дней";
+            this._labelDays.AutoSize = true;
+            this._labelDays.Location = new System.Drawing.Point(8, 29);
+            this._labelDays.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._labelDays.Name = "labelDays";
+            this._labelDays.Size = new System.Drawing.Size(142, 13);
+            this._labelDays.TabIndex = 0;
+            this._labelDays.Text = "Кол-во отработанных дней";
             // 
             // textBoxTariffRate
             // 
-            this.textBoxTariffRate.Location = new System.Drawing.Point(195, 2);
-            this.textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxTariffRate.MaxLength = 7;
-            this.textBoxTariffRate.Name = "textBoxTariffRate";
-            this.textBoxTariffRate.Size = new System.Drawing.Size(55, 20);
-            this.textBoxTariffRate.TabIndex = 2;
+            this._textBoxTariffRate.Location = new System.Drawing.Point(195, 2);
+            this._textBoxTariffRate.Margin = new System.Windows.Forms.Padding(2);
+            this._textBoxTariffRate.MaxLength = 7;
+            this._textBoxTariffRate.Name = "textBoxTariffRate";
+            this._textBoxTariffRate.Size = new System.Drawing.Size(55, 20);
+            this._textBoxTariffRate.TabIndex = 2;
             // 
             // textBoxDays
             // 
-            this.textBoxDays.Location = new System.Drawing.Point(195, 26);
-            this.textBoxDays.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxDays.MaxLength = 7;
-            this.textBoxDays.Name = "textBoxDays";
-            this.textBoxDays.Size = new System.Drawing.Size(55, 20);
-            this.textBoxDays.TabIndex = 3;
+            this._textBoxDays.Location = new System.Drawing.Point(195, 26);
+            this._textBoxDays.Margin = new System.Windows.Forms.Padding(2);
+            this._textBoxDays.MaxLength = 7;
+            this._textBoxDays.Name = "textBoxDays";
+            this._textBoxDays.Size = new System.Drawing.Size(55, 20);
+            this._textBoxDays.TabIndex = 3;
             // 
             // SalaryTariffRateUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelTariffRate);
-            this.Controls.Add(this.labelDays);
-            this.Controls.Add(this.textBoxTariffRate);
-            this.Controls.Add(this.textBoxDays);
+            this.Controls.Add(this._labelTariffRate);
+            this.Controls.Add(this._labelDays);
+            this.Controls.Add(this._textBoxTariffRate);
+            this.Controls.Add(this._textBoxDays);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryTariffRateUserControl";
             this.Size = new System.Drawing.Size(260, 80);
@@ -92,9 +92,9 @@ namespace View
 
         #endregion
 
-        internal Label labelTariffRate;
-        internal Label labelDays;
-        internal TextBox textBoxTariffRate;
-        internal TextBox textBoxDays;
+        internal Label _labelTariffRate;
+        internal Label _labelDays;
+        internal TextBox _textBoxTariffRate;
+        internal TextBox _textBoxDays;
     }
 }

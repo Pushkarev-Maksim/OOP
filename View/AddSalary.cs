@@ -25,33 +25,33 @@ namespace View
             StartPosition = FormStartPosition.CenterScreen;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-            salaryHourlyRateUserControl.textBoxHourlyRate.Tag = typeof(double);
-            salaryHourlyRateUserControl.textBoxHours.Tag = typeof(int);
-            salaryMonthlyUserControl.textBoxFixedSalary.Tag = typeof(double);
-            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Tag = typeof(int);
-            salaryMonthlyUserControl.textBoxActualWorkedDays.Tag = typeof(int);
-            salaryTariffRateUserControl.textBoxTariffRate.Tag = typeof(double);
-            salaryTariffRateUserControl.textBoxDays.Tag = typeof(int);
+            _salaryHourlyRateUserControl._textBoxHourlyRate.Tag = typeof(double);
+            _salaryHourlyRateUserControl._textBoxHours.Tag = typeof(int);
+            _salaryMonthlyUserControl._textBoxFixedSalary.Tag = typeof(double);
+            _salaryMonthlyUserControl._textBoxMonthlyWorkingDays.Tag = typeof(int);
+            _salaryMonthlyUserControl._textBoxActualWorkedDays.Tag = typeof(int);
+            _salaryTariffRateUserControl._textBoxTariffRate.Tag = typeof(double);
+            _salaryTariffRateUserControl._textBoxDays.Tag = typeof(int);
 
-            salaryHourlyRateUserControl.textBoxHourlyRate.KeyPress += new
+            _salaryHourlyRateUserControl._textBoxHourlyRate.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
 
-            salaryHourlyRateUserControl.textBoxHours.KeyPress += new
+            _salaryHourlyRateUserControl._textBoxHours.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
 
-            salaryMonthlyUserControl.textBoxFixedSalary.KeyPress += new
+            _salaryMonthlyUserControl._textBoxFixedSalary.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
 
-            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.KeyPress += new
+            _salaryMonthlyUserControl._textBoxMonthlyWorkingDays.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
 
-            salaryMonthlyUserControl.textBoxActualWorkedDays.KeyPress += new
+            _salaryMonthlyUserControl._textBoxActualWorkedDays.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
             
-            salaryTariffRateUserControl.textBoxTariffRate.KeyPress += new
+            _salaryTariffRateUserControl._textBoxTariffRate.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
             
-            salaryTariffRateUserControl.textBoxDays.KeyPress += new
+            _salaryTariffRateUserControl._textBoxDays.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
         }
 
@@ -62,9 +62,9 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ChangeSalaryHourlyRate(object sender, EventArgs e)
         {
-            salaryHourlyRateUserControl.Visible = true;
-            salaryMonthlyUserControl.Visible = false;
-            salaryTariffRateUserControl.Visible = false;
+            _salaryHourlyRateUserControl.Visible = true;
+            _salaryMonthlyUserControl.Visible = false;
+            _salaryTariffRateUserControl.Visible = false;
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ChangeSalaryMonthly(object sender, EventArgs e)
         {
-            salaryHourlyRateUserControl.Visible = false;
-            salaryMonthlyUserControl.Visible = true;
-            salaryTariffRateUserControl.Visible = false;
+            _salaryHourlyRateUserControl.Visible = false;
+            _salaryMonthlyUserControl.Visible = true;
+            _salaryTariffRateUserControl.Visible = false;
         }
 
         /// <summary>
@@ -86,9 +86,9 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ChangeSalaryTariffRate(object sender, EventArgs e)
         {
-            salaryHourlyRateUserControl.Visible = false;
-            salaryMonthlyUserControl.Visible = false;
-            salaryTariffRateUserControl.Visible = true;
+            _salaryHourlyRateUserControl.Visible = false;
+            _salaryMonthlyUserControl.Visible = false;
+            _salaryTariffRateUserControl.Visible = true;
         }
         
         /// <summary>
@@ -112,38 +112,38 @@ namespace View
             {
                 SalaryBase salaryBase = null;
 
-                if (salaryHourlyRateUserControl.Visible)
+                if (_salaryHourlyRateUserControl.Visible)
                 {
                     salaryBase = new SalaryHourlyRate()
                     {
                         HourlyRate = Convert.ToDouble(
-                            salaryHourlyRateUserControl.textBoxHourlyRate.Text),
+                            _salaryHourlyRateUserControl._textBoxHourlyRate.Text),
                         Hours = Convert.ToInt32(
-                            salaryHourlyRateUserControl.textBoxHours.Text),
+                            _salaryHourlyRateUserControl._textBoxHours.Text),
                     };
                 }
 
-                if (salaryMonthlyUserControl.Visible)
+                if (_salaryMonthlyUserControl.Visible)
                 {
                     salaryBase = new SalaryMonthly()
                     {
                         FixedSalary = Convert.ToDouble(
-                            salaryMonthlyUserControl.textBoxFixedSalary.Text),
+                            _salaryMonthlyUserControl._textBoxFixedSalary.Text),
                         MonthlyWorkingDays = Convert.ToInt32(
-                            salaryMonthlyUserControl.textBoxMonthlyWorkingDays.Text),
+                            _salaryMonthlyUserControl._textBoxMonthlyWorkingDays.Text),
                         ActualWorkedDays = Convert.ToInt32(
-                            salaryMonthlyUserControl.textBoxActualWorkedDays.Text),
+                            _salaryMonthlyUserControl._textBoxActualWorkedDays.Text),
                     };
                 }
 
-                if (salaryTariffRateUserControl.Visible)
+                if (_salaryTariffRateUserControl.Visible)
                 {
                     salaryBase = new SalaryTariffRate()
                     {
                         TariffRate = Convert.ToDouble(
-                            salaryTariffRateUserControl.textBoxTariffRate.Text),
+                            _salaryTariffRateUserControl._textBoxTariffRate.Text),
                         Days = Convert.ToInt32(
-                            salaryTariffRateUserControl.textBoxDays.Text),
+                            _salaryTariffRateUserControl._textBoxDays.Text),
                     };
                 }
 

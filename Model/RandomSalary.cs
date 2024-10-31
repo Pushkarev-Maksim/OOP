@@ -20,7 +20,8 @@ namespace Model
         /// <returns>Сгенерированное число типа double.</returns>
         public static double GetRandomDouble(int minValue, int maxValue)
         {
-            var randomValue = Convert.ToDouble(_random.Next(minValue, maxValue));
+            var randomValue = Convert.ToDouble(
+                _random.Next(minValue, maxValue));
             return randomValue;
         }
 

@@ -29,135 +29,135 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxParameters = new System.Windows.Forms.GroupBox();
-            this.label = new System.Windows.Forms.Label();
-            this.textBoxSalary = new System.Windows.Forms.TextBox();
-            this.checkBoxInput = new System.Windows.Forms.CheckBox();
-            this.checkBoxSalaryMonthly = new System.Windows.Forms.CheckBox();
-            this.checkBoxSalaryTariffRate = new System.Windows.Forms.CheckBox();
-            this.checkBoxSalaryHourlyRate = new System.Windows.Forms.CheckBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.groupBoxParameters.SuspendLayout();
+            this._groupBoxParameters = new System.Windows.Forms.GroupBox();
+            this._label = new System.Windows.Forms.Label();
+            this._textBoxSalary = new System.Windows.Forms.TextBox();
+            this._checkBoxInput = new System.Windows.Forms.CheckBox();
+            this._checkBoxSalaryMonthly = new System.Windows.Forms.CheckBox();
+            this._checkBoxSalaryTariffRate = new System.Windows.Forms.CheckBox();
+            this._checkBoxSalaryHourlyRate = new System.Windows.Forms.CheckBox();
+            this._buttonSearch = new System.Windows.Forms.Button();
+            this._groupBoxParameters.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxParameters
             // 
-            this.groupBoxParameters.Controls.Add(this.label);
-            this.groupBoxParameters.Controls.Add(this.textBoxSalary);
-            this.groupBoxParameters.Controls.Add(this.checkBoxInput);
-            this.groupBoxParameters.Controls.Add(this.checkBoxSalaryMonthly);
-            this.groupBoxParameters.Controls.Add(this.checkBoxSalaryTariffRate);
-            this.groupBoxParameters.Controls.Add(this.checkBoxSalaryHourlyRate);
-            this.groupBoxParameters.Location = new System.Drawing.Point(8, 8);
-            this.groupBoxParameters.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBoxParameters.Name = "groupBoxParameters";
-            this.groupBoxParameters.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxParameters.Size = new System.Drawing.Size(338, 123);
-            this.groupBoxParameters.TabIndex = 0;
-            this.groupBoxParameters.TabStop = false;
-            this.groupBoxParameters.Text = "Параметры фильтрации";
+            this._groupBoxParameters.Controls.Add(this._label);
+            this._groupBoxParameters.Controls.Add(this._textBoxSalary);
+            this._groupBoxParameters.Controls.Add(this._checkBoxInput);
+            this._groupBoxParameters.Controls.Add(this._checkBoxSalaryMonthly);
+            this._groupBoxParameters.Controls.Add(this._checkBoxSalaryTariffRate);
+            this._groupBoxParameters.Controls.Add(this._checkBoxSalaryHourlyRate);
+            this._groupBoxParameters.Location = new System.Drawing.Point(8, 8);
+            this._groupBoxParameters.Margin = new System.Windows.Forms.Padding(2);
+            this._groupBoxParameters.Name = "groupBoxParameters";
+            this._groupBoxParameters.Padding = new System.Windows.Forms.Padding(2);
+            this._groupBoxParameters.Size = new System.Drawing.Size(338, 123);
+            this._groupBoxParameters.TabIndex = 0;
+            this._groupBoxParameters.TabStop = false;
+            this._groupBoxParameters.Text = "Параметры фильтрации";
             // 
             // label
             // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(281, 96);
-            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(27, 13);
-            this.label.TabIndex = 5;
-            this.label.Text = "руб.";
+            this._label.AutoSize = true;
+            this._label.Location = new System.Drawing.Point(281, 96);
+            this._label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._label.Name = "label";
+            this._label.Size = new System.Drawing.Size(27, 13);
+            this._label.TabIndex = 5;
+            this._label.Text = "руб.";
             // 
             // textBoxSalary
             // 
-            this.textBoxSalary.Location = new System.Drawing.Point(182, 93);
-            this.textBoxSalary.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSalary.MaxLength = 7;
-            this.textBoxSalary.Name = "textBoxSalary";
-            this.textBoxSalary.Size = new System.Drawing.Size(95, 20);
-            this.textBoxSalary.TabIndex = 4;
+            this._textBoxSalary.Location = new System.Drawing.Point(182, 93);
+            this._textBoxSalary.Margin = new System.Windows.Forms.Padding(2);
+            this._textBoxSalary.MaxLength = 7;
+            this._textBoxSalary.Name = "textBoxSalary";
+            this._textBoxSalary.Size = new System.Drawing.Size(95, 20);
+            this._textBoxSalary.TabIndex = 4;
             // 
             // checkBoxInput
             // 
-            this.checkBoxInput.AutoSize = true;
-            this.checkBoxInput.Location = new System.Drawing.Point(10, 94);
-            this.checkBoxInput.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxInput.Name = "checkBoxInput";
-            this.checkBoxInput.Size = new System.Drawing.Size(174, 17);
-            this.checkBoxInput.TabIndex = 3;
-            this.checkBoxInput.Text = "Введите необходимую сумму";
-            this.checkBoxInput.UseVisualStyleBackColor = true;
-            this.checkBoxInput.CheckedChanged += new System.EventHandler(this.ActivateTextBox);
+            this._checkBoxInput.AutoSize = true;
+            this._checkBoxInput.Location = new System.Drawing.Point(10, 94);
+            this._checkBoxInput.Margin = new System.Windows.Forms.Padding(2);
+            this._checkBoxInput.Name = "checkBoxInput";
+            this._checkBoxInput.Size = new System.Drawing.Size(174, 17);
+            this._checkBoxInput.TabIndex = 3;
+            this._checkBoxInput.Text = "Введите необходимую сумму";
+            this._checkBoxInput.UseVisualStyleBackColor = true;
+            this._checkBoxInput.CheckedChanged += new System.EventHandler(this.ActivateTextBox);
             // 
             // checkBoxSalaryMonthly
             // 
-            this.checkBoxSalaryMonthly.AutoSize = true;
-            this.checkBoxSalaryMonthly.Location = new System.Drawing.Point(10, 48);
-            this.checkBoxSalaryMonthly.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxSalaryMonthly.Name = "checkBoxSalaryMonthly";
-            this.checkBoxSalaryMonthly.Size = new System.Drawing.Size(108, 17);
-            this.checkBoxSalaryMonthly.TabIndex = 1;
-            this.checkBoxSalaryMonthly.Text = "Оклад за месяц";
-            this.checkBoxSalaryMonthly.UseVisualStyleBackColor = true;
+            this._checkBoxSalaryMonthly.AutoSize = true;
+            this._checkBoxSalaryMonthly.Location = new System.Drawing.Point(10, 48);
+            this._checkBoxSalaryMonthly.Margin = new System.Windows.Forms.Padding(2);
+            this._checkBoxSalaryMonthly.Name = "checkBoxSalaryMonthly";
+            this._checkBoxSalaryMonthly.Size = new System.Drawing.Size(108, 17);
+            this._checkBoxSalaryMonthly.TabIndex = 1;
+            this._checkBoxSalaryMonthly.Text = "Оклад за месяц";
+            this._checkBoxSalaryMonthly.UseVisualStyleBackColor = true;
             // 
             // checkBoxSalaryTariffRate
             // 
-            this.checkBoxSalaryTariffRate.AutoSize = true;
-            this.checkBoxSalaryTariffRate.Location = new System.Drawing.Point(10, 71);
-            this.checkBoxSalaryTariffRate.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxSalaryTariffRate.Name = "checkBoxSalaryTariffRate";
-            this.checkBoxSalaryTariffRate.Size = new System.Drawing.Size(115, 17);
-            this.checkBoxSalaryTariffRate.TabIndex = 2;
-            this.checkBoxSalaryTariffRate.Text = "Тарифная ставка";
-            this.checkBoxSalaryTariffRate.UseVisualStyleBackColor = true;
+            this._checkBoxSalaryTariffRate.AutoSize = true;
+            this._checkBoxSalaryTariffRate.Location = new System.Drawing.Point(10, 71);
+            this._checkBoxSalaryTariffRate.Margin = new System.Windows.Forms.Padding(2);
+            this._checkBoxSalaryTariffRate.Name = "checkBoxSalaryTariffRate";
+            this._checkBoxSalaryTariffRate.Size = new System.Drawing.Size(115, 17);
+            this._checkBoxSalaryTariffRate.TabIndex = 2;
+            this._checkBoxSalaryTariffRate.Text = "Тарифная ставка";
+            this._checkBoxSalaryTariffRate.UseVisualStyleBackColor = true;
             // 
             // checkBoxSalaryHourlyRate
             // 
-            this.checkBoxSalaryHourlyRate.AutoSize = true;
-            this.checkBoxSalaryHourlyRate.Location = new System.Drawing.Point(10, 25);
-            this.checkBoxSalaryHourlyRate.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxSalaryHourlyRate.Name = "checkBoxSalaryHourlyRate";
-            this.checkBoxSalaryHourlyRate.Size = new System.Drawing.Size(160, 17);
-            this.checkBoxSalaryHourlyRate.TabIndex = 0;
-            this.checkBoxSalaryHourlyRate.Text = "Часовая тарифная ставка";
-            this.checkBoxSalaryHourlyRate.UseVisualStyleBackColor = true;
+            this._checkBoxSalaryHourlyRate.AutoSize = true;
+            this._checkBoxSalaryHourlyRate.Location = new System.Drawing.Point(10, 25);
+            this._checkBoxSalaryHourlyRate.Margin = new System.Windows.Forms.Padding(2);
+            this._checkBoxSalaryHourlyRate.Name = "checkBoxSalaryHourlyRate";
+            this._checkBoxSalaryHourlyRate.Size = new System.Drawing.Size(160, 17);
+            this._checkBoxSalaryHourlyRate.TabIndex = 0;
+            this._checkBoxSalaryHourlyRate.Text = "Часовая тарифная ставка";
+            this._checkBoxSalaryHourlyRate.UseVisualStyleBackColor = true;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(8, 135);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(338, 26);
-            this.buttonSearch.TabIndex = 5;
-            this.buttonSearch.Text = "Найти";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.Filter);
+            this._buttonSearch.Location = new System.Drawing.Point(8, 135);
+            this._buttonSearch.Margin = new System.Windows.Forms.Padding(2);
+            this._buttonSearch.Name = "buttonSearch";
+            this._buttonSearch.Size = new System.Drawing.Size(338, 26);
+            this._buttonSearch.TabIndex = 5;
+            this._buttonSearch.Text = "Найти";
+            this._buttonSearch.UseVisualStyleBackColor = true;
+            this._buttonSearch.Click += new System.EventHandler(this.Filter);
             // 
             // FilterSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 169);
-            this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.groupBoxParameters);
+            this.Controls.Add(this._buttonSearch);
+            this.Controls.Add(this._groupBoxParameters);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FilterSalary";
             this.Text = "Фильтр по типу зарплаты";
-            this.groupBoxParameters.ResumeLayout(false);
-            this.groupBoxParameters.PerformLayout();
+            this._groupBoxParameters.ResumeLayout(false);
+            this._groupBoxParameters.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private GroupBox groupBoxParameters;
-        private Label label;
-        private TextBox textBoxSalary;
-        private CheckBox checkBoxInput;
-        private CheckBox checkBoxSalaryHourlyRate;
-        private CheckBox checkBoxSalaryMonthly;
-        private CheckBox checkBoxSalaryTariffRate;
-        private Button buttonSearch;
+        private GroupBox _groupBoxParameters;
+        private Label _label;
+        private TextBox _textBoxSalary;
+        private CheckBox _checkBoxInput;
+        private CheckBox _checkBoxSalaryHourlyRate;
+        private CheckBox _checkBoxSalaryMonthly;
+        private CheckBox _checkBoxSalaryTariffRate;
+        private Button _buttonSearch;
     }
 }

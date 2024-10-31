@@ -39,18 +39,18 @@ namespace View
             _salaryList = salaryList;
             BackColor = Color.AliceBlue;
             StartPosition = FormStartPosition.CenterScreen;
-            textBoxSalary.Enabled = false;
+            _textBoxSalary.Enabled = false;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             
-            textBoxSalary.Tag = typeof(double);
-            textBoxSalary.KeyPress += new
+            _textBoxSalary.Tag = typeof(double);
+            _textBoxSalary.KeyPress += new
                 KeyPressEventHandler(TextBoxHandler.TextBoxKeyPress);
             DeactivateElements();
 
-            checkBoxSalaryHourlyRate.CheckedChanged += ActivateElements;
-            checkBoxSalaryMonthly.CheckedChanged += ActivateElements;
-            checkBoxSalaryTariffRate.CheckedChanged += ActivateElements;
-            checkBoxInput.CheckedChanged += ActivateSalaryBox;
+            _checkBoxSalaryHourlyRate.CheckedChanged += ActivateElements;
+            _checkBoxSalaryMonthly.CheckedChanged += ActivateElements;
+            _checkBoxSalaryTariffRate.CheckedChanged += ActivateElements;
+            _checkBoxInput.CheckedChanged += ActivateSalaryBox;
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace View
         /// </summary>
         private void DeactivateElements()
         {
-            checkBoxInput.Enabled = false;
-            textBoxSalary.Enabled = false;
+            _checkBoxInput.Enabled = false;
+            _textBoxSalary.Enabled = false;
         }
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ActivateElements(object sender, EventArgs e)
         {
-            bool activate = checkBoxSalaryHourlyRate.Checked
-                || checkBoxSalaryMonthly.Checked
-                || checkBoxSalaryTariffRate.Checked;
+            bool activate = _checkBoxSalaryHourlyRate.Checked
+                || _checkBoxSalaryMonthly.Checked
+                || _checkBoxSalaryTariffRate.Checked;
 
-            checkBoxInput.Enabled = activate;
+            _checkBoxInput.Enabled = activate;
         }
         
         /// <summary>
@@ -84,7 +84,7 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ActivateSalaryBox(object sender, EventArgs e)
         {
-            textBoxSalary.Enabled = checkBoxInput.Checked;
+            _textBoxSalary.Enabled = _checkBoxInput.Checked;
         }
 
         /// <summary>
@@ -94,9 +94,9 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ActivateTextBox(object sender, EventArgs e)
         {
-            if (checkBoxInput.Checked)
+            if (_checkBoxInput.Checked)
             {
-                textBoxSalary.Enabled = true;
+                _textBoxSalary.Enabled = true;
             }
         }
 
@@ -112,34 +112,34 @@ namespace View
             BindingList<SalaryBase> tempFilteredList = 
                 new BindingList<SalaryBase>();
 
-            if (checkBoxSalaryHourlyRate.Checked)
+            if (_checkBoxSalaryHourlyRate.Checked)
             {
                 FilterByType(_salaryList, 
                     tempFilteredList, 
                     typeof(SalaryHourlyRate));
             }
 
-            if (checkBoxSalaryMonthly.Checked)
+            if (_checkBoxSalaryMonthly.Checked)
             {
                 FilterByType(_salaryList, 
                     tempFilteredList,
                     typeof(SalaryMonthly));
             }
 
-            if (checkBoxSalaryTariffRate.Checked)
+            if (_checkBoxSalaryTariffRate.Checked)
             {
                 FilterByType(_salaryList,
                     tempFilteredList, 
                     typeof(SalaryTariffRate));
             }
 
-            if (checkBoxInput.Checked)
+            if (_checkBoxInput.Checked)
             {
-                if (!string.IsNullOrEmpty(textBoxSalary.Text))
+                if (!string.IsNullOrEmpty(_textBoxSalary.Text))
                 {
                     tempFilteredList = 
                         FilterBySalaryValue(tempFilteredList, 
-                        Convert.ToDouble(textBoxSalary.Text));
+                        Convert.ToDouble(_textBoxSalary.Text));
                 }
                 else
                 {

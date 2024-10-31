@@ -16,13 +16,15 @@ namespace View
         /// <summary>
         /// Список зарплат.
         /// </summary>
-        private BindingList<SalaryBase> _salaryList = new BindingList<SalaryBase>();
+        private BindingList<SalaryBase> _salaryList = 
+            new BindingList<SalaryBase>();
 
         /// <summary>
         /// Список отфильтрованных зарплат.
         /// </summary>
-        private BindingList<SalaryBase> _listSalaryFilter = new BindingList<SalaryBase>();
-
+        private BindingList<SalaryBase> _listSalaryFilter = 
+            new BindingList<SalaryBase>();
+         
         /// <summary>
         /// Для файлов.
         /// </summary>
@@ -51,8 +53,9 @@ namespace View
         {
             InitializeComponent();
             BackColor = Color.AliceBlue;
-            dataGridViewSpace.BackgroundColor = Color.LightGray;
+            _dataGridViewSpace.BackgroundColor = Color.LightGray;
             StartPosition = FormStartPosition.CenterScreen;
+            UpdatingStatusButtons();
         }
 
         /// <summary>
@@ -62,23 +65,17 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonAdd(object sender, EventArgs e)
         {
-            if (_isAddFormOpen == false && _isFilter == false)
+            AddSalary addSalary = new AddSalary();
+            addSalary.SalaryAdded += AddedSalary;
+            _isAddFormOpen = true;
+            UpdatingStatusButtons();
+            addSalary.FormClosed += (s, args) =>
             {
-                _isAddFormOpen = true;
+                _isAddFormOpen = false;
+                UpdatingStatusButtons();
+            };
 
-                AddSalary addSalary = new AddSalary();
-                addSalary.FormClosed += (s, args) => 
-                    { _isAddFormOpen = false; };
-                addSalary.FormClosed += (s, args) =>
-                { buttonFilter.Enabled = true; };
-                addSalary.SalaryAdded += AddedSalary;
-                addSalary.Show();
-
-                if (_isAddFormOpen)
-                {
-                    buttonFilter.Enabled = false;
-                }
-            }
+            addSalary.Show();
         }
 
         /// <summary>
@@ -88,26 +85,18 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonFilter(object sender, EventArgs e)
         {
-            if (!_isFilterFormOpen)
+            FilterSalary filterSalary = new FilterSalary(_salaryList);
+            filterSalary.SalaryFiltered += FilteredSalary;
+            _isFilterFormOpen = true;
+            UpdatingStatusButtons();
+            filterSalary.FormClosed += (s, args) =>
             {
-                _isFilterFormOpen = true;
-                
-                FilterSalary filterSalary = new FilterSalary(_salaryList);
-                filterSalary.FormClosed += (s, args) => 
-                    { _isFilterFormOpen = false; };
-                filterSalary.FormClosed += (s, args) =>
-                            { buttonAdd.Enabled = true; };
-                filterSalary.SalaryFiltered += FilteredSalary;
-                filterSalary.Show();
+                _isFilterFormOpen = false;
+                UpdatingStatusButtons();
+            };
 
-                if (_isFilterFormOpen)
-                {
-                    buttonAdd.Enabled = false;
-                }
-            }
+            filterSalary.Show();
         }
-
-
 
         /// <summary>
         /// Создание таблицы DataGrid.
@@ -144,7 +133,7 @@ namespace View
         private void LoadMainForm(object sender, EventArgs e)
         {
             _salaryList = new BindingList<SalaryBase>();
-            CreateTable(_salaryList, dataGridViewSpace);
+            CreateTable(_salaryList, _dataGridViewSpace);
         }
 
         /// <summary>
@@ -164,7 +153,24 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonCleanList(object sender, EventArgs e)
         {
-            _salaryList.Clear();
+            _dataGridViewSpace.ClearSelection();
+            foreach (DataGridViewRow row in _dataGridViewSpace.Rows)
+            {
+                row.Selected = true;
+            }
+            foreach (DataGridViewRow row in
+                    _dataGridViewSpace.SelectedRows)
+            {
+                if (row.DataBoundItem is SalaryBase salary)
+                {
+                    _salaryList.Remove(salary);
+                    if (_listSalaryFilter != null 
+                        && _listSalaryFilter.Count > 0)
+                    {
+                        _listSalaryFilter.Remove(salary);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -174,12 +180,20 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonDelete(object sender, EventArgs e)
         {
-            if (dataGridViewSpace.SelectedCells.Count != 0)
+            if (_dataGridViewSpace.SelectedCells.Count != 0)
             {
-                foreach (DataGridViewRow row in dataGridViewSpace.SelectedRows)
+                foreach (DataGridViewRow row in
+                    _dataGridViewSpace.SelectedRows)
                 {
-                    _salaryList.Remove(row.DataBoundItem as SalaryBase);
-                    _listSalaryFilter.Remove(row.DataBoundItem as SalaryBase);
+                    if (row.DataBoundItem is SalaryBase salary)
+                    {
+                        _salaryList.Remove(salary);
+                        if (_listSalaryFilter != null 
+                            && _listSalaryFilter.Count > 0)
+                        {
+                            _listSalaryFilter.Remove(salary);
+                        }
+                    }
                 }
             }
         }
@@ -191,9 +205,9 @@ namespace View
         /// <param name="e">Данные о событие.</param>
         private void ClickВuttonResetFilter(object sender, EventArgs e)
         {
-            CreateTable(_salaryList, dataGridViewSpace);
+            CreateTable(_salaryList, _dataGridViewSpace);
             _isFilter = false;
-            // buttonAdd.Enabled = true;
+            UpdatingStatusButtons();
         }
 
         /// <summary>
@@ -252,8 +266,8 @@ namespace View
                         _serializer.Deserialize(file);
                 }
 
-                dataGridViewSpace.DataSource = _salaryList;
-                dataGridViewSpace.CurrentCell = null;
+                _dataGridViewSpace.DataSource = _salaryList;
+                _dataGridViewSpace.CurrentCell = null;
                 MessageBox.Show("Файл успешно загружен.",
                     "Загрузка завершена",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -265,6 +279,21 @@ namespace View
                     $"Ошибка:  {ex.Message}",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Метод обновления состояний кнопок.
+        /// </summary>
+        private void UpdatingStatusButtons()
+        {
+            _buttonAdd.Enabled = !_isFilterFormOpen &&
+                !_isFilter && !_isAddFormOpen;
+
+            _buttonFilter.Enabled = !_isAddFormOpen &&
+                !_isFilterFormOpen;
+
+            _toolStripDropDownButton.Enabled = !_isFilter;
+            _buttonRandomSalary.Enabled = _toolStripDropDownButton.Enabled;
         }
 
         /// <summary>
@@ -288,11 +317,11 @@ namespace View
         private void FilteredSalary(object sender, EventArgs salaryList)
         {
             SalaryFilterEvent filterEventArgs =
-                salaryList as SalaryFilterEvent;
-
+                 salaryList as SalaryFilterEvent;
             _listSalaryFilter = filterEventArgs?.FilteredSalaryList;
             _isFilter = true;
-            CreateTable(_listSalaryFilter, dataGridViewSpace);
+            UpdatingStatusButtons();
+            CreateTable(_listSalaryFilter, _dataGridViewSpace);
         }
     }
 }

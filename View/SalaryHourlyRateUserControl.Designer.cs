@@ -30,58 +30,58 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelHourlyRate = new System.Windows.Forms.Label();
-            this.labelHours = new System.Windows.Forms.Label();
-            this.textBoxHourlyRate = new System.Windows.Forms.TextBox();
-            this.textBoxHours = new System.Windows.Forms.TextBox();
+            this._labelHourlyRate = new System.Windows.Forms.Label();
+            this._labelHours = new System.Windows.Forms.Label();
+            this._textBoxHourlyRate = new System.Windows.Forms.TextBox();
+            this._textBoxHours = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelHourlyRate
             // 
-            this.labelHourlyRate.AutoSize = true;
-            this.labelHourlyRate.Location = new System.Drawing.Point(8, 4);
-            this.labelHourlyRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelHourlyRate.Name = "labelHourlyRate";
-            this.labelHourlyRate.Size = new System.Drawing.Size(141, 13);
-            this.labelHourlyRate.TabIndex = 0;
-            this.labelHourlyRate.Text = "Часовая тарифная ставка";
+            this._labelHourlyRate.AutoSize = true;
+            this._labelHourlyRate.Location = new System.Drawing.Point(8, 4);
+            this._labelHourlyRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._labelHourlyRate.Name = "labelHourlyRate";
+            this._labelHourlyRate.Size = new System.Drawing.Size(141, 13);
+            this._labelHourlyRate.TabIndex = 0;
+            this._labelHourlyRate.Text = "Часовая тарифная ставка";
             // 
             // labelHours
             // 
-            this.labelHours.AutoSize = true;
-            this.labelHours.Location = new System.Drawing.Point(8, 29);
-            this.labelHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelHours.Name = "labelHours";
-            this.labelHours.Size = new System.Drawing.Size(147, 13);
-            this.labelHours.TabIndex = 1;
-            this.labelHours.Text = "Кол-во отработанных часов";
+            this._labelHours.AutoSize = true;
+            this._labelHours.Location = new System.Drawing.Point(8, 29);
+            this._labelHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this._labelHours.Name = "labelHours";
+            this._labelHours.Size = new System.Drawing.Size(147, 13);
+            this._labelHours.TabIndex = 1;
+            this._labelHours.Text = "Кол-во отработанных часов";
             // 
             // textBoxHourlyRate
             // 
-            this.textBoxHourlyRate.Location = new System.Drawing.Point(195, 2);
-            this.textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxHourlyRate.MaxLength = 7;
-            this.textBoxHourlyRate.Name = "textBoxHourlyRate";
-            this.textBoxHourlyRate.Size = new System.Drawing.Size(55, 20);
-            this.textBoxHourlyRate.TabIndex = 2;
+            this._textBoxHourlyRate.Location = new System.Drawing.Point(195, 2);
+            this._textBoxHourlyRate.Margin = new System.Windows.Forms.Padding(2);
+            this._textBoxHourlyRate.MaxLength = 7;
+            this._textBoxHourlyRate.Name = "textBoxHourlyRate";
+            this._textBoxHourlyRate.Size = new System.Drawing.Size(55, 20);
+            this._textBoxHourlyRate.TabIndex = 2;
             // 
             // textBoxHours
             // 
-            this.textBoxHours.Location = new System.Drawing.Point(195, 26);
-            this.textBoxHours.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxHours.MaxLength = 7;
-            this.textBoxHours.Name = "textBoxHours";
-            this.textBoxHours.Size = new System.Drawing.Size(55, 20);
-            this.textBoxHours.TabIndex = 3;
+            this._textBoxHours.Location = new System.Drawing.Point(195, 26);
+            this._textBoxHours.Margin = new System.Windows.Forms.Padding(2);
+            this._textBoxHours.MaxLength = 7;
+            this._textBoxHours.Name = "textBoxHours";
+            this._textBoxHours.Size = new System.Drawing.Size(55, 20);
+            this._textBoxHours.TabIndex = 3;
             // 
             // SalaryHourlyRateUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBoxHours);
-            this.Controls.Add(this.textBoxHourlyRate);
-            this.Controls.Add(this.labelHours);
-            this.Controls.Add(this.labelHourlyRate);
+            this.Controls.Add(this._textBoxHours);
+            this.Controls.Add(this._textBoxHourlyRate);
+            this.Controls.Add(this._labelHours);
+            this.Controls.Add(this._labelHourlyRate);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SalaryHourlyRateUserControl";
             this.Size = new System.Drawing.Size(260, 80);
@@ -92,9 +92,9 @@ namespace View
 
         #endregion
 
-        internal Label labelHourlyRate;
-        internal Label labelHours;
-        internal TextBox textBoxHourlyRate;
-        internal TextBox textBoxHours;
+        internal Label _labelHourlyRate;
+        internal Label _labelHours;
+        internal TextBox _textBoxHourlyRate;
+        internal TextBox _textBoxHours;
     }
 }
